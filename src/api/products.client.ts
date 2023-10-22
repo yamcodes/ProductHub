@@ -9,15 +9,15 @@ import axios from 'axios';
  * const products = await client.getProducts();
  * ```
  */
-export class ProductsClient {
-  constructor(private readonly baseUrl: string) {}
+export default class ProductsClient {
+  constructor(private readonly baseUrl = 'http://localhost:3000') {}
 
   /**
    * Gets all products.
    * @returns A promise that resolves to an array of products.
    */
   async getProducts() {
-    const res = await axios.get(`${this.baseUrl}/api/products`);
+    const res = await axios.get(`${this.baseUrl}/products`);
     return res.data;
   }
 
@@ -28,7 +28,7 @@ export class ProductsClient {
    */
   async addProduct(product: any) {
     const res = await axios
-      .post(`${this.baseUrl}/api/products`, {
+      .post(`${this.baseUrl}/products`, {
         product,
       })
       .then(function (response) {

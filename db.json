@@ -15,5 +15,25 @@
   ],
   "profile": {
     "name": "typicode"
-  }
+  },
+  "products": [
+    {
+      "id": 1,
+      "name": "eggs",
+      "quantity": 12,
+      "brand": "Chicken"
+    },
+    {
+      "id": 2,
+      "name": "beyond meat",
+      "quantity": 1,
+      "brand": "Beyond UK"
+    },
+    {
+      "id": 3,
+      "name": "milk",
+      "quantity": 1,
+      "brand": "Bjib Land"
+    }
+  ]
 }
