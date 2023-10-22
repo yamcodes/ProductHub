@@ -18,6 +18,13 @@ export default function ProductsWidget() {
         </p>
       )}
       {isError && <p>Error: {error?.message}</p>}
+      <label>Product Name: </label>
+      <input type="text" />
+      <br />
+      <label>Quantity: </label>
+      <input type="number" />
+      <br />
+      <button>Submit</button>
     </>
   );
 }
