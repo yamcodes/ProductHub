@@ -7,7 +7,7 @@ import viteLogo from '/vite.svg';
 function App() {
   const [count, setCount] = useState(0);
   const [message, setMessage] = useState('');
-  const { status, error } = useProducts();
+  const { isLoading, isError, isSuccess, products, error } = useProducts();
 
   return (
     <>
@@ -32,8 +32,9 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-      <p>P </p>
-      {error && <p>Error: {error.message}</p>}
+      {isLoading && <p>Loading...</p>}
+      {isSuccess && <p>{products}</p>}
+      {isError && <p>Error: {error?.message}</p>}
     </>
   );
 }

@@ -9,14 +9,19 @@ const client = new ProductsClient();
  * @returns An object with the products and the status of the request.
  */
 export default function useProducts() {
-  const result = useQuery({
+  const { status, error, data } = useQuery({
     queryKey: ['products'],
     queryFn: client.getProducts,
   });
-
-  const { status, error } = result;
   if (status === 'error') {
     console.error(error);
   }
-  return result;
+
+  return {
+    isLoading: status === 'pending',
+    isError: status === 'error',
+    isSuccess: status === 'success',
+    products: JSON.stringify(data),
+    error: error,
+  };
 }
