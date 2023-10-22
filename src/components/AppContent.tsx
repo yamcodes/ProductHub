@@ -1,12 +1,11 @@
 import { useState } from 'react';
 import '../App.css';
 import reactLogo from '../assets/react.svg';
-import useProducts from '../hooks/useProducts.hook';
 import viteLogo from '/vite.svg';
+import ProductsWidget from './ProductsWidget';
 
 function App() {
   const [count, setCount] = useState(0);
-  const { isLoading, isError, isSuccess, products, error } = useProducts();
 
   return (
     <>
@@ -23,16 +22,11 @@ function App() {
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-      {isLoading && <p>Loading...</p>}
-      {isSuccess && <p>{products}</p>}
-      {isError && <p>Error: {error?.message}</p>}
+      <ProductsWidget />
     </>
   );
 }
