@@ -10,23 +10,23 @@ import axios from 'axios';
  * ```
  */
 export default class ProductsClient {
-  constructor(private readonly baseUrl = 'http://localhost:3000') {}
+  constructor(private baseUrl = 'http://localhost:3000') {}
 
   /**
    * Gets all products.
    * @returns A promise that resolves to an array of products.
    */
-  async getProducts() {
+  getProducts = async () => {
     const res = await axios.get(`${this.baseUrl}/products`);
     return res.data;
-  }
+  };
 
   /**
    * Adds a product.
    * @param product The product to add.
    * @returns A promise that resolves to the added product.
    */
-  async addProduct(product: any) {
+  addProduct = async (product: any) => {
     const res = await axios
       .post(`${this.baseUrl}/products`, {
         product,
@@ -39,5 +39,5 @@ export default class ProductsClient {
       });
 
     return res;
-  }
+  };
 }
