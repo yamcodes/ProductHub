@@ -1,22 +1,13 @@
-import { useState, useEffect } from 'react';
-import reactLogo from '../assets/react.svg';
-import viteLogo from '/vite.svg';
+import { useState } from 'react';
 import '../App.css';
+import reactLogo from '../assets/react.svg';
 import useProducts from '../hooks/useProducts.hook';
+import viteLogo from '/vite.svg';
 
 function App() {
   const [count, setCount] = useState(0);
   const [message, setMessage] = useState('');
   const { status, error } = useProducts();
-
-  // useEffect(() => {
-  //   const init = async () => {
-  //     const client = new ProductsClient();
-  //     const products = await client.getProducts();
-  //     setMessage(JSON.stringify(products));
-  //   };
-  //   init();
-  // });
 
   return (
     <>
