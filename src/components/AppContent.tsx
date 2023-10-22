@@ -32,7 +32,7 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-      <p>Status: {status} </p>
+      <p>P </p>
       {error && <p>Error: {error.message}</p>}
     </>
   );

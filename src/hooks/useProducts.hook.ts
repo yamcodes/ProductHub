@@ -4,15 +4,19 @@ import { useQuery } from '@tanstack/react-query';
 
 const client = new ProductsClient();
 
+/**
+ * Hook for getting all products.
+ * @returns An object with the products and the status of the request.
+ */
 export default function useProducts() {
-  const info = useQuery({
+  const result = useQuery({
     queryKey: ['products'],
     queryFn: client.getProducts,
   });
 
-  const { status, error } = info;
+  const { status, error } = result;
   if (status === 'error') {
     console.error(error);
   }
-  return info;
+  return result;
 }
