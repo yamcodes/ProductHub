@@ -6,7 +6,17 @@ export default function ProductsWidget() {
   return (
     <>
       {isLoading && <p>Loading...</p>}
-      {isSuccess && <p>{products}</p>}
+      {isSuccess && (
+        <p>
+          <ol>
+            {products!.map((product) => (
+              <li>
+                {product.name} : {product.quantity}
+              </li>
+            ))}
+          </ol>
+        </p>
+      )}
       {isError && <p>Error: {error?.message}</p>}
     </>
   );

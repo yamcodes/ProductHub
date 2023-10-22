@@ -1,6 +1,7 @@
 import ProductsClient from '../api/products.client';
 // https://tanstack.com/query/latest/docs/react/guides/queries
 import { useQuery } from '@tanstack/react-query';
+import { Product } from '../types';
 
 const client = new ProductsClient();
 
@@ -9,7 +10,7 @@ const client = new ProductsClient();
  * @returns An object with the products and the status of the request.
  */
 export default function useProducts() {
-  const { status, error, data } = useQuery({
+  const { status, error, data } = useQuery<Product[]>({
     queryKey: ['products'],
     queryFn: client.getProducts,
   });
@@ -21,7 +22,7 @@ export default function useProducts() {
     isLoading: status === 'pending',
     isError: status === 'error',
     isSuccess: status === 'success',
-    products: JSON.stringify(data),
-    error: error,
+    products: data,
+    error,
   };
 }
