@@ -34,6 +34,27 @@
       "name": "milk",
       "quantity": 1,
       "brand": "Bjib Land"
+    },
+    {
+      "product": {
+        "id": 4,
+        "name": "milky",
+        "quantity": 5,
+        "brand": "milky-brand"
+      },
+      "id": 4
+    },
+    {
+      "id": 9,
+      "name": "myname",
+      "quantity": 20,
+      "brand": "best brand"
+    },
+    {
+      "id": 10,
+      "name": "bestName",
+      "quantity": 100,
+      "brand": "bestBrand"
     }
   ]
 }
