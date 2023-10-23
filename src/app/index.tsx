@@ -1,9 +1,10 @@
 import './index.css';
-import AppContent from '../pages/AppContent';
-import enhance from './providers';
+import { enhance } from './enhancements';
+import { router } from '~/pages';
+import { RouterProvider } from '@tanstack/react-router';
 
 function App() {
-  return <AppContent />;
+  return <RouterProvider router={router} />;
 }
 
 export default enhance(App);

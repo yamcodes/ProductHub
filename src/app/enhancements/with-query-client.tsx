@@ -3,7 +3,7 @@
 import React from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
-export const withQueryClient = (Component: React.FC) => {
+const withQueryClient = (Component: React.FC) => {
   const queryClient = new QueryClient();
 
   return () => (
@@ -12,3 +12,5 @@ export const withQueryClient = (Component: React.FC) => {
     </QueryClientProvider>
   );
 };
+
+export default withQueryClient;

@@ -20,8 +20,12 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
 
-    /* Absolute paths */
-    "baseUrl": "./src"
+    /* Path aliases
+     * Remember: must be also added to vite.config.ts
+     */
+    "paths": {
+      "~/*": ["./src/*"]
+    }
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
