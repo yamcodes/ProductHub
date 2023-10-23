@@ -36,15 +36,6 @@
       "brand": "Bjib Land"
     },
     {
-      "product": {
-        "id": 4,
-        "name": "milky",
-        "quantity": 5,
-        "brand": "milky-brand"
-      },
-      "id": 4
-    },
-    {
       "id": 9,
       "name": "myname",
       "quantity": 20,
@@ -63,14 +54,6 @@
       "brand": "hi"
     },
     {
-      "myproduct": "",
-      "id": 12
-    },
-    {
-      "myproduct2": "",
-      "id": 13
-    },
-    {
       "id": 14,
       "name": "hello",
       "quantity": 2,
@@ -83,8 +66,16 @@
       "brand": "hiweqeqw"
     },
     {
-      "myproduct2": "",
-      "id": 16
+      "name": "redbull",
+      "quantity": 2,
+      "brand": "pepsi",
+      "id": 17
+    },
+    {
+      "name": "myname",
+      "quantity": 2,
+      "brand": "mybrand",
+      "id": 18
     }
   ]
 }
