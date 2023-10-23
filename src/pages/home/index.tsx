@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import reactLogo from '/react.svg';
 import viteLogo from '/vite.svg';
-import ProductsWidget from '../../widgets/products-list';
+import ProductsList from '../../widgets/products-list';
 
 export default function Home() {
   const [count, setCount] = useState(0);
@@ -25,7 +25,7 @@ export default function Home() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-      <ProductsWidget />
+      <ProductsList />
     </>
   );
 }
