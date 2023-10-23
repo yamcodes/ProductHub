@@ -11,7 +11,8 @@ export default function useProducts(client = new ProductsClient()) {
     queryFn: client.getProducts,
   });
   const queryClient = useQueryClient();
-  const mutation = useMutation({
+
+  const createMutation = useMutation({
     mutationKey: ['products'],
     mutationFn: client.addProduct,
     onSuccess: () => {
@@ -19,9 +20,17 @@ export default function useProducts(client = new ProductsClient()) {
     },
   });
 
+  const deleteMutation = useMutation({
+    mutationKey: ['products'],
+    mutationFn: client.deleteProduct,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['products'] });
+    },
+  });
+
   return {
     query,
-    mutation,
-    mutate: mutation.mutate,
+    createMutation,
+    deleteMutation,
   };
 }

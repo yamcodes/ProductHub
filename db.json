@@ -18,12 +18,6 @@
   },
   "products": [
     {
-      "id": 1,
-      "name": "eggs",
-      "quantity": 12,
-      "brand": "Chicken"
-    },
-    {
       "id": 2,
       "name": "beyond meat",
       "quantity": 1,
@@ -58,24 +52,6 @@
       "name": "hello",
       "quantity": 2,
       "brand": "hi"
-    },
-    {
-      "id": 15,
-      "name": "weew",
-      "quantity": 2,
-      "brand": "hiweqeqw"
-    },
-    {
-      "name": "redbull",
-      "quantity": 2,
-      "brand": "pepsi",
-      "id": 17
-    },
-    {
-      "name": "myname",
-      "quantity": 2,
-      "brand": "mybrand",
-      "id": 18
     }
   ]
 }

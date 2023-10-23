@@ -2,7 +2,7 @@ import useProducts from '../hooks/useProducts.hook';
 import { useRef } from 'react';
 
 export default function ProductsWidget() {
-  const { query, mutate } = useProducts();
+  const { query, createMutation, deleteMutation } = useProducts();
 
   const productNameRef = useRef<HTMLInputElement>(null);
   const quantityRef = useRef<HTMLInputElement>(null);
@@ -18,11 +18,8 @@ export default function ProductsWidget() {
       console.log('Invalid input');
       return;
     }
-    console.log(productNameRef.current?.value);
-    console.log(quantityRef.current?.value);
-    console.log('submit');
     e.preventDefault();
-    mutate({ name, quantity, brand });
+    createMutation.mutate({ name, quantity, brand });
   };
 
   return (
@@ -33,6 +30,9 @@ export default function ProductsWidget() {
           {query.data!.map((product) => (
             <li key={product.id}>
               {product.name} : {product.quantity}
+              <button onClick={() => deleteMutation.mutate(product.id)}>
+                Delete
+              </button>
             </li>
           ))}
         </ol>

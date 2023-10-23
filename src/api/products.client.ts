@@ -31,4 +31,9 @@ export default class ProductsClient {
     const res = await axios.post<Product>(`${this.baseUrl}/products`, product);
     return res.data;
   };
+
+  deleteProduct = async (id: number) => {
+    const res = await axios.delete(`${this.baseUrl}/products/${id}`);
+    return res.data;
+  };
 }
