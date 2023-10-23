@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Product } from '../types';
+import { InsertProductDto, Product } from '../types';
 
 /**
  * Client for the products API.
@@ -25,13 +25,10 @@ export default class ProductsClient {
   /**
    * Adds a product.
    * @param product The product to add.
-   * @returns A promise that resolves to the added product.
+   * @returns A promise that resolves to the added product. An ID is generated and assigned to the product.
    */
-  addProduct = async (product: Product) => {
-    const res = await axios.post<Product[]>(
-      `${this.baseUrl}/products`,
-      product,
-    );
+  addProduct = async (product: InsertProductDto) => {
+    const res = await axios.post<Product>(`${this.baseUrl}/products`, product);
     return res.data;
   };
 }

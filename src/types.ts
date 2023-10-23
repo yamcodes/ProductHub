@@ -4,3 +4,5 @@ export interface Product {
   quantity: number;
   brand: string;
 }
+
+export type InsertProductDto = Omit<Product, 'id'>;
