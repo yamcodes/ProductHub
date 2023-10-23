@@ -1,11 +1,5 @@
 import ProductsClient from '../api/products.client';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
-import { Product } from '../types';
-
-const getLastProductId = (products: Product[]) => {
-  const lastProduct = products[products.length - 1];
-  return lastProduct ? lastProduct.id : 0;
-};
 
 /**
  * Hook for getting all products.
@@ -40,12 +34,6 @@ export default function useProducts(client = new ProductsClient()) {
     isLoading: query.isPending || mutation.isPending,
     isError: query.isError || mutation.isError,
     setProduct: mutation.mutate,
-    addProduct: (product: Omit<Product, 'id'>) => {
-      mutation.mutate({
-        id: getLastProductId(query.data || []) + 1,
-        ...product,
-      });
-    },
     error,
     isSuccess: query.isSuccess || mutation.isSuccess,
   };

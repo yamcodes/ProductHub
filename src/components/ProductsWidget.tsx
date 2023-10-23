@@ -2,7 +2,7 @@ import useProducts from '../hooks/useProducts.hook';
 import { useRef } from 'react';
 
 export default function ProductsWidget() {
-  const { isLoading, isError, products, error, addProduct, isSuccess } =
+  const { isLoading, isError, products, error, isSuccess, setProduct } =
     useProducts();
 
   const productNameRef = useRef<HTMLInputElement>(null);
@@ -23,7 +23,7 @@ export default function ProductsWidget() {
     console.log(quantityRef.current?.value);
     console.log('submit');
     e.preventDefault();
-    addProduct({ name, quantity, brand });
+    setProduct({ name, quantity, brand });
   };
 
   return (
