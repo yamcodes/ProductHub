@@ -1,4 +1,4 @@
-import useProducts from '../shared/hooks/useProducts.hook';
+import useProducts from '../../shared/hooks/useProducts.hook';
 import { useRef } from 'react';
 
 export default function ProductsWidget() {
