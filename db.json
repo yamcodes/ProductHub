@@ -18,40 +18,40 @@
   },
   "products": [
     {
-      "id": 2,
-      "name": "beyond meat",
-      "quantity": 1,
-      "brand": "Beyond UK"
+      "name": "123",
+      "quantity": 123,
+      "brand": "123",
+      "id": 1
     },
     {
-      "id": 3,
+      "name": "my-products",
+      "quantity": 123,
+      "brand": "my-brand",
+      "id": 2
+    },
+    {
       "name": "milk",
-      "quantity": 1,
-      "brand": "Bjib Land"
-    },
-    {
-      "id": 9,
-      "name": "myname",
-      "quantity": 20,
-      "brand": "best brand"
-    },
-    {
-      "id": 10,
-      "name": "bestName",
-      "quantity": 100,
-      "brand": "bestBrand"
-    },
-    {
-      "id": 11,
-      "name": "hello",
       "quantity": 2,
-      "brand": "hi"
+      "brand": "cow",
+      "id": 3
     },
     {
-      "id": 14,
-      "name": "hello",
-      "quantity": 2,
-      "brand": "hi"
+      "name": "my-products",
+      "quantity": 12345,
+      "brand": "my-brand",
+      "id": 4
+    },
+    {
+      "name": "my-produc3ts",
+      "quantity": 123,
+      "brand": "my-brand",
+      "id": 5
+    },
+    {
+      "name": "eggs",
+      "quantity": 12,
+      "brand": "chicken",
+      "id": 6
     }
   ]
 }

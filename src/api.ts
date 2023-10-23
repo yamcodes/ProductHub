@@ -1,8 +1,8 @@
-import axios from 'axios';
-import { InsertProductDto, Product } from '../types';
+import axios, { AxiosInstance } from 'axios';
+import { InsertProductDto, Product } from './types';
 
 /**
- * Client for the products API.
+ * Client for the API.
  * @param baseUrl The base URL of the API.
  * @example
  * ```ts
@@ -10,15 +10,22 @@ import { InsertProductDto, Product } from '../types';
  * const products = await client.getProducts();
  * ```
  */
-export default class ProductsClient {
-  constructor(private baseUrl = 'http://localhost:3000') {}
+export default class ApiClient {
+  private instance: AxiosInstance;
+  constructor(private host = 'http://localhost:3000') {
+    this.instance = axios.create({
+      baseURL: host,
+    });
+  }
 
   /**
    * Gets all products.
    * @returns A promise that resolves to an array of products.
    */
   getProducts = async () => {
-    const res = await axios.get<Product[]>(`${this.baseUrl}/products`);
+    // const res = await axios.get<Product[]>(`${this.host}/products`);
+    // https://axios-http.com/docs/instance
+    const res = await this.instance.get<Product[]>('products');
     return res.data;
   };
 
@@ -28,12 +35,12 @@ export default class ProductsClient {
    * @returns A promise that resolves to the added product. An ID is generated and assigned to the product.
    */
   addProduct = async (product: InsertProductDto) => {
-    const res = await axios.post<Product>(`${this.baseUrl}/products`, product);
+    const res = await this.instance.post<Product>('products', product);
     return res.data;
   };
 
   deleteProduct = async (id: number) => {
-    const res = await axios.delete(`${this.baseUrl}/products/${id}`);
+    const res = await this.instance.delete(`products/${id}`);
     return res.data;
   };
 }
