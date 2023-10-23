@@ -2,8 +2,7 @@ import useProducts from '../hooks/useProducts.hook';
 import { useRef } from 'react';
 
 export default function ProductsWidget() {
-  const { isLoading, isError, products, error, isSuccess, setProduct } =
-    useProducts();
+  const { query, mutate } = useProducts();
 
   const productNameRef = useRef<HTMLInputElement>(null);
   const quantityRef = useRef<HTMLInputElement>(null);
@@ -23,22 +22,22 @@ export default function ProductsWidget() {
     console.log(quantityRef.current?.value);
     console.log('submit');
     e.preventDefault();
-    setProduct({ name, quantity, brand });
+    mutate({ name, quantity, brand });
   };
 
   return (
     <>
-      {isLoading && <p>Loading...</p>}
-      {isSuccess && (
+      {query.isLoading && <p>Loading...</p>}
+      {query.isSuccess && (
         <ol>
-          {products!.map((product) => (
+          {query.data!.map((product) => (
             <li key={product.id}>
               {product.name} : {product.quantity}
             </li>
           ))}
         </ol>
       )}
-      {isError && <p>Error: {error?.message}</p>}
+      {query.isError && <p>Error: {query.error?.message}</p>}
       <label>Product Name: </label>
       <input type="text" ref={productNameRef} />
       <br />
