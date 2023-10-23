@@ -18,12 +18,6 @@
   },
   "products": [
     {
-      "name": "123",
-      "quantity": 123,
-      "brand": "123",
-      "id": 1
-    },
-    {
       "name": "my-products",
       "quantity": 123,
       "brand": "my-brand",
@@ -34,24 +28,6 @@
       "quantity": 2,
       "brand": "cow",
       "id": 3
-    },
-    {
-      "name": "my-products",
-      "quantity": 12345,
-      "brand": "my-brand",
-      "id": 4
-    },
-    {
-      "name": "my-produc3ts",
-      "quantity": 123,
-      "brand": "my-brand",
-      "id": 5
-    },
-    {
-      "name": "eggs",
-      "quantity": 12,
-      "brand": "chicken",
-      "id": 6
     }
   ]
 }

@@ -12,19 +12,17 @@ import { InsertProductDto, Product } from './types';
  */
 export default class ApiClient {
   private instance: AxiosInstance;
-  constructor(private host = 'http://localhost:3000') {
+  constructor(host = 'http://localhost:3000') {
     this.instance = axios.create({
       baseURL: host,
     });
   }
 
   /**
-   * Gets all products.
+   * Retrieves all products.
    * @returns A promise that resolves to an array of products.
    */
-  getProducts = async () => {
-    // const res = await axios.get<Product[]>(`${this.host}/products`);
-    // https://axios-http.com/docs/instance
+  findAllProducts = async () => {
     const res = await this.instance.get<Product[]>('products');
     return res.data;
   };
@@ -34,12 +32,17 @@ export default class ApiClient {
    * @param product The product to add.
    * @returns A promise that resolves to the added product. An ID is generated and assigned to the product.
    */
-  addProduct = async (product: InsertProductDto) => {
+  createProduct = async (product: InsertProductDto) => {
     const res = await this.instance.post<Product>('products', product);
     return res.data;
   };
 
-  deleteProduct = async (id: number) => {
+  /**
+   * Deletes a product by ID.
+   * @param id The ID of the product to delete.
+   * @returns A promise that resolves to an empty object.
+   */
+  deleteProductById = async (id: number) => {
     const res = await this.instance.delete(`products/${id}`);
     return res.data;
   };

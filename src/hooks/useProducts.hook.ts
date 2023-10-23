@@ -8,13 +8,13 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 export default function useProducts(client = new ApiClient()) {
   const query = useQuery({
     queryKey: ['products'],
-    queryFn: client.getProducts,
+    queryFn: client.findAllProducts,
   });
   const queryClient = useQueryClient();
 
   const createMutation = useMutation({
     mutationKey: ['products'],
-    mutationFn: client.addProduct,
+    mutationFn: client.createProduct,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['products'] });
     },
@@ -22,7 +22,7 @@ export default function useProducts(client = new ApiClient()) {
 
   const deleteMutation = useMutation({
     mutationKey: ['products'],
-    mutationFn: client.deleteProduct,
+    mutationFn: client.deleteProductById,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['products'] });
     },
