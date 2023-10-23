@@ -16,5 +16,12 @@
   "profile": {
     "name": "typicode"
   },
-  "products": []
+  "products": [
+    {
+      "name": "123",
+      "quantity": 123,
+      "brand": "123",
+      "id": 1
+    }
+  ]
 }

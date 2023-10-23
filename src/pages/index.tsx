@@ -1,14 +1,25 @@
+import { lazy } from 'react';
 import { Outlet, Link, Router, Route, RootRoute } from '@tanstack/react-router';
 import About from './about';
 import Home from './home';
 
-// Create a root route
-const rootRoute = new RootRoute({
-  component: Root,
-});
+console.log;
 
-function Root() {
-  return (
+// Define Devtools (only for development)
+const TanStackRouterDevtools =
+  process.env.NODE_ENV === 'production'
+    ? () => null // Render nothing in production
+    : lazy(() =>
+        // Lazy load in development
+        import('@tanstack/router-devtools').then((res) => ({
+          default: res.TanStackRouterDevtools,
+          // For Embedded Mode
+          // default: res.TanStackRouterDevtoolsPanel
+        })),
+      );
+
+const rootRoute = new RootRoute({
+  component: () => (
     <>
       <div>
         <Link to="/">Home</Link>
@@ -16,28 +27,25 @@ function Root() {
       </div>
       <hr />
       <Outlet />
+      <TanStackRouterDevtools />
     </>
-  );
-}
+  ),
+});
 
-// Create an index route
 const homeRoute = new Route({
   getParentRoute: () => rootRoute,
   path: '/',
   component: Home,
 });
 
-// Create an about route
 const aboutRoute = new Route({
   getParentRoute: () => rootRoute,
   path: '/about',
   component: About,
 });
 
-// Create the route tree using the routes
 const routeTree = rootRoute.addChildren([homeRoute, aboutRoute]);
 
-// Create the router using the route tree
 export const router = new Router({
   routeTree,
 });

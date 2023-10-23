@@ -1,9 +1,9 @@
 // HOC for QueryClientProvider
 
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
-const withQueryClient = (Component: React.FC) => {
+const withQueryClient = (Component: FunctionComponent) => {
   const queryClient = new QueryClient();
 
   return () => (

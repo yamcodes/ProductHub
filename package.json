@@ -23,6 +23,8 @@
     "recompose": "^0.30.0"
   },
   "devDependencies": {
+    "@tanstack/react-query-devtools": "^5.1.0",
+    "@tanstack/router-devtools": "beta",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@types/recompose": "^0.30.12",
