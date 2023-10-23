@@ -16,18 +16,5 @@
   "profile": {
     "name": "typicode"
   },
-  "products": [
-    {
-      "name": "my-products",
-      "quantity": 123,
-      "brand": "my-brand",
-      "id": 2
-    },
-    {
-      "name": "milk",
-      "quantity": 2,
-      "brand": "cow",
-      "id": 3
-    }
-  ]
+  "products": []
 }
