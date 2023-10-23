@@ -1,5 +1,5 @@
 import axios, { AxiosInstance } from 'axios';
-import { InsertProductDto, Product } from './types';
+import { InsertProductDto, Product } from '../../types';
 
 /**
  * Client for the API.

@@ -1,5 +1,5 @@
-import '../app/index.css';
-import AppContent from '../components/AppContent';
+import './index.css';
+import AppContent from '../pages/AppContent';
 import enhance from './providers';
 
 function App() {
