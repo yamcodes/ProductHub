@@ -13,7 +13,6 @@ export default function useProducts(client = new ApiClient()) {
   const queryClient = useQueryClient();
 
   const createMutation = useMutation({
-    mutationKey: ['products'],
     mutationFn: client.createProduct,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['products'] });
@@ -21,7 +20,6 @@ export default function useProducts(client = new ApiClient()) {
   });
 
   const deleteMutation = useMutation({
-    mutationKey: ['products'],
     mutationFn: client.deleteProductById,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['products'] });
