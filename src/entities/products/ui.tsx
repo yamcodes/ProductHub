@@ -6,7 +6,7 @@ interface Props {
   actions: ReactNode;
 }
 
-export function Product({ product, actions }: Props) {
+export function Item({ product, actions }: Props) {
   return (
     <>
       {product.name} : {product.quantity}

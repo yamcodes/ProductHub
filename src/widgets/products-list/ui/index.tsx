@@ -1,4 +1,4 @@
-import { Product } from '~/entities/products';
+import { ProductItem } from '~/entities/products';
 import { DeleteProductButton } from '~/features/delete-product';
 import { useQueryProducts } from '../api';
 
@@ -12,7 +12,7 @@ export function ProductsList() {
         <ol>
           {products!.map((product) => (
             <li key={product.id}>
-              <Product
+              <ProductItem
                 product={product}
                 actions={<DeleteProductButton productId={product.id} />}
               />

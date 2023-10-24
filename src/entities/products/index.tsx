@@ -1,2 +1,2 @@
-export * from './ui';
+export { Item as ProductItem } from './ui';
 export * from './api';
