@@ -1,11 +1,11 @@
-import { Product } from '~/types';
+import { IProduct } from '~/entities/products';
 import { useDeleteProduct } from '.';
 
 interface Props {
-  productId: Product['id'];
+  productId: IProduct['id'];
 }
 
-export function DeleteProductButton({ productId }: Props) {
+export function Button({ productId }: Props) {
   const { mutate } = useDeleteProduct();
   return <button onClick={() => mutate(productId)}>Delete</button>;
 }

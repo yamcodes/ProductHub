@@ -1,12 +1,12 @@
-import { Product } from '~/types';
+import { IProduct } from '~/entities/products';
 import { ReactNode } from 'react';
 
-interface ProductItemProps {
-  product: Product;
+interface Props {
+  product: IProduct;
   actions: ReactNode;
 }
 
-export function ProductItem({ product, actions }: ProductItemProps) {
+export function Product({ product, actions }: Props) {
   return (
     <>
       {product.name} : {product.quantity}

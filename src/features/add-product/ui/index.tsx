@@ -7,7 +7,7 @@ interface FormValues {
   brand?: string;
 }
 
-export function AddProductForm() {
+export function Form() {
   const { mutate } = useAddProduct();
   const { register, handleSubmit } = useForm<FormValues>();
 

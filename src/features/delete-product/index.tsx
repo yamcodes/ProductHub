@@ -1,2 +1,2 @@
 export * from './api';
-export * from './ui';
+export { Button as DeleteProductButton } from './ui';
