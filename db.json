@@ -19,45 +19,39 @@
   "products": [
     {
       "name": "myName",
-      "quantity": "myQuantity",
-      "brand": "myBrand",
+      "quantity": 5,
+      "brand": "cheerios",
       "id": 1
     },
     {
       "name": "myName",
-      "quantity": "3",
-      "brand": "myBrand",
+      "quantity": 5,
+      "brand": "cheerios",
       "id": 2
     },
     {
       "name": "myName",
-      "quantity": "3",
-      "brand": "myBrand",
+      "quantity": 5,
+      "brand": "cheerios",
       "id": 3
     },
     {
       "name": "myName",
-      "quantity": "3",
-      "brand": "myBrand",
+      "quantity": 5,
+      "brand": "cheerios",
       "id": 4
     },
     {
       "name": "myName",
-      "quantity": "3",
-      "brand": "myBrand",
+      "quantity": 1,
+      "brand": "cheerios",
       "id": 5
     },
     {
-      "name": "myName",
-      "quantity": "3",
-      "brand": "myBrand",
+      "name": "321",
+      "quantity": 1,
+      "brand": "123",
       "id": 6
-    },
-    {
-      "name": "myName",
-      "quantity": "6",
-      "brand": "chocolate",
-      "id": 7
     }
   ]
 }
