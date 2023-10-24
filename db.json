@@ -52,6 +52,12 @@
       "quantity": "3",
       "brand": "myBrand",
       "id": 6
+    },
+    {
+      "name": "myName",
+      "quantity": "6",
+      "brand": "chocolate",
+      "id": 7
     }
   ]
 }

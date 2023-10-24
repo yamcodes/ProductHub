@@ -18,15 +18,13 @@ export function Form() {
       console.log('Invalid input');
       return;
     }
-
-    console.log('Adding product...', { name, quantity, brand });
     mutate({ name, quantity, brand });
   };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <input {...register('name')} placeholder="name" />
-      <input {...register('quantity')} placeholder="quantity" />
+      <input {...register('quantity')} placeholder="quantity" type="number" />
       <input {...register('brand')} placeholder="brand" />
       <button type="submit">Submit</button>
     </form>
