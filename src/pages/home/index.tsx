@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import reactLogo from '/react.svg';
 import viteLogo from '/vite.svg';
-import ProductsList from '../../widgets/products-list';
+import ProductsList from '~/widgets/products-list';
 
 export default function Home() {
   const [count, setCount] = useState(0);
