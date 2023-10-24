@@ -18,10 +18,10 @@
   },
   "products": [
     {
-      "name": "123",
-      "quantity": 123,
+      "name": "321",
+      "quantity": "321",
       "brand": "123",
-      "id": 5
+      "id": 23
     }
   ]
 }

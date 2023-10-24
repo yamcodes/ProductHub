@@ -1,5 +1,5 @@
-import { useDeleteProduct } from './api';
 import { Product } from '~/types';
+import { useDeleteProduct } from '.';
 
 interface Props {
   productId: Product['id'];

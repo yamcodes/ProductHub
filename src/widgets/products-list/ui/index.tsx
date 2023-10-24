@@ -1,34 +1,17 @@
-import { useProducts, ProductItem } from '~/entities/products';
 import { useRef } from 'react';
+import { ProductItem, useProducts } from '~/entities/products';
 import { DeleteProductButton } from '~/features/delete-product';
+import { useQueryProducts } from '../api';
 
 export function ProductsList() {
-  const { query, createMutation } = useProducts();
-
-  const productNameRef = useRef<HTMLInputElement>(null);
-  const quantityRef = useRef<HTMLInputElement>(null);
-  const brandRef = useRef<HTMLInputElement>(null);
-
-  const handleSubmit = (e: any) => {
-    const name = productNameRef.current?.value;
-    const quantity = quantityRef.current
-      ? Number(quantityRef.current.value)
-      : undefined;
-    const brand = brandRef.current?.value;
-    if (!name || !quantity || !brand) {
-      console.log('Invalid input');
-      return;
-    }
-    e.preventDefault();
-    createMutation.mutate({ name, quantity, brand });
-  };
+  const { isLoading, isSuccess, isError, products, error } = useQueryProducts();
 
   return (
     <>
-      {query.isLoading && <p>Loading...</p>}
-      {query.isSuccess && (
+      {isLoading && <p>Loading...</p>}
+      {isSuccess && (
         <ol>
-          {query.data!.map((product) => (
+          {products!.map((product) => (
             <li key={product.id}>
               <ProductItem
                 product={product}
@@ -38,19 +21,7 @@ export function ProductsList() {
           ))}
         </ol>
       )}
-      {query.isError && <p>Error: {query.error?.message}</p>}
-      <label>Product Name: </label>
-      <input type="text" ref={productNameRef} />
-      <br />
-      <label>Brand: </label>
-      <input type="text" ref={brandRef} />
-      <br />
-      <label>Quantity: </label>
-      <input type="number" ref={quantityRef} min={'1'} />
-      <br />
-      <button type="submit" onClick={handleSubmit}>
-        Submit
-      </button>
+      {isError && <p>Error: {error?.message}</p>}
     </>
   );
 }

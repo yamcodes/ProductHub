@@ -2,6 +2,7 @@ import { useState } from 'react';
 import reactLogo from '/react.svg';
 import viteLogo from '/vite.svg';
 import ProductsList from '~/widgets/products-list';
+import { AddProductForm } from '~/features/add-product';
 
 export default function Home() {
   const [count, setCount] = useState(0);
@@ -26,6 +27,7 @@ export default function Home() {
         Click on the Vite and React logos to learn more
       </p>
       <ProductsList />
+      <AddProductForm />
     </>
   );
 }
