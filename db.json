@@ -19,9 +19,39 @@
   "products": [
     {
       "name": "myName",
-      "quantity": "6",
+      "quantity": "myQuantity",
       "brand": "myBrand",
       "id": 1
+    },
+    {
+      "name": "myName",
+      "quantity": "3",
+      "brand": "myBrand",
+      "id": 2
+    },
+    {
+      "name": "myName",
+      "quantity": "3",
+      "brand": "myBrand",
+      "id": 3
+    },
+    {
+      "name": "myName",
+      "quantity": "3",
+      "brand": "myBrand",
+      "id": 4
+    },
+    {
+      "name": "myName",
+      "quantity": "3",
+      "brand": "myBrand",
+      "id": 5
+    },
+    {
+      "name": "myName",
+      "quantity": "3",
+      "brand": "myBrand",
+      "id": 6
     }
   ]
 }
