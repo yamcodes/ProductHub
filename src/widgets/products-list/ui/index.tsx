@@ -1,5 +1,6 @@
 import useProducts from '~/shared/hooks/useProducts.hook';
 import { useRef } from 'react';
+import { DeleteProductButton } from '~/features/delete-product/ui';
 import { ProductItem } from '~/entities/products/ui';
 export function ProductsList() {
   const { query, createMutation, deleteMutation } = useProducts();
@@ -31,11 +32,7 @@ export function ProductsList() {
             <li key={product.id}>
               <ProductItem
                 product={product}
-                actions={
-                  <button onClick={() => deleteMutation.mutate(product.id)}>
-                    Delete
-                  </button>
-                }
+                actions={<DeleteProductButton productId={product.id} />}
               />
             </li>
           ))}
