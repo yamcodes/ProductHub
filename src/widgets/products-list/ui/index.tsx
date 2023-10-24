@@ -1,9 +1,9 @@
-import useProducts from '~/shared/hooks/useProducts.hook';
+import { useProducts } from '~/entities/products/api';
 import { useRef } from 'react';
 import { DeleteProductButton } from '~/features/delete-product/ui';
 import { ProductItem } from '~/entities/products/ui';
 export function ProductsList() {
-  const { query, createMutation, deleteMutation } = useProducts();
+  const { query, createMutation } = useProducts();
 
   const productNameRef = useRef<HTMLInputElement>(null);
   const quantityRef = useRef<HTMLInputElement>(null);

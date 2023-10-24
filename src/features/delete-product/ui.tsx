@@ -1,4 +1,4 @@
-import useProducts from '~/shared/hooks/useProducts.hook';
+import { useProducts } from '~/entities/products/api';
 import { Product } from '~/types';
 
 interface Props {
