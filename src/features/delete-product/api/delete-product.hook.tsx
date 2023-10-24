@@ -1,4 +1,4 @@
-import { useProducts } from '~/entities/products/api';
+import { useProducts } from '~/entities/products';
 import ApiClient from '~/shared/api';
 
 const useDeleteProduct = (client = new ApiClient()) =>

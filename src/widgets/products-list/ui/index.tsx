@@ -1,7 +1,7 @@
-import { useProducts } from '~/entities/products/api';
+import { useProducts, ProductItem } from '~/entities/products';
 import { useRef } from 'react';
-import { DeleteProductButton } from '~/features/delete-product/ui';
-import { ProductItem } from '~/entities/products/ui';
+import { DeleteProductButton } from '~/features/delete-product';
+
 export function ProductsList() {
   const { query, createMutation } = useProducts();
 
