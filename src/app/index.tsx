@@ -7,4 +7,6 @@ function App() {
   return <RouterProvider router={router} />;
 }
 
-export default enhance(App);
+const EnhancedApp = enhance(App);
+
+export default EnhancedApp;

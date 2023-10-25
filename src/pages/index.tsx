@@ -3,9 +3,8 @@ import { Outlet, Link, Router, Route, RootRoute } from '@tanstack/react-router';
 import About from './about';
 import Home from './home';
 
-console.log;
-
 // Define Devtools (only for development)
+/* eslint-disable react-refresh/only-export-components -- This is a dev-only component */
 const TanStackRouterDevtools =
   process.env.NODE_ENV === 'production'
     ? () => null // Render nothing in production
