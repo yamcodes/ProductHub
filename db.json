@@ -18,28 +18,10 @@
   },
   "products": [
     {
-      "name": "MyName",
+      "name": "Bottle Glass",
       "quantity": 5,
-      "brand": "My Brand",
-      "id": 20
-    },
-    {
-      "name": "Bottle (Glass)",
-      "quantity": 1,
-      "brand": "Coca Cola",
-      "id": 21
-    },
-    {
-      "name": "Bottle (Glass)",
-      "quantity": 1,
-      "brand": "Coca Cola",
-      "id": 22
-    },
-    {
-      "name": "Bottle (Glass)",
-      "quantity": 1,
-      "brand": "Coca Cola",
-      "id": 23
+      "brand": "Can of coke",
+      "id": 38
     }
   ]
 }

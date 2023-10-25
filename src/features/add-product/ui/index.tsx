@@ -2,6 +2,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { useAddProduct } from '..';
+import { Button } from '~/shared/ui';
 
 interface Values {
   name: string;
@@ -56,7 +57,13 @@ export function Form() {
         <input {...register('brand')} placeholder="Coca Cola" />
         {errors.brand?.message && <div>{errors.brand?.message}</div>}
       </div>
-      <button type="submit">Submit</button>
+      <Button type="submit">
+        Submit
+        <div
+          className="i-tabler:circle-arrow-up-right
+        text-#1d1d1d ml-1.5 mb-2px"
+        />
+      </Button>
     </form>
   );
 }

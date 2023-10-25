@@ -1,5 +1,6 @@
 import { IProduct } from '~/entities/products';
 import { useDeleteProduct } from '.';
+import { Button as UiButton } from '~/shared/ui';
 
 interface Props {
   productId: IProduct['id'];
@@ -7,5 +8,10 @@ interface Props {
 
 export function Button({ productId }: Props) {
   const { mutate } = useDeleteProduct();
-  return <button onClick={() => mutate(productId)}>Delete</button>;
+  return (
+    <UiButton onClick={() => mutate(productId)}>
+      Delete
+      <div className="i-tabler:trash ml-1.5 mb-2px" />
+    </UiButton>
+  );
 }
