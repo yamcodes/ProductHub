@@ -58,11 +58,11 @@ export function Form() {
         {errors.brand?.message && <div>{errors.brand?.message}</div>}
       </div>
       <Button type="submit">
-        Submit
         <div
           className="i-tabler:circle-arrow-up-right
-        text-#1d1d1d ml-1.5 mb-2px"
+        text-#1d1d1d mr-1 mb-2px"
         />
+        Submit
       </Button>
     </form>
   );

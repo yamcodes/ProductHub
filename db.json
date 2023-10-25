@@ -18,10 +18,10 @@
   },
   "products": [
     {
-      "name": "Bottle Glass",
-      "quantity": 5,
-      "brand": "Can of coke",
-      "id": 38
+      "name": "bottle of glass",
+      "quantity": 3,
+      "brand": "my coca cola",
+      "id": 39
     }
   ]
 }

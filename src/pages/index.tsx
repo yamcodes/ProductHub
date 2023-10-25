@@ -1,6 +1,7 @@
 import { lazy } from 'react';
 import { Outlet, Link, Router, Route, RootRoute } from '@tanstack/react-router';
 import About from './about';
+import { Tab } from '@headlessui/react';
 import Home from './home';
 
 // Define Devtools (only for development)
@@ -20,13 +21,35 @@ const TanStackRouterDevtools =
 const rootRoute = new RootRoute({
   component: () => (
     <>
-      <div>
+      {/* <div>
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
       </div>
-      <hr />
-      <Outlet />
-      <TanStackRouterDevtools />
+      <hr /> */}
+      <div className="flex items-center flex-col">
+        <div className="w-full">
+          <div className="flex flex-auto p-4">
+            <div
+              className="text-xl font-bold mx-6 bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text text-transparent
+            "
+            >
+              ProductHub
+            </div>
+            <Tab.Group>
+              <Tab.List>
+                <Tab>
+                  <Link to="/">Home</Link>
+                </Tab>
+                <Tab>
+                  <Link to="/about">About</Link>
+                </Tab>
+              </Tab.List>
+            </Tab.Group>
+          </div>
+        </div>
+        <Outlet />
+        <TanStackRouterDevtools />
+      </div>
     </>
   ),
 });

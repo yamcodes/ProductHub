@@ -10,8 +10,8 @@ export function Button({ productId }: Props) {
   const { mutate } = useDeleteProduct();
   return (
     <UiButton onClick={() => mutate(productId)}>
+      <div className="i-tabler:trash mr-1 mb-2px" />
       Delete
-      <div className="i-tabler:trash ml-1.5 mb-2px" />
     </UiButton>
   );
 }
