@@ -18,10 +18,16 @@
   },
   "products": [
     {
-      "name": "Lamp",
+      "name": "65+",
       "quantity": 1,
-      "brand": "Disney Pixar",
-      "id": 44
+      "brand": "23",
+      "id": 54
+    },
+    {
+      "name": "156",
+      "quantity": 1,
+      "brand": "651",
+      "id": 57
     }
   ]
 }

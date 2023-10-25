@@ -6,8 +6,32 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+/* pleasant focus ring */
+button:focus,
+button:focus-visible,
+input:focus {
+  outline: 4px auto -webkit-focus-ring-color;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.without-ring:focus:not(:focus-visible) {
+  @apply focus:ring-0 focus:ring-offset-0;
+}
+
+.without-ring:focus-visible {
+  @apply ring-2 ring-offset-2;
+}
+
+/* // If we wanted to apply this globally, we could use native type selectors */
+
+[type="checkbox"]:focus:not(:focus-visible) {
+  @apply focus:ring-0 focus:ring-offset-0;
+}
+
+[type="checkbox"]:focus-visible {
+  @apply ring-2 ring-offset-2;
 }

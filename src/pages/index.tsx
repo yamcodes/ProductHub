@@ -1,8 +1,9 @@
 import { lazy } from 'react';
 import { Outlet, Link, Router, Route, RootRoute } from '@tanstack/react-router';
 import About from './about';
-import { Tab } from '@headlessui/react';
+// import { Tab } from '@headlessui/react';
 import Home from './home';
+import { Tab } from '~/shared/ui';
 
 // Define Devtools (only for development)
 /* eslint-disable react-refresh/only-export-components -- This is a dev-only component */
@@ -29,7 +30,7 @@ const rootRoute = new RootRoute({
               className="text-xl font-bold mx-6 bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text text-transparent cursor-pointer select-none
             "
             >
-              <div>ProductHub</div>
+              ProductHub
             </Link>
             <Tab.Group>
               <Tab.List>
