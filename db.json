@@ -18,16 +18,10 @@
   },
   "products": [
     {
-      "name": "bottle of glass",
-      "quantity": 3,
-      "brand": "my coca cola",
-      "id": 39
-    },
-    {
-      "name": "myName",
-      "quantity": 6,
-      "brand": "Cola",
-      "id": 40
+      "name": "Lamp",
+      "quantity": 1,
+      "brand": "Disney Pixar",
+      "id": 44
     }
   ]
 }

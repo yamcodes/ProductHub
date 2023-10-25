@@ -21,11 +21,6 @@ const TanStackRouterDevtools =
 const rootRoute = new RootRoute({
   component: () => (
     <>
-      {/* <div>
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-      </div>
-      <hr /> */}
       <div className="flex items-center flex-col">
         <div className="w-full">
           <div className="flex flex-auto p-4">
@@ -38,12 +33,12 @@ const rootRoute = new RootRoute({
             </Link>
             <Tab.Group>
               <Tab.List>
-                <Tab>
-                  <Link to="/">Home</Link>
-                </Tab>
-                <Tab>
-                  <Link to="/about">About</Link>
-                </Tab>
+                <Link to="/">
+                  <Tab>Home</Tab>
+                </Link>
+                <Link to="/about">
+                  <Tab>About</Tab>
+                </Link>
               </Tab.List>
             </Tab.Group>
           </div>
