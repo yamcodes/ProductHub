@@ -18,40 +18,22 @@
   },
   "products": [
     {
-      "name": "myName",
-      "quantity": 5,
-      "brand": "cheerios",
+      "name": "Bottle",
+      "quantity": 1,
+      "brand": "Coca Cola",
       "id": 1
     },
     {
-      "name": "myName",
-      "quantity": 5,
-      "brand": "cheerios",
+      "name": "Can of Coke",
+      "quantity": 1,
+      "brand": "Coca Cola",
       "id": 2
     },
     {
       "name": "myName",
-      "quantity": 5,
-      "brand": "cheerios",
+      "quantity": 1,
+      "brand": "myBrand",
       "id": 3
-    },
-    {
-      "name": "myName",
-      "quantity": 5,
-      "brand": "cheerios",
-      "id": 4
-    },
-    {
-      "name": "myName",
-      "quantity": 1,
-      "brand": "cheerios",
-      "id": 5
-    },
-    {
-      "name": "321",
-      "quantity": 1,
-      "brand": "123",
-      "id": 6
     }
   ]
 }
