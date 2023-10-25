@@ -18,22 +18,10 @@
   },
   "products": [
     {
-      "name": "Bottle",
-      "quantity": 1,
-      "brand": "Coca Cola",
-      "id": 1
-    },
-    {
-      "name": "Can of Coke",
-      "quantity": 1,
-      "brand": "Coca Cola",
-      "id": 2
-    },
-    {
-      "name": "myName",
-      "quantity": 1,
-      "brand": "myBrand",
-      "id": 3
+      "name": "MyName",
+      "quantity": 5,
+      "brand": "My Brand",
+      "id": 20
     }
   ]
 }

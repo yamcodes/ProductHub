@@ -3,19 +3,21 @@ import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { useAddProduct } from '..';
 
-interface FormValues {
+interface Values {
   name: string;
   quantity: number;
   brand: string;
 }
 
 const schema = z.object({
-  name: z.string().min(3, 'Name must be at least 3 characters long'),
+  name: z
+    .string()
+    .min(3, 'Name must be at least 3 characters long. Sorry, Bo and Ed.'),
   quantity: z
     .number()
-    .min(1, 'Quantity must be between 1 and 10')
-    .max(10, 'Quantity must be between 1 and 10'),
-  brand: z.string().min(1, 'Brand must not be empty'),
+    .min(1, 'Quantity must be between 1 and 10.')
+    .max(10, 'Quantity must be between 1 and 10.'),
+  brand: z.string().min(1, 'Brand must not be empty.'),
 });
 
 export function Form() {
@@ -23,8 +25,8 @@ export function Form() {
   const {
     register,
     handleSubmit,
-    formState: { errors, isDirty },
-  } = useForm<FormValues>({
+    formState: { errors },
+  } = useForm<Values>({
     resolver: zodResolver(schema),
     defaultValues: {
       name: '',
@@ -54,9 +56,7 @@ export function Form() {
         <input {...register('brand')} placeholder="Coca Cola" />
         {errors.brand?.message && <div>{errors.brand?.message}</div>}
       </div>
-      <button type="submit" disabled={!isDirty}>
-        Submit
-      </button>
+      <button type="submit">Submit</button>
     </form>
   );
 }
