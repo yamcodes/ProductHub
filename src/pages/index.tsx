@@ -29,12 +29,13 @@ const rootRoute = new RootRoute({
       <div className="flex items-center flex-col">
         <div className="w-full">
           <div className="flex flex-auto p-4">
-            <div
-              className="text-xl font-bold mx-6 bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text text-transparent
+            <Link
+              to="/"
+              className="text-xl font-bold mx-6 bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text text-transparent cursor-pointer select-none
             "
             >
-              ProductHub
-            </div>
+              <div>ProductHub</div>
+            </Link>
             <Tab.Group>
               <Tab.List>
                 <Tab>

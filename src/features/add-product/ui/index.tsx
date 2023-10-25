@@ -60,7 +60,7 @@ export function Form() {
       <Button type="submit">
         <div
           className="i-tabler:circle-arrow-up-right
-        text-#1d1d1d mr-1 mb-2px"
+        mr-1 mb-2px"
         />
         Submit
       </Button>
