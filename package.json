@@ -6,7 +6,9 @@
   "scripts": {
     "client": "vite",
     "dev": "concurrently 'bun client' 'bun server'",
-    "dev slow": "concurrently 'bun client' 'bun server:slow'",
+    "dev:slow": "concurrently 'bun client' 'bun server:slow'",
+    "host": "concurrently 'bun client --host' 'bun server --host 0.0.0.0'",
+    "host:slow": "concurrently 'bun client --host' 'bun server:slow --host 0.0.0.0'",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "format:check": "prettier --check .",

@@ -18,16 +18,10 @@
   },
   "products": [
     {
-      "name": "65+",
+      "name": "432",
       "quantity": 1,
-      "brand": "23",
-      "id": 54
-    },
-    {
-      "name": "156",
-      "quantity": 1,
-      "brand": "651",
-      "id": 57
+      "brand": "123",
+      "id": 64
     }
   ]
 }
