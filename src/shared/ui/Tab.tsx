@@ -11,10 +11,10 @@ const Tab = ({ children }: Props) => {
     <HeadlessUiTab
       className={({ selected }) =>
         classNames(
-          'bg-transparent py-1 px-2 rounded  select-none  cursor-pointer ',
+          'bg-transparent px-2 py-1 rounded select-none cursor-pointer',
           selected
-            ? 'bshadow-sm hover:bg-#f5f5f5 border-1 border-solid border-#ddd focus:outline-none focus:ring-0'
-            : 'border-none',
+            ? 'bshadow-sm hover:bg-#f5f5f5 border-1 border-solid border-#ddd focus:outline-none'
+            : 'm-1px',
         )
       }
     >

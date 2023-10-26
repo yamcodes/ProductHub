@@ -16,12 +16,5 @@
   "profile": {
     "name": "typicode"
   },
-  "products": [
-    {
-      "name": "my bottle",
-      "quantity": 9,
-      "brand": "cola",
-      "id": 66
-    }
-  ]
+  "products": []
 }

@@ -2,7 +2,8 @@
 
 import { Link, Outlet } from '@tanstack/react-router';
 import { lazy } from 'react';
-import { Tab, useTabs } from '~/shared/ui';
+import { getTabIndex, tabs } from '~/shared/lib';
+import { Tab } from '~/shared/ui';
 
 // Define Devtools (only for development)
 /* eslint-disable react-refresh/only-export-components -- This is a dev-only component */
@@ -19,7 +20,6 @@ const TanStackRouterDevtools =
       );
 
 export function Root() {
-  const { currentTabIndex, handleTabChange, tabs } = useTabs();
   return (
     <div className="flex items-center flex-col">
       <div className="w-full">
@@ -31,9 +31,9 @@ export function Root() {
           >
             ProductHub
           </Link>
-          <Tab.Group selectedIndex={currentTabIndex} onChange={handleTabChange}>
+          <Tab.Group selectedIndex={getTabIndex(location.pathname)}>
             {tabs.map((tab) => (
-              <Link to={tab.pathname}>
+              <Link to={tab.pathname} key={tab.pathname}>
                 <Tab>{tab.name}</Tab>
               </Link>
             ))}
