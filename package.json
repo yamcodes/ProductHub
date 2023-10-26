@@ -49,6 +49,7 @@
     "prettier": "^3.0.3",
     "typescript": "^5.0.2",
     "unocss": "^0.57.1",
+    "unocss-preset-primitives": "^0.0.1-beta.13",
     "vite": "^4.4.5"
   }
 }
