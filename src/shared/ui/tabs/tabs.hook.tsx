@@ -18,7 +18,8 @@ export default function useTabs() {
   };
 
   return {
-    selectedTabIndex,
+    currentTab: tabs[selectedTabIndex],
+    currentTabIndex: selectedTabIndex,
     handleTabChange,
     tabs,
   };

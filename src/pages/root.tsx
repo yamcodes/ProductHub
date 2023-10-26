@@ -19,7 +19,7 @@ const TanStackRouterDevtools =
       );
 
 export function Root() {
-  const { selectedTabIndex, handleTabChange, tabs } = useTabs();
+  const { currentTabIndex, handleTabChange, tabs } = useTabs();
   return (
     <div className="flex items-center flex-col">
       <div className="w-full">
@@ -31,10 +31,7 @@ export function Root() {
           >
             ProductHub
           </Link>
-          <Tab.Group
-            selectedIndex={selectedTabIndex}
-            onChange={handleTabChange}
-          >
+          <Tab.Group selectedIndex={currentTabIndex} onChange={handleTabChange}>
             {tabs.map((tab) => (
               <Link to={tab.pathname}>
                 <Tab>{tab.name}</Tab>
