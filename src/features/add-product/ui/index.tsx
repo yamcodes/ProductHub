@@ -40,7 +40,13 @@ export function Form() {
     <form onSubmit={handleSubmit((values) => mutate(values))}>
       <div>
         <label htmlFor="name">Name</label>
-        <input {...register('name')} placeholder="Bottle (Glass)" type="text" />
+        <input
+          {...register('name')}
+          placeholder="Bottle (Glass)"
+          type="text"
+          id="name"
+          autoComplete="off" // we don't expect a user to have product names in their browser's autocomplete
+        />
         {errors.name?.message && <div>{errors.name?.message}</div>}
       </div>
       <div>
@@ -49,12 +55,13 @@ export function Form() {
           {...register('quantity', { valueAsNumber: true })}
           placeholder="1"
           type="number"
+          id="quantity"
         />
         {errors.quantity?.message && <div>{errors.quantity?.message}</div>}
       </div>
       <div>
         <label htmlFor="brand">Brand</label>
-        <input {...register('brand')} placeholder="Coca Cola" />
+        <input {...register('brand')} placeholder="Coca Cola" id="brand" />
         {errors.brand?.message && <div>{errors.brand?.message}</div>}
       </div>
       <Button type="submit">
