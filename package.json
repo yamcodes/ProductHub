@@ -7,15 +7,21 @@
     "client": "vite",
     "dev": "concurrently 'bun client' 'bun server'",
     "dev:slow": "concurrently 'bun client' 'bun server:slow'",
+    "dev:slower": "concurrently 'bun client' 'bun server:slower'",
+    "dev:slowest": "concurrently 'bun client' 'bun server:slowest'",
     "host": "concurrently 'bun client --host' 'bun server --host 0.0.0.0'",
     "host:slow": "concurrently 'bun client --host' 'bun server:slow --host 0.0.0.0'",
+    "host:slower": "concurrently 'bun client --host' 'bun server:slower --host 0.0.0.0'",
+    "host:slowest": "concurrently 'bun client --host' 'bun server:slowest --host 0.0.0.0'",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "format:check": "prettier --check .",
     "format": "prettier --write .",
     "lint": "bun format:check && eslint .",
     "server": "json-server --watch db.json",
-    "server:slow": "json-server --watch db.json --delay 1000"
+    "server:slow": "json-server --watch db.json --delay 500",
+    "server:slower": "json-server --watch db.json --delay 1000",
+    "server:slowest": "json-server --watch db.json --delay 2000"
   },
   "dependencies": {
     "@headlessui/react": "latest",

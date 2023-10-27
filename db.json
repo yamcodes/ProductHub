@@ -18,40 +18,52 @@
   },
   "products": [
     {
-      "name": "Boed",
+      "name": "123",
       "quantity": 1,
-      "brand": "Coca Cola",
-      "id": 33
-    },
-    {
-      "name": "coca cola",
-      "quantity": 5,
-      "brand": "coca cola",
-      "id": 34
-    },
-    {
-      "name": "glass bottle",
-      "quantity": 70,
-      "brand": "Coca cola",
-      "id": 35
-    },
-    {
-      "name": "glass bottle",
-      "quantity": 1,
-      "brand": "coca cola",
-      "id": 36
+      "brand": "321",
+      "id": 1
     },
     {
       "name": "123",
-      "quantity": 5,
-      "brand": "c",
-      "id": 37
-    },
-    {
-      "name": "2123",
       "quantity": 1,
       "brand": "123",
-      "id": 38
+      "id": 2
+    },
+    {
+      "name": "321",
+      "quantity": 1,
+      "brand": "123",
+      "id": 3
+    },
+    {
+      "name": "123",
+      "quantity": 1,
+      "brand": "321",
+      "id": 4
+    },
+    {
+      "name": "321",
+      "quantity": 1,
+      "brand": "123",
+      "id": 5
+    },
+    {
+      "name": "123",
+      "quantity": 1,
+      "brand": "123",
+      "id": 6
+    },
+    {
+      "name": "123",
+      "quantity": 1,
+      "brand": "123",
+      "id": 7
+    },
+    {
+      "name": "321",
+      "quantity": 1,
+      "brand": "123",
+      "id": 8
     }
   ]
 }
