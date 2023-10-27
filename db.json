@@ -18,15 +18,15 @@
   },
   "products": [
     {
-      "name": "glass bottle",
-      "quantity": 1,
-      "brand": "coca cola",
+      "name": "my bottle",
+      "quantity": 3,
+      "brand": "coka",
       "id": 1
     },
     {
-      "name": "Glass Bottle",
+      "name": "my cool product",
       "quantity": 1,
-      "brand": "3",
+      "brand": "some company",
       "id": 2
     }
   ]

@@ -9,7 +9,11 @@ interface Props {
 export function Item({ product, actions }: Props) {
   return (
     <>
-      {product.name} : {product.quantity}
+      <div className="space-x-24 flex items-center">
+        <span className="color-gray">x{product.quantity}</span>
+        <span>{product.name}</span>
+        <span>{product.brand}</span>
+      </div>
       {actions}
     </>
   );
