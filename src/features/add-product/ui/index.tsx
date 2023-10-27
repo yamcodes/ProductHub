@@ -12,9 +12,7 @@ interface Values {
 }
 
 const schema = z.object({
-  name: z
-    .string()
-    .min(3, 'Name must be at least 3 characters long. Sorry, Bo and Ed.'),
+  name: z.string().min(3, 'Name must be at least 3 characters long.'),
   quantity: valueAsNumber(
     z
       .number()
@@ -50,6 +48,8 @@ export function Form() {
     }
   };
 
+  const isError = Object.values(errors).every((value) => !value);
+
   return (
     <form
       onSubmit={formSubmitHandler(handleSubmit)}
@@ -77,7 +77,7 @@ export function Form() {
         label="Brand"
         errorMessage={errors.brand?.message}
       />
-      <Button type="submit" disabled={isSubmitting || isValidating}>
+      <Button type="submit" disabled={isSubmitting || isValidating || !isError}>
         <div
           className="i-tabler:circle-arrow-up-right
         mr-1 mb-2px"
