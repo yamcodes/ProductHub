@@ -1,8 +1,9 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
-import { useAddProduct } from '..';
+import { valueAsNumber } from '~/shared/lib';
 import { Button, Textbox } from '~/shared/ui';
+import { useAddProduct } from '~/features/add-product';
 
 interface Values {
   name: string;
@@ -14,18 +15,13 @@ const schema = z.object({
   name: z
     .string()
     .min(3, 'Name must be at least 3 characters long. Sorry, Bo and Ed.'),
-  quantity: z
-    .string()
-    .refine((value) => value !== '' && !isNaN(Number(value)), {
-      message: 'Quantity must not be empty',
-    })
-    .transform((value) => Number(value))
-    .pipe(
-      z
-        .number()
-        .min(1, 'Quantity must be between 1 and 10.')
-        .max(10, 'Quantity must be between 1 and 10.'),
-    ),
+  quantity: valueAsNumber(
+    z
+      .number()
+      .min(1, 'Quantity must be between 1 and 99( including).')
+      .max(99, 'Quantity must be between 1 and 99( including).'),
+    'Quantity must not be empty.',
+  ),
   brand: z.string().min(1, 'Brand must not be empty.'),
 });
 
@@ -68,7 +64,7 @@ export function Form() {
         errorMessage={errors.name?.message}
       />
       <Textbox
-        {...register('quantity')}
+        {...register('quantity', { valueAsNumber: true })}
         placeholder="1"
         type="number"
         label="Quantity"

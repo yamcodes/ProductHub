@@ -34,18 +34,6 @@
       "quantity": 3,
       "brand": "coca cola",
       "id": 4
-    },
-    {
-      "name": "Glass Bottle",
-      "quantity": 3,
-      "brand": "Coca Cola",
-      "id": 5
-    },
-    {
-      "name": "Bottle Glass",
-      "quantity": 3,
-      "brand": "Coca cola",
-      "id": 6
     }
   ]
 }
