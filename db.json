@@ -16,5 +16,18 @@
   "profile": {
     "name": "typicode"
   },
-  "products": []
+  "products": [
+    {
+      "name": "glass bottle",
+      "quantity": 1,
+      "brand": "coca cola",
+      "id": 1
+    },
+    {
+      "name": "Glass Bottle",
+      "quantity": 1,
+      "brand": "3",
+      "id": 2
+    }
+  ]
 }

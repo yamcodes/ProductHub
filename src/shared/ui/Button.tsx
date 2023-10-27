@@ -10,7 +10,7 @@ export default function Button({ children, className, ...rest }: Props) {
   return (
     <button
       className={twMerge(
-        'bg-white py-1 px-2 rounded text-#333 border-1 border-solid border-#ddd select-none font-bold shadow-sm hover:bg-#f5f5f5 cursor-pointer',
+        'bg-white py-1 px-2 rounded text-#333 border-1 border-solid border-#ddd select-none font-medium shadow-sm hover:bg-#f5f5f5 cursor-pointer',
         ' ',
         className,
       )}
