@@ -24,21 +24,21 @@
       "id": 2
     },
     {
-      "name": "gog",
-      "quantity": 5,
-      "brand": "gog",
+      "name": "bob",
+      "quantity": 1,
+      "brand": "Coca Cola",
       "id": 3
     },
     {
-      "name": "gog",
-      "quantity": 5,
-      "brand": "gog",
+      "name": "name",
+      "quantity": 3,
+      "brand": "Coca Cola",
       "id": 4
     },
     {
-      "name": "gog",
-      "quantity": 5,
-      "brand": "gog",
+      "name": "Edi",
+      "quantity": 3,
+      "brand": "Coca Cola",
       "id": 5
     }
   ]
