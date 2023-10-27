@@ -18,16 +18,28 @@
   },
   "products": [
     {
-      "name": "hey",
-      "quantity": 9,
-      "brand": "coke",
-      "id": 10
+      "name": "gog",
+      "quantity": 5,
+      "brand": "gog",
+      "id": 2
     },
     {
-      "name": "bot",
-      "quantity": 3,
-      "brand": "coke",
-      "id": 11
+      "name": "gog",
+      "quantity": 5,
+      "brand": "gog",
+      "id": 3
+    },
+    {
+      "name": "gog",
+      "quantity": 5,
+      "brand": "gog",
+      "id": 4
+    },
+    {
+      "name": "gog",
+      "quantity": 5,
+      "brand": "gog",
+      "id": 5
     }
   ]
 }
