@@ -37,7 +37,10 @@ export function Form() {
   });
 
   return (
-    <form onSubmit={handleSubmit((values) => mutate(values))}>
+    <form
+      onSubmit={handleSubmit((values) => mutate(values))}
+      className="bg-#f9f9f9 border-#ddd border-1 rounded-md p-4 space-y-4"
+    >
       <div>
         <label htmlFor="name">Name</label>
         <input

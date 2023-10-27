@@ -23,8 +23,12 @@ const Tab = ({ children }: Props) => {
   );
 };
 
+const Panel = ({ children }: Props) => {
+  return <HeadlessUiTab.Panel className="my-6">{children}</HeadlessUiTab.Panel>;
+};
+
 Tab.List = HeadlessUiTab.List;
-Tab.Panel = HeadlessUiTab.Panel;
+Tab.Panel = Panel;
 Tab.Group = HeadlessUiTab.Group;
 Tab.Panels = HeadlessUiTab.Panels;
 

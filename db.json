@@ -16,5 +16,18 @@
   "profile": {
     "name": "typicode"
   },
-  "products": []
+  "products": [
+    {
+      "name": "hey",
+      "quantity": 9,
+      "brand": "coke",
+      "id": 10
+    },
+    {
+      "name": "bot",
+      "quantity": 3,
+      "brand": "coke",
+      "id": 11
+    }
+  ]
 }

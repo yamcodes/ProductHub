@@ -21,26 +21,32 @@ const TanStackRouterDevtools =
 
 function Root() {
   return (
-    <div className="flex items-center flex-col">
-      <div className="w-full">
-        <div className="p-4">
+    <div className="p-4">
+      <Tab.Group selectedIndex={getTabIndex(location.pathname)}>
+        <div className="flex items-center space-x-4">
           <Link
             to="/"
-            className="text-xl font-bold mx-6 bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text text-transparent cursor-pointer select-none border-1
-        "
+            className="text-xl font-bold bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text text-transparent cursor-pointer select-none
+  "
           >
             ProductHub
           </Link>
-          <Tab.Group selectedIndex={getTabIndex(location.pathname)}>
+          <Tab.List>
             {tabs.map((tab) => (
               <Link to={tab.pathname} key={tab.pathname}>
                 <Tab>{tab.name}</Tab>
               </Link>
             ))}
-          </Tab.Group>
+          </Tab.List>
         </div>
-      </div>
-      <Outlet />
+        <Tab.Panels>
+          {tabs.map((tab) => (
+            <Tab.Panel key={tab.pathname}>
+              <Outlet />
+            </Tab.Panel>
+          ))}
+        </Tab.Panels>
+      </Tab.Group>
       <TanStackRouterDevtools />
     </div>
   );
