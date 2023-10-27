@@ -18,18 +18,6 @@
   },
   "products": [
     {
-      "name": "my name",
-      "quantity": 1,
-      "brand": "cola",
-      "id": 7
-    },
-    {
-      "name": "321",
-      "quantity": 5,
-      "brand": "12",
-      "id": 8
-    },
-    {
       "name": "321",
       "quantity": 5,
       "brand": "12",
