@@ -18,8 +18,8 @@ const schema = z.object({
   quantity: valueAsNumber(
     z
       .number()
-      .min(1, 'Quantity must be between 1 and 99( including).')
-      .max(99, 'Quantity must be between 1 and 99( including).'),
+      .min(1, 'Quantity must be between 1 and 99.')
+      .max(99, 'Quantity must be between 1 and 99.'),
     'Quantity must not be empty.',
   ),
   brand: z.string().min(1, 'Brand must not be empty.'),

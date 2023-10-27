@@ -18,22 +18,28 @@
   },
   "products": [
     {
-      "name": "glass bottle",
-      "quantity": 5,
-      "brand": "coke",
-      "id": 2
-    },
-    {
-      "name": "coke can",
-      "quantity": 3,
-      "brand": "coca cola",
-      "id": 3
-    },
-    {
       "name": "coca cola",
+      "quantity": 1,
+      "brand": "can of coke",
+      "id": 12
+    },
+    {
+      "name": "can of coke",
       "quantity": 3,
-      "brand": "coca cola",
-      "id": 4
+      "brand": "cola",
+      "id": 13
+    },
+    {
+      "name": "can of coke",
+      "quantity": 1,
+      "brand": "cola",
+      "id": 14
+    },
+    {
+      "name": "can of coke",
+      "quantity": 3,
+      "brand": "coca cola company",
+      "id": 15
     }
   ]
 }

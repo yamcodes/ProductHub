@@ -14,16 +14,12 @@ export default function useProducts(client = new ApiClient()) {
 
   const createMutation = useMutation({
     mutationFn: client.createProduct,
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['products'] });
-    },
+    onSettled: () => queryClient.invalidateQueries({ queryKey: ['products'] }),
   });
 
   const deleteMutation = useMutation({
     mutationFn: client.deleteProductById,
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['products'] });
-    },
+    onSettled: () => queryClient.invalidateQueries({ queryKey: ['products'] }),
   });
 
   return {
