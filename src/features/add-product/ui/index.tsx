@@ -26,7 +26,7 @@ const schema = z.object({
 });
 
 export function Form() {
-  const { mutateAsync, status } = useAddProduct();
+  const { mutateAsync } = useAddProduct();
   const {
     register,
     handleSubmit: formSubmitHandler,
