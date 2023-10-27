@@ -26,7 +26,7 @@ function Root() {
         <div className="p-4">
           <Link
             to="/"
-            className="text-xl font-bold mx-6 bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text text-transparent cursor-pointer select-none
+            className="text-xl font-bold mx-6 bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text text-transparent cursor-pointer select-none border-1
         "
           >
             ProductHub

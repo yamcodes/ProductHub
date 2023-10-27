@@ -16,12 +16,5 @@
   "profile": {
     "name": "typicode"
   },
-  "products": [
-    {
-      "name": "321",
-      "quantity": 5,
-      "brand": "12",
-      "id": 9
-    }
-  ]
+  "products": []
 }

@@ -8,7 +8,7 @@ export function ProductsList() {
   return (
     <>
       {isLoading && <p>Loading...</p>}
-      {isSuccess && (
+      {isSuccess && products!.length > 0 && (
         <ol>
           {products!.map((product) => (
             <li key={product.id}>
