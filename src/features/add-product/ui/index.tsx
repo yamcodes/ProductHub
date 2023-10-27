@@ -22,11 +22,12 @@ const schema = z.object({
 });
 
 export function Form() {
-  const { mutate } = useAddProduct();
+  const { mutateAsync } = useAddProduct();
   const {
     register,
-    handleSubmit,
+    handleSubmit: formSubmitHandler,
     formState: { errors },
+    reset,
   } = useForm<Values>({
     resolver: zodResolver(schema),
     defaultValues: {
@@ -36,9 +37,18 @@ export function Form() {
     },
   });
 
+  const handleSubmit = async (values: Values) => {
+    try {
+      await mutateAsync(values);
+      reset();
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <form
-      onSubmit={handleSubmit((values) => mutate(values))}
+      onSubmit={formSubmitHandler(handleSubmit)}
       className="bg-#f9f9f9 border-#ddd border-1 rounded-md p-4 space-y-4"
     >
       <Textbox
