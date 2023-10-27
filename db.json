@@ -16,12 +16,5 @@
   "profile": {
     "name": "typicode"
   },
-  "products": [
-    {
-      "name": "Can",
-      "quantity": 1,
-      "brand": "Coca cola",
-      "id": 9
-    }
-  ]
+  "products": []
 }
