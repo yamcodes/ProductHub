@@ -18,16 +18,10 @@
   },
   "products": [
     {
-      "name": "my bottle",
-      "quantity": 3,
-      "brand": "coka",
-      "id": 1
-    },
-    {
-      "name": "my cool product",
+      "name": "can",
       "quantity": 1,
-      "brand": "some company",
-      "id": 2
+      "brand": "coca cola",
+      "id": 4
     }
   ]
 }

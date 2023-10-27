@@ -26,7 +26,7 @@ export function Form() {
   const {
     register,
     handleSubmit: formSubmitHandler,
-    formState: { errors },
+    formState: { errors, isSubmitting, isValidating },
     reset,
   } = useForm<Values>({
     resolver: zodResolver(schema),
@@ -73,7 +73,7 @@ export function Form() {
         label="Brand"
         errorMessage={errors.brand?.message}
       />
-      <Button type="submit">
+      <Button type="submit" disabled={isSubmitting || isValidating}>
         <div
           className="i-tabler:circle-arrow-up-right
         mr-1 mb-2px"
