@@ -47,3 +47,9 @@ export default class ApiClient {
     return res.data;
   };
 }
+
+let client: ApiClient;
+export const useApiClient = () => {
+  if (!client) client = new ApiClient();
+  return client;
+};

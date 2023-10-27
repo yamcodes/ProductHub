@@ -1,7 +1,6 @@
 import { useProducts } from '~/entities/products';
 import ApiClient from '~/shared/api';
 
-const useAddProduct = (client = new ApiClient()) =>
-  useProducts(client).createMutation;
+const useAddProduct = () => useProducts().createMutation;
 
 export default useAddProduct;
