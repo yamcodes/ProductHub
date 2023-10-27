@@ -1,5 +1,5 @@
 import { ComponentProps, forwardRef } from 'react';
-import clsx from 'clsx';
+import { twJoin, twMerge } from 'tailwind-merge';
 
 interface Props extends ComponentProps<'input'> {
   label?: string;
@@ -14,12 +14,14 @@ const Textbox = forwardRef<HTMLInputElement, Props>(
           {rest.label}
         </label>
         <input
-          className={clsx(
-            'bg-white text-sm border-#ddd border-1 shadow-sm py-1.5 px-3 rounded md:max-w-[300px] sm:max-w-screen',
-            errorMessage
-              ? 'border-red-400 text-red-700 focus:outline-red-500 placeholder-red-300'
-              : 'border-#ddd',
-            ' ',
+          className={twJoin(
+            twMerge(
+              'bg-white text-sm border-#ddd border-1 shadow-sm py-1.5 px-3 rounded md:max-w-[300px] sm:max-w-screen',
+              errorMessage
+                ? 'border-red-400 text-red-700 focus:outline-red-500 placeholder-red-300'
+                : 'border-#ddd',
+              ' ',
+            ),
             className,
           )}
           {...rest}

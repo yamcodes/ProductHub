@@ -18,10 +18,10 @@
   },
   "products": [
     {
-      "name": "eddie",
+      "name": "Can",
       "quantity": 1,
-      "brand": "3",
-      "id": 7
+      "brand": "Coca cola",
+      "id": 9
     }
   ]
 }
