@@ -1,9 +1,9 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
+import { useAddProduct } from '~/features/add-product';
 import { valueAsNumber } from '~/shared/lib';
 import { Button, Textbox } from '~/shared/ui';
-import { useAddProduct } from '~/features/add-product';
 
 interface Values {
   name: string;
@@ -26,7 +26,7 @@ const schema = z.object({
 });
 
 export function Form() {
-  const { mutateAsync } = useAddProduct();
+  const { mutateAsync, status } = useAddProduct();
   const {
     register,
     handleSubmit: formSubmitHandler,

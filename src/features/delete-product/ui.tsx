@@ -5,10 +5,14 @@ import { twJoin } from 'tailwind-merge';
 
 interface Props {
   productId: IProduct['id'];
+  disabled?: boolean;
 }
 
-export function Button({ productId }: Props) {
-  const { mutate, isPending: disabled } = useDeleteProduct();
+export function Button({ productId, disabled: disabledOverride }: Props) {
+  const { mutate, isPending } = useDeleteProduct();
+
+  const disabled = disabledOverride || isPending;
+
   return (
     <UiButton
       onClick={() => mutate(productId)}

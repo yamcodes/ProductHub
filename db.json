@@ -18,64 +18,28 @@
   },
   "products": [
     {
-      "name": "coca cola",
-      "quantity": 1,
-      "brand": "can of coke",
-      "id": 12
-    },
-    {
-      "name": "can of coke",
-      "quantity": 3,
-      "brand": "coca cola company",
-      "id": 15
-    },
-    {
       "name": "123",
-      "quantity": 3,
-      "brand": "coca cola",
-      "id": 16
-    },
-    {
-      "name": "glass",
       "quantity": 1,
-      "brand": "coca cola",
-      "id": 17
-    },
-    {
-      "name": "glass bottle",
-      "quantity": 1,
-      "brand": "coca cola company",
-      "id": 18
+      "brand": "123",
+      "id": 29
     },
     {
       "name": "123",
       "quantity": 1,
       "brand": "123",
-      "id": 19
+      "id": 30
     },
     {
       "name": "123",
       "quantity": 1,
       "brand": "123",
-      "id": 20
+      "id": 31
     },
     {
       "name": "123",
       "quantity": 1,
       "brand": "123",
-      "id": 21
-    },
-    {
-      "name": "321",
-      "quantity": 1,
-      "brand": "321",
-      "id": 23
-    },
-    {
-      "name": "123",
-      "quantity": 1,
-      "brand": "123",
-      "id": 24
+      "id": 32
     }
   ]
 }

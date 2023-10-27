@@ -17,11 +17,13 @@ export default function useProducts() {
   const createMutation = useMutation({
     mutationFn: apiClient.createProduct,
     onSettled: () => queryClient.invalidateQueries({ queryKey: ['products'] }),
+    mutationKey: ['products', 'add'], // for mutationState
   });
 
   const deleteMutation = useMutation({
     mutationFn: apiClient.deleteProductById,
     onSettled: () => queryClient.invalidateQueries({ queryKey: ['products'] }),
+    mutationKey: ['products', 'delete'], // for mutationState
   });
 
   return {
