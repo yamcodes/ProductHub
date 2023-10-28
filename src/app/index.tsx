@@ -2,10 +2,5 @@ import { enhance } from './enhancements';
 import { router } from '~/pages';
 import { RouterProvider } from '@tanstack/react-router';
 
-function App() {
-  return <RouterProvider router={router} />;
-}
-
-const EnhancedApp = enhance(App);
-
-export default EnhancedApp;
+// Create the app by enhancing the router with HOCs
+export const App = enhance(() => <RouterProvider router={router} />);

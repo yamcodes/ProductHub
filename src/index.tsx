@@ -1,6 +1,6 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import App from './app/index.tsx';
+import { App } from './app';
 import '@unocss/reset/tailwind-compat.css';
 import 'virtual:uno.css';
 

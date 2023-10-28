@@ -3,6 +3,7 @@ import { About } from './about';
 import { lazy } from 'react';
 import { getTabIndex, tabs } from '~/shared/lib';
 import { Tab } from '~/shared/ui';
+import { Home } from './home';
 
 // Define Devtools (only for development)
 /* eslint-disable react-refresh/only-export-components -- This is a dev-only component */
