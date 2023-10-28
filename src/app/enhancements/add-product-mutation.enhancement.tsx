@@ -13,4 +13,3 @@ const withAddProductMutation = (Component: FunctionComponent) => {
 };
 
 export default withAddProductMutation;
-withAddProductMutation;

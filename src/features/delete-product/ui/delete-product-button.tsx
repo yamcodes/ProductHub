@@ -1,5 +1,5 @@
 import { IProduct } from '~/entities/products';
-import { useDeleteProduct } from '.';
+import { useDeleteProduct } from '..';
 import { Button as UiButton } from '~/shared/ui';
 import { twJoin } from 'tailwind-merge';
 
@@ -8,7 +8,10 @@ interface Props {
   disabled?: boolean;
 }
 
-export function Button({ productId, disabled: disabledOverride }: Props) {
+export function DeleteProductButton({
+  productId,
+  disabled: disabledOverride,
+}: Props) {
   const { mutate, isPending } = useDeleteProduct();
 
   const disabled = disabledOverride || isPending;

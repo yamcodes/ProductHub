@@ -1,7 +1,7 @@
 import { ProductItem } from '~/entities/products';
 import { useAddProduct } from '~/features/add-product';
-import { DeleteProductButton } from '~/features/delete-product';
 import { useQueryProducts } from '~/features/query-products';
+import { DeleteProductButton } from '~/features/delete-product';
 
 export function ProductsList() {
   const query = useQueryProducts();

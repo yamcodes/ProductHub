@@ -18,52 +18,16 @@
   },
   "products": [
     {
-      "name": "123",
-      "quantity": 1,
-      "brand": "321",
-      "id": 1
+      "name": "Practical Metal Hat",
+      "quantity": 8,
+      "brand": "Fisher, Murphy and Schamberger",
+      "id": 68
     },
     {
-      "name": "123",
-      "quantity": 1,
-      "brand": "123",
-      "id": 2
-    },
-    {
-      "name": "321",
-      "quantity": 1,
-      "brand": "123",
-      "id": 3
-    },
-    {
-      "name": "123",
-      "quantity": 1,
-      "brand": "321",
-      "id": 4
-    },
-    {
-      "name": "321",
-      "quantity": 1,
-      "brand": "123",
-      "id": 5
-    },
-    {
-      "name": "123",
-      "quantity": 1,
-      "brand": "123",
-      "id": 6
-    },
-    {
-      "name": "123",
-      "quantity": 1,
-      "brand": "123",
-      "id": 7
-    },
-    {
-      "name": "321",
-      "quantity": 1,
-      "brand": "123",
-      "id": 8
+      "name": "Glass Bottle",
+      "quantity": 5,
+      "brand": "Coca Cola",
+      "id": 69
     }
   ]
 }
