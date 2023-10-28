@@ -5,7 +5,7 @@ import { useApiClient } from '~/shared/api';
  * Hook for interacting with products.
  * @returns An object with the products and the status of the request.
  */
-export default function useProducts() {
+export function useProducts() {
   const apiClient = useApiClient();
   const queryClient = useQueryClient();
 

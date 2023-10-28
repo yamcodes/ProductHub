@@ -1,6 +1,6 @@
 import { useProducts } from '~/entities/products';
 
-const useQueryProducts = () => {
+export const useQueryProducts = () => {
   const { data: products, ...rest } = useProducts().query;
 
   return {
@@ -8,5 +8,3 @@ const useQueryProducts = () => {
     ...rest,
   };
 };
-
-export default useQueryProducts;

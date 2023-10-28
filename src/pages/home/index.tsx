@@ -1,8 +1,8 @@
 import { AddProductForm } from '~/features/add-product';
 import { GenerateProducts } from '~/features/generate-products';
-import ProductsList from '~/widgets/products-list';
+import { ProductsList } from '~/widgets/products-list';
 
-export default function Home() {
+export function Home() {
   return (
     <div className="space-y-4">
       <ProductsList />

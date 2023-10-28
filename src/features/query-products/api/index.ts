@@ -1,1 +1,1 @@
-export { default as useQueryProducts } from './query-products.hook';
+export * from './query-products.hook';

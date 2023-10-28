@@ -1,7 +1,7 @@
 import { useContext } from 'react';
-import AddProductContext from './add-product.context';
+import { AddProductContext } from './add-product.context';
 
-const useAddProduct = () => {
+export const useAddProduct = () => {
   const context = useContext(AddProductContext);
 
   if (context === undefined)
@@ -9,5 +9,3 @@ const useAddProduct = () => {
 
   return context;
 };
-
-export default useAddProduct;

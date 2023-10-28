@@ -6,7 +6,7 @@ interface Props extends ComponentProps<'input'> {
   errorMessage?: string;
 }
 
-const Textbox = forwardRef<HTMLInputElement, Props>(
+export const Textbox = forwardRef<HTMLInputElement, Props>(
   ({ className, name, errorMessage, ...rest }, ref) => {
     return (
       <div className="flex flex-col">
@@ -36,5 +36,3 @@ const Textbox = forwardRef<HTMLInputElement, Props>(
     );
   },
 );
-
-export default Textbox;

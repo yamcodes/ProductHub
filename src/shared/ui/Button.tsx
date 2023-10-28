@@ -6,12 +6,7 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
 }
 
-export default function Button({
-  children,
-  className,
-  disabled,
-  ...rest
-}: Props) {
+export function Button({ children, className, disabled, ...rest }: Props) {
   return (
     <button
       className={twMerge(

@@ -4,12 +4,10 @@
 import { FunctionComponent } from 'react';
 import { AddProductProvider } from '~/features/add-product';
 
-const withAddProductMutation = (Component: FunctionComponent) => {
+export const withAddProductMutation = (Component: FunctionComponent) => {
   return () => (
     <AddProductProvider>
       <Component />
     </AddProductProvider>
   );
 };
-
-export default withAddProductMutation;

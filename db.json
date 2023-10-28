@@ -18,16 +18,70 @@
   },
   "products": [
     {
-      "name": "Practical Metal Hat",
-      "quantity": 8,
-      "brand": "Fisher, Murphy and Schamberger",
-      "id": 68
+      "name": "Unbranded Steel Salad",
+      "quantity": 29,
+      "brand": "Friesen Group",
+      "id": 7
     },
     {
-      "name": "Glass Bottle",
-      "quantity": 5,
-      "brand": "Coca Cola",
-      "id": 69
+      "name": "Fantastic Bronze Towels",
+      "quantity": 44,
+      "brand": "Sipes - Reilly",
+      "id": 8
+    },
+    {
+      "name": "Rustic Steel Sausages",
+      "quantity": 73,
+      "brand": "O'Reilly - Powlowski",
+      "id": 9
+    },
+    {
+      "name": "Tasty Wooden Hat",
+      "quantity": 50,
+      "brand": "Abbott - Price",
+      "id": 10
+    },
+    {
+      "name": "Handcrafted Cotton Chair",
+      "quantity": 4,
+      "brand": "Feeney, Osinski and Keebler",
+      "id": 19
+    },
+    {
+      "name": "Recycled Concrete Bacon",
+      "quantity": 7,
+      "brand": "Haag, Jacobi and Marvin",
+      "id": 20
+    },
+    {
+      "name": "Handcrafted Soft Pants",
+      "quantity": 92,
+      "brand": "Cummerata LLC",
+      "id": 21
+    },
+    {
+      "name": "Recycled Frozen Mouse",
+      "quantity": 89,
+      "brand": "Effertz Inc",
+      "id": 23
+    },
+    {
+      "name": "Recycled Plastic Chips",
+      "quantity": 72,
+      "brand": "Prohaska, Connelly and Christiansen",
+      "id": 24
+    },
+    {
+      "name": "Refined Wooden Sausages",
+      "quantity": 67,
+      "brand": "Pfeffer, Rutherford and Ortiz",
+      "id": 25
+    },
+    {
+      "name": "Elegant Wooden Chips",
+      "quantity": 71,
+      "brand": "Mayer, Stiedemann and Hilll",
+      "id": 26
     }
   ]
 }

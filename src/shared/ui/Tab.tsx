@@ -6,7 +6,7 @@ interface Props {
   children: ReactNode;
 }
 
-const Tab = ({ children }: Props) => {
+const BaseTab = ({ children }: Props) => {
   return (
     <HeadlessUiTab
       className={({ selected }) =>
@@ -27,9 +27,9 @@ const Panel = ({ children }: Props) => {
   return <HeadlessUiTab.Panel className="my-6">{children}</HeadlessUiTab.Panel>;
 };
 
-Tab.List = HeadlessUiTab.List;
-Tab.Panel = Panel;
-Tab.Group = HeadlessUiTab.Group;
-Tab.Panels = HeadlessUiTab.Panels;
-
-export default Tab;
+export const Tab = Object.assign(BaseTab, {
+  List: HeadlessUiTab.List,
+  Group: HeadlessUiTab.Group,
+  Panels: HeadlessUiTab.Panels,
+  Panel,
+});

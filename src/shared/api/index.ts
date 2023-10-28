@@ -10,7 +10,7 @@ import { InsertProductDto, IProduct } from '~/entities/products';
  * const products = await client.getProducts();
  * ```
  */
-export default class ApiClient {
+export class ApiClient {
   private instance: AxiosInstance;
   constructor(host = 'http://localhost:3000') {
     this.instance = axios.create({

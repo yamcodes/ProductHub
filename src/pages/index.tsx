@@ -1,6 +1,5 @@
 import { Link, Outlet, RootRoute, Route, Router } from '@tanstack/react-router';
-import About from './about';
-import Home from './home';
+import { About } from './about';
 import { lazy } from 'react';
 import { getTabIndex, tabs } from '~/shared/lib';
 import { Tab } from '~/shared/ui';
