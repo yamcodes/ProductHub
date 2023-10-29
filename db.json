@@ -36,52 +36,10 @@
       "id": 9
     },
     {
-      "name": "Tasty Wooden Hat",
-      "quantity": 50,
-      "brand": "Abbott - Price",
+      "name": "bottle",
+      "quantity": 1,
+      "brand": "glass",
       "id": 10
-    },
-    {
-      "name": "Handcrafted Cotton Chair",
-      "quantity": 4,
-      "brand": "Feeney, Osinski and Keebler",
-      "id": 19
-    },
-    {
-      "name": "Recycled Concrete Bacon",
-      "quantity": 7,
-      "brand": "Haag, Jacobi and Marvin",
-      "id": 20
-    },
-    {
-      "name": "Handcrafted Soft Pants",
-      "quantity": 92,
-      "brand": "Cummerata LLC",
-      "id": 21
-    },
-    {
-      "name": "Recycled Frozen Mouse",
-      "quantity": 89,
-      "brand": "Effertz Inc",
-      "id": 23
-    },
-    {
-      "name": "Recycled Plastic Chips",
-      "quantity": 72,
-      "brand": "Prohaska, Connelly and Christiansen",
-      "id": 24
-    },
-    {
-      "name": "Refined Wooden Sausages",
-      "quantity": 67,
-      "brand": "Pfeffer, Rutherford and Ortiz",
-      "id": 25
-    },
-    {
-      "name": "Elegant Wooden Chips",
-      "quantity": 71,
-      "brand": "Mayer, Stiedemann and Hilll",
-      "id": 26
     }
   ]
 }

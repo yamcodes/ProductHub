@@ -11,13 +11,13 @@ interface Values {
 }
 
 const schema = z.object({
-  amount: valueAsNumber(
-    z
-      .number()
-      .min(1, 'Amount must be between 1 and 10.')
-      .max(10, 'Amount must be between 1 and 10.'),
-    'Amount must not be empty.',
-  ),
+  amount: (() => {
+    const betweenMessage = 'Amount must be between 1 and 10.';
+    return valueAsNumber(
+      z.number().min(1, betweenMessage).max(10, betweenMessage),
+      'Amount must not be empty.',
+    );
+  })(),
 });
 
 export function Form() {

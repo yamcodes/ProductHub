@@ -13,13 +13,13 @@ interface Values {
 
 const schema = z.object({
   name: z.string().min(3, 'Name must be at least 3 characters long.'),
-  quantity: valueAsNumber(
-    z
-      .number()
-      .min(1, 'Quantity must be between 1 and 99.')
-      .max(99, 'Quantity must be between 1 and 99.'),
-    'Quantity must not be empty.',
-  ),
+  quantity: (() => {
+    const betweenMessage = 'Quantity must be between 1 and 99.';
+    return valueAsNumber(
+      z.number().min(1, betweenMessage).max(99, betweenMessage),
+      'Quantity must not be empty.',
+    );
+  })(),
   brand: z.string().min(1, 'Brand must not be empty.'),
 });
 
