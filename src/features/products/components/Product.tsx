@@ -1,4 +1,4 @@
-import type { ProductType } from '~/features/products/types';
+import type { ProductType } from '~/features/products';
 import { ReactNode } from 'react';
 import { twJoin } from 'tailwind-merge';
 

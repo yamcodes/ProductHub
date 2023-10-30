@@ -1,6 +1,6 @@
 import { FC, ReactElement } from 'react';
 import { compose } from '~/shared/lib';
-import { withAddProductProvider } from './AddProductProvider';
+import { withAddProduct } from './AppProductProvider';
 import { withQueryClient } from './QueryClientProvider';
 import { withSuspense } from './Suspense';
 
@@ -9,11 +9,7 @@ import { withSuspense } from './Suspense';
 /**
  * HOC for all providers in the app
  */
-const withProviders = compose(
-  withSuspense,
-  withQueryClient,
-  withAddProductProvider,
-);
+const withProviders = compose(withSuspense, withQueryClient, withAddProduct);
 
 // export the AppProvider component
 

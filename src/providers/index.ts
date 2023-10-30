@@ -1,4 +1,4 @@
 export * from './AppProvider';
-export * from './AddProductProvider';
+export * from './AppProductProvider/AddProductProvider';
 export * from './QueryClientProvider';
 export * from './Suspense';
