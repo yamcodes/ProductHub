@@ -1,5 +1,5 @@
 import { FC, ReactElement } from 'react';
-import { compose } from '~/shared/lib';
+import { compose } from '~/utils/utils';
 import { withAddProduct } from './AppProductProvider';
 import { withQueryClient } from './QueryClientProvider';
 import { withSuspense } from './Suspense';

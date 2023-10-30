@@ -2,8 +2,8 @@ import { Link, Outlet, RootRoute, Route, Router } from '@tanstack/react-router';
 import { lazy } from 'react';
 import { About } from '~/features/misc';
 import { Products } from '~/features/products';
-import { getTabIndex, tabs } from '~/shared/lib';
-import { Tab } from '~/shared/ui';
+import { Tab } from '~/components';
+import { getTabIndex, tabs } from '~/utils/tabs';
 
 // Define Devtools (only for development)
 /* eslint-disable react-refresh/only-export-components -- This is a dev-only component */

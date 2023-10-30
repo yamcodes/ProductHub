@@ -1,8 +1,8 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
-import { valueAsNumber } from '~/shared/lib';
-import { Button, Textbox } from '~/shared/ui';
+import { valueAsNumber } from '~/utils/utils';
+import { Button, Textbox } from '~/components';
 import { faker } from '@faker-js/faker';
 import { useAddProduct } from '..';
 

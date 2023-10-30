@@ -1,5 +1,5 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
-import { useApiClient } from '~/shared/api';
+import { useApiClient } from '~/api';
 
 /**
  * Hook for interacting with products.

@@ -1,3 +1,5 @@
+// TODO: move away from utils into a more appropriate folder
+
 import { Link } from '@tanstack/react-router';
 import { ComponentProps } from 'react';
 

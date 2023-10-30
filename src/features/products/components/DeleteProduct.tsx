@@ -1,5 +1,5 @@
 import { IProduct } from '~/entities/products';
-import { Button as UiButton } from '~/shared/ui';
+import { Button as UiButton } from '~/components';
 import { twJoin } from 'tailwind-merge';
 import { useDeleteProduct } from '../api';
 

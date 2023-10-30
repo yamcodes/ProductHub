@@ -1,5 +1,5 @@
 import axios, { AxiosInstance } from 'axios';
-import { InsertProductDto, IProduct } from '~/entities/products';
+import { InsertProductDto, ProductType } from '~/features/products';
 
 /**
  * Client for the API.
@@ -23,7 +23,7 @@ export class ApiClient {
    * @returns A promise that resolves to an array of products.
    */
   findAllProducts = async () => {
-    const res = await this.instance.get<IProduct[]>('products');
+    const res = await this.instance.get<ProductType[]>('products');
     return res.data;
   };
 
@@ -33,7 +33,7 @@ export class ApiClient {
    * @returns A promise that resolves to the added product. An ID is generated and assigned to the product.
    */
   createProduct = async (product: InsertProductDto) => {
-    const res = await this.instance.post<IProduct>('products', product);
+    const res = await this.instance.post<ProductType>('products', product);
     return res.data;
   };
 
