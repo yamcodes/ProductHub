@@ -1,3 +1,3 @@
-import { useProducts } from '~/entities/products';
+import { useProducts } from '.';
 
 export const useDeleteProduct = () => useProducts().deleteMutation;
