@@ -1,5 +1,5 @@
-import { AppProvider } from './providers/app.provider';
-import { router } from '~/pages';
+import { AppProvider } from './providers/AppProvider';
+import { router } from '~/routes';
 import { RouterProvider } from '@tanstack/react-router';
 
 // Create the app by enhancing the router with HOCs
