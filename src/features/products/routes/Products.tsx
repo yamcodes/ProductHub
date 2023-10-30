@@ -1,6 +1,6 @@
 import { AddProduct } from '~/features/products';
 import { GenerateProducts } from '~/features/products';
-import { ProductsList } from '~/widgets/products-list';
+import { ProductsList } from '../components';
 
 export function Products() {
   return (
