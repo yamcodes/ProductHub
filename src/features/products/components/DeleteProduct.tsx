@@ -1,10 +1,10 @@
-import { IProduct } from '~/entities/products';
 import { Button as UiButton } from '~/components';
 import { twJoin } from 'tailwind-merge';
 import { useDeleteProduct } from '../api';
+import { ProductType } from '..';
 
 interface Props {
-  productId: IProduct['id'];
+  productId: ProductType['id'];
   disabled?: boolean;
 }
 
