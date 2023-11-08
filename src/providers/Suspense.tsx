@@ -1,8 +1,9 @@
 // HOC for Suspense
 
-import { FunctionComponent, Suspense } from 'react';
+import { Suspense } from 'react';
+import { HOC } from '~/types';
 
-export const withSuspense = (Component: FunctionComponent) => () => (
+export const withSuspense: HOC = (Component) => () => (
   <Suspense fallback={<div>Loading...</div>}>
     <Component />
   </Suspense>

@@ -1,7 +1,7 @@
-import { FunctionComponent } from 'react';
+import { HOC } from '~/types';
 import { AddProductProvider } from '.';
 
-export const withAddProduct = (Component: FunctionComponent) => () => (
+export const withAddProduct: HOC = (Component) => () => (
   <AddProductProvider>
     <Component />
   </AddProductProvider>
