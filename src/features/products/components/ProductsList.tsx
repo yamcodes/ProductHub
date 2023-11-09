@@ -18,7 +18,7 @@ export function ProductsList() {
     <>
       {query.isLoading && <p>Loading...</p>}
       {query.isSuccess && products!.length > 0 && (
-        <ol className="bg-#f9f9f9 border-#ddd border-1 rounded-md">
+        <ul className="bg-#f9f9f9 border-#ddd border-1 rounded-md">
           {products!.map((product) => (
             <li
               key={product.id}
@@ -46,7 +46,7 @@ export function ProductsList() {
               />
             </li>
           ))}
-        </ol>
+        </ul>
       )}
       {query.isError && <p>Error: {query.error?.message}</p>}
     </>
