@@ -1,18 +1,10 @@
-import { useMutationState } from '@tanstack/react-query';
-import { ProductType, useQueryProducts } from '..';
+import { useQueryProducts } from '..';
 import { DeleteProduct } from './DeleteProduct';
 import { Product } from './Product';
 
 export function ProductsList() {
   const query = useQueryProducts();
   const { products } = query;
-  const variables = useMutationState<ProductType>({
-    filters: {
-      mutationKey: ['products', 'add'],
-      status: 'pending',
-    },
-    select: (mutation) => mutation.state.variables,
-  });
 
   return (
     <>
@@ -30,7 +22,7 @@ export function ProductsList() {
               />
             </li>
           ))}
-          {variables.map((variable) => (
+          {/* {variables.map((variable) => (
             <li className="flex justify-between p-4 items-center border-t-1 border-solid border-#ddd">
               <Product
                 product={{
@@ -45,7 +37,7 @@ export function ProductsList() {
                 }
               />
             </li>
-          ))}
+          ))} */}
         </ul>
       )}
       {query.isError && <p>Error: {query.error?.message}</p>}

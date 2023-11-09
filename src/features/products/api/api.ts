@@ -1,4 +1,4 @@
-import { request } from '~/utils/request';
+import { request } from '~/lib/axios';
 import { AddProductDto, ProductType } from '..';
 
 /**
@@ -6,8 +6,7 @@ import { AddProductDto, ProductType } from '..';
  * @returns A promise that resolves to an array of products.
  */
 export const findAllProducts = async () => {
-  const res = await request.get<ProductType[]>('products');
-  return res.data;
+  return await request.get<ProductType[]>('products');
 };
 
 /**
@@ -16,8 +15,7 @@ export const findAllProducts = async () => {
  * @returns A promise that resolves to the added product. An ID is generated and assigned to the product.
  */
 export const addProduct = async (product: AddProductDto) => {
-  const res = await request.post<ProductType>('products', product);
-  return res.data;
+  return await request.post<ProductType>('products', product);
 };
 
 /**
@@ -26,6 +24,5 @@ export const addProduct = async (product: AddProductDto) => {
  * @returns A promise that resolves to an empty object.
  */
 export const deleteProductById = async (id: number) => {
-  const res = await request.delete(`products/${id}`);
-  return res.data;
+  return await request.delete(`products/${id}`);
 };
