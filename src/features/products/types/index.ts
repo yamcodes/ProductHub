@@ -5,4 +5,4 @@ export interface ProductType {
   brand: string;
 }
 
-export type InsertProductDto = Omit<ProductType, 'id'>;
+export type AddProductDto = Omit<ProductType, 'id'>;

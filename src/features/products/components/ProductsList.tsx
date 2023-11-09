@@ -1,12 +1,18 @@
-import { useAddProduct, useQueryProducts } from '..';
+import { useMutationState } from '@tanstack/react-query';
+import { ProductType, useQueryProducts } from '..';
 import { DeleteProduct } from './DeleteProduct';
 import { Product } from './Product';
 
 export function ProductsList() {
   const query = useQueryProducts();
-  const createMutation = useAddProduct();
   const { products } = query;
-  const { variables } = createMutation;
+  const variables = useMutationState<ProductType>({
+    filters: {
+      mutationKey: ['products', 'add'],
+      status: 'pending',
+    },
+    select: (mutation) => mutation.state.variables,
+  });
 
   return (
     <>
@@ -24,14 +30,14 @@ export function ProductsList() {
               />
             </li>
           ))}
-          {createMutation.isPending && (
+          {variables.map((variable) => (
             <li className="flex justify-between p-4 items-center border-t-1 border-solid border-#ddd">
               <Product
                 product={{
                   id: products!.length,
-                  name: variables!.name,
-                  quantity: variables!.quantity,
-                  brand: variables!.brand,
+                  name: variable.name,
+                  quantity: variable.quantity,
+                  brand: variable.brand,
                 }}
                 pending
                 actions={
@@ -39,7 +45,7 @@ export function ProductsList() {
                 }
               />
             </li>
-          )}
+          ))}
         </ol>
       )}
       {query.isError && <p>Error: {query.error?.message}</p>}

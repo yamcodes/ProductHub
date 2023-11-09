@@ -1,8 +1,8 @@
 import { request } from '~/utils/request';
-import { InsertProductDto, ProductType } from '..';
+import { AddProductDto, ProductType } from '..';
 
 /**
- * Retrieves all products.
+ * Find all products.
  * @returns A promise that resolves to an array of products.
  */
 export const findAllProducts = async () => {
@@ -11,17 +11,17 @@ export const findAllProducts = async () => {
 };
 
 /**
- * Adds a product.
+ * Add a product.
  * @param product The product to add.
  * @returns A promise that resolves to the added product. An ID is generated and assigned to the product.
  */
-export const createProduct = async (product: InsertProductDto) => {
+export const addProduct = async (product: AddProductDto) => {
   const res = await request.post<ProductType>('products', product);
   return res.data;
 };
 
 /**
- * Deletes a product by ID.
+ * Delete a product by ID.
  * @param id The ID of the product to delete.
  * @returns A promise that resolves to an empty object.
  */
