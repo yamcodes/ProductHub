@@ -5,6 +5,8 @@ import { Button, Textbox } from '~/components';
 import { faker } from '@faker-js/faker';
 import { useAddProduct } from '..';
 import { valueAsNumber } from '~/utils/zod';
+import { useQueryClient } from '@tanstack/react-query';
+import { queryKey } from '../utils';
 
 interface Values {
   amount: number;
@@ -21,7 +23,7 @@ const schema = z.object({
 });
 
 export function GenerateProducts() {
-  const { mutateAsync } = useAddProduct();
+  const { mutateAsync } = useAddProduct({ alwaysRefetch: false });
   const {
     register,
     handleSubmit: formSubmitHandler,
@@ -33,6 +35,7 @@ export function GenerateProducts() {
       amount: 10,
     },
   });
+  const queryClient = useQueryClient();
 
   const handleSubmit = async (values: Values) => {
     try {
@@ -45,6 +48,8 @@ export function GenerateProducts() {
           }),
         ),
       );
+      // invalidate the query so that it refetches the data after the bulk insert
+      queryClient.invalidateQueries({ queryKey });
       reset();
     } catch (error) {
       console.error(error);

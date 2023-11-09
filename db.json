@@ -18,63 +18,9 @@
   },
   "products": [
     {
-      "name": "Modern Soft Computer",
-      "quantity": 25,
-      "brand": "Haley, Hand and Collins",
-      "id": 1
-    },
-    {
-      "name": "Handcrafted Soft Bacon",
-      "quantity": 76,
-      "brand": "Bauch, Bashirian and Littel",
-      "id": 2
-    },
-    {
-      "name": "Tasty Wooden Chair",
-      "quantity": 96,
-      "brand": "Kling Inc",
-      "id": 3
-    },
-    {
-      "name": "Small Soft Pants",
-      "quantity": 60,
-      "brand": "Kuvalis, King and Keebler",
-      "id": 4
-    },
-    {
-      "name": "Licensed Granite Gloves",
-      "quantity": 40,
-      "brand": "Wilkinson - Conn",
-      "id": 5
-    },
-    {
-      "name": "Handcrafted Frozen Shirt",
-      "quantity": 25,
-      "brand": "Windler Group",
-      "id": 6
-    },
-    {
-      "name": "Small Rubber Bike",
-      "quantity": 86,
-      "brand": "Gorczany Inc",
-      "id": 7
-    },
-    {
-      "name": "Recycled Metal Gloves",
-      "quantity": 60,
-      "brand": "Walsh, Sawayn and Hermann",
-      "id": 8
-    },
-    {
-      "name": "Luxurious Metal Mouse",
-      "quantity": 87,
-      "brand": "Wintheiser, Wiegand and DuBuque",
-      "id": 9
-    },
-    {
-      "name": "Refined Metal Chicken",
-      "quantity": 32,
-      "brand": "Lindgren, Morar and Cremin",
+      "name": "Fantastic Granite Tuna",
+      "quantity": 80,
+      "brand": "Littel - Willms",
       "id": 10
     }
   ]

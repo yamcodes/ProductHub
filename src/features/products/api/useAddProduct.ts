@@ -2,7 +2,16 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { queryKey } from '../utils';
 import { addProduct } from './api';
 
-export const useAddProduct = () => {
+interface Options {
+  alwaysRefetch?: boolean;
+}
+
+const defaultOptions: Options = {
+  alwaysRefetch: false,
+};
+
+export const useAddProduct = (options: Options = defaultOptions) => {
+  const { alwaysRefetch } = { ...defaultOptions, ...options };
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: addProduct,
@@ -31,7 +40,9 @@ export const useAddProduct = () => {
         queryClient.setQueryData(queryKey, context.previousProducts);
       }
     },
-    // 3. Always refetch after error or success:
-    onSettled: () => queryClient.invalidateQueries({ queryKey }),
+    // 3. Refetch after error or success:
+    onSettled: () => {
+      if (alwaysRefetch) queryClient.invalidateQueries({ queryKey });
+    },
   });
 };
