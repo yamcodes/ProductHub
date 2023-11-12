@@ -3,10 +3,9 @@ import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { Button, Textbox } from '~/components';
 import { faker } from '@faker-js/faker';
-import { useAddProduct } from '..';
+import { queryKey, useAddProduct } from '..';
 import { valueAsNumber } from '~/utils/zod';
 import { useQueryClient } from '@tanstack/react-query';
-import { queryKey } from '../utils';
 
 interface Values {
   amount: number;

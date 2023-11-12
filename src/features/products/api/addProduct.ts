@@ -1,17 +1,26 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { queryKey } from '../utils';
-import { addProduct } from './api';
+import { request } from '~/lib/axios';
+import { AddProductDto, ProductType, queryKey } from '..';
 
-interface Options {
+/**
+ * Add a product.
+ * @param product The product to add.
+ * @returns A promise that resolves to the added product. An ID is generated and assigned to the product.
+ */
+export const addProduct = async (product: AddProductDto) => {
+  return await request.post<ProductType>('products', product);
+};
+
+interface HookOptions {
   alwaysRefetch?: boolean;
 }
 
-const defaultOptions: Options = {
+const defaultHookOptions: HookOptions = {
   alwaysRefetch: false,
 };
 
-export const useAddProduct = (options: Options = defaultOptions) => {
-  const { alwaysRefetch } = { ...defaultOptions, ...options };
+export const useAddProduct = (options: HookOptions = defaultHookOptions) => {
+  const { alwaysRefetch } = { ...defaultHookOptions, ...options };
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: addProduct,

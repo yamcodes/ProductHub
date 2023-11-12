@@ -16,12 +16,5 @@
   "profile": {
     "name": "typicode"
   },
-  "products": [
-    {
-      "name": "Fantastic Granite Tuna",
-      "quantity": 80,
-      "brand": "Littel - Willms",
-      "id": 10
-    }
-  ]
+  "products": []
 }
