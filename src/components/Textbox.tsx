@@ -10,7 +10,7 @@ export const Textbox = forwardRef<HTMLInputElement, Props>(
   ({ className, name, errorMessage, ...rest }, ref) => {
     return (
       <div className="flex flex-col">
-        <label htmlFor={name} className="text-sm font-medium mb-2">
+        <label htmlFor={name} className="mb-2 text-sm font-medium">
           {rest.label}
         </label>
         <input
@@ -30,7 +30,7 @@ export const Textbox = forwardRef<HTMLInputElement, Props>(
           ref={ref}
         />
         {errorMessage && (
-          <div className="text-xs text-red-600 mt-1">{errorMessage}</div>
+          <div className="mt-1 text-xs text-red-600">{errorMessage}</div>
         )}
       </div>
     );

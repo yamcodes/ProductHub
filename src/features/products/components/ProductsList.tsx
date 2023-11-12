@@ -10,11 +10,11 @@ export function ProductsList() {
     <>
       {query.isLoading && <p>Loading...</p>}
       {query.isSuccess && products!.length > 0 && (
-        <ul className="bg-#f9f9f9 border-#ddd border-1 rounded-md">
+        <ul className="border-1 border-#ddd rounded-md bg-#f9f9f9">
           {products!.map((product) => (
             <li
               key={product.id}
-              className="flex justify-between p-4 items-center border-t-1 border-solid border-#ddd first:border-none"
+              className="flex items-center justify-between border-t-1 border-#ddd border-solid p-4 first:border-none"
             >
               <Product
                 product={product}

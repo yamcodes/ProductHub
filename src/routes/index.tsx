@@ -26,8 +26,7 @@ function Root() {
         <div className="flex items-center space-x-4">
           <Link
             to="/"
-            className="text-xl font-bold bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text text-transparent cursor-pointer select-none
-  "
+            className="cursor-pointer select-none from-pink-400 to-purple-500 bg-gradient-to-r bg-clip-text text-xl font-bold text-transparent"
           >
             ProductHub
           </Link>

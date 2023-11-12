@@ -1,4 +1,4 @@
-import { Button as UiButton } from '~/components';
+import { Button } from '~/components';
 import { twJoin } from 'tailwind-merge';
 import { useDeleteProduct } from '../api';
 import { ProductType } from '..';
@@ -17,7 +17,7 @@ export function DeleteProduct({
   const disabled = disabledOverride || isPending;
 
   return (
-    <UiButton
+    <Button
       onClick={() => mutate(productId)}
       className={twJoin(
         'border-0',
@@ -27,8 +27,8 @@ export function DeleteProduct({
       )}
       disabled={disabled}
     >
-      <div className="i-tabler:trash mr-1 mb-2px" />
+      <div className="i-tabler:trash mb-2px mr-1" />
       Delete
-    </UiButton>
+    </Button>
   );
 }

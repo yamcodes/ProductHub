@@ -40,12 +40,8 @@ export function AddProduct() {
   });
 
   const handleSubmit = async (values: Values) => {
-    try {
-      await mutateAsync(values);
-      reset();
-    } catch (error) {
-      console.error(error);
-    }
+    await mutateAsync(values);
+    reset();
   };
 
   const isError = Object.values(errors).every((value) => !value);
@@ -75,10 +71,7 @@ export function AddProduct() {
         errorMessage={errors.brand?.message}
       />
       <Button type="submit" disabled={isSubmitting || isValidating || !isError}>
-        <div
-          className="i-tabler:circle-arrow-up-right
-        mr-1 mb-2px"
-        />
+        <i className="i-tabler:circle-arrow-up-right mb-2px mr-1" />
         Submit
       </Button>
     </form>
