@@ -1,17 +1,23 @@
-import { AddProduct, useDeleteProducts } from '~/features/products';
+import {
+  AddProduct,
+  useDeleteProducts,
+  useQueryProducts,
+} from '~/features/products';
 import { GenerateProducts } from '~/features/products';
 import { ProductsList } from '../components';
+import { Button } from '~/components';
 
 export function Products() {
   const { mutate } = useDeleteProducts();
+  const n = useQueryProducts().products?.length ?? 0;
   return (
     <div className="space-y-4">
       {/* Temporary delete all products button until we have a proper header for that */}
-      <button className="btn btn-red mb-4" onClick={() => mutate()}>
-        Delete All Products
-      </button>
+      <Button onClick={() => mutate()} disabled={!n} variant="danger">
+        Delete All {n} Product{n === 1 ? '' : 's'}
+      </Button>
       <ProductsList />
-      <div className="bg-#f9f9f9 border-#ddd border-1 rounded-md p-4">
+      <div className="border-1 border-#ddd rounded-md bg-#f9f9f9 p-4">
         <AddProduct />
         <hr className="my-4" />
         <GenerateProducts />
