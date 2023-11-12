@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import axios from 'axios';
+import axios, { AxiosRequestConfig } from 'axios';
 import { API_URL } from '~/config';
 
 /**

@@ -8,7 +8,7 @@ import { getTabIndex, tabs } from '~/utils/tabs';
 // Define Devtools (only for development)
 /* eslint-disable react-refresh/only-export-components -- This is a dev-only component */
 const TanStackRouterDevtools =
-  process.env.NODE_ENV === 'production'
+  import.meta.env.NODE_ENV === 'production'
     ? () => null // Render nothing in production
     : lazy(() =>
         // Lazy load in development
