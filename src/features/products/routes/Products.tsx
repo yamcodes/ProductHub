@@ -15,6 +15,7 @@ export function Products() {
     <div className="space-y-4">
       {/* Temporary delete all products button until we have a proper header for that */}
       <Button onClick={() => mutate()} disabled={!n} variant="danger">
+        <i className="i-tabler:trash mr-1" />
         Delete All {n} Product{n === 1 ? '' : 's'}
       </Button>
       <ProductsList />

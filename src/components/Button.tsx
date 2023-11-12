@@ -26,6 +26,7 @@ export const Button: FC<Props> = ({
   <button
     className={twMerge(
       'border-solid border-#ddd rounded bg-white px-2 py-1 font-medium',
+      'flex items-center justify-center',
       'disabled:cursor-not-allowed select-none',
       variantClassnames[variant],
       className,

@@ -27,8 +27,8 @@ export function DeleteProduct({
       )}
       disabled={disabled}
     >
-      <div className="i-tabler:trash mb-2px mr-1" />
-      Delete
+      <i className="i-tabler:trash mr-1" />
+      <span>Delete</span>
     </Button>
   );
 }
