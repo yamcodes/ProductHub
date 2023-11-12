@@ -13,7 +13,7 @@ export function Product({ product, pending, actions }: Props) {
     <>
       <div
         className={twJoin(
-          'space-x-24 flex items-center',
+          'flex items-center space-x-24',
           pending && 'opacity-50',
         )}
       >

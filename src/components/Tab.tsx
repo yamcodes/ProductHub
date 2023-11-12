@@ -11,9 +11,9 @@ const BaseTab = ({ children }: Props) => {
     <HeadlessUiTab
       className={({ selected }) =>
         twJoin(
-          'bg-transparent px-2 py-1 rounded select-none cursor-pointer',
+          'cursor-pointer select-none rounded bg-transparent px-2 py-1',
           selected
-            ? 'bshadow-sm hover:bg-#f5f5f5 border-1 border-solid border-#ddd focus:outline-none'
+            ? 'bshadow-sm hover:bg-#f5f5f5 border-1 border-#ddd border-solid focus:outline-none'
             : 'm-1px',
         )
       }
