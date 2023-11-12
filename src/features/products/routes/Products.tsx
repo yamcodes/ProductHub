@@ -9,7 +9,8 @@ import { Button } from '~/components';
 
 export function Products() {
   const { mutate } = useDeleteProducts();
-  const n = useQueryProducts().products?.length ?? 0;
+  const { products } = useQueryProducts();
+  const n = products?.length ?? 0;
   return (
     <div className="space-y-4">
       {/* Temporary delete all products button until we have a proper header for that */}
