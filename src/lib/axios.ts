@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
+// @ts-expect-error - we're redefining the AxiosInstance interface
 import axios, { AxiosRequestConfig } from 'axios';
 import { API_URL } from '~/config';
 
