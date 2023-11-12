@@ -16,5 +16,24 @@
   "profile": {
     "name": "typicode"
   },
-  "products": []
+  "products": [
+    {
+      "name": "hey",
+      "quantity": 1,
+      "brand": "you",
+      "id": 1
+    },
+    {
+      "name": "fsdafew",
+      "quantity": 1,
+      "brand": "weqf",
+      "id": 2
+    },
+    {
+      "name": "wewer",
+      "quantity": 1,
+      "brand": "qfewf",
+      "id": 3
+    }
+  ]
 }

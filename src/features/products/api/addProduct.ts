@@ -16,7 +16,7 @@ interface HookOptions {
 }
 
 const defaultHookOptions: HookOptions = {
-  alwaysRefetch: false,
+  alwaysRefetch: true,
 };
 
 export const useAddProduct = (options: HookOptions = defaultHookOptions) => {
