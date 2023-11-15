@@ -18,12 +18,6 @@
   },
   "products": [
     {
-      "name": "Recycled Frozen Chips",
-      "quantity": 37,
-      "brand": "Jacobi and Sons",
-      "id": 9
-    },
-    {
       "name": "Generic Plastic Bike",
       "quantity": 13,
       "brand": "Sanford, Jacobson and McLaughlin",

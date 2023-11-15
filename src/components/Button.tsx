@@ -1,19 +1,28 @@
 import { ButtonHTMLAttributes, FC } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-const variantClassnames = {
+type Variant = Exclude<Props['variant'], undefined>;
+type Color = Exclude<Props['color'], undefined>;
+
+const variantClassnames: Record<Variant, string> = {
   primary:
     'bg-blue-6 text-white border-blue-6 hover:bg-blue-7 disabled:bg-blue-3 disabled:text-white disabled:border-blue-3',
   secondary:
     'bg-white text-gray-6 border-gray-6 hover:bg-#f5f5f5 disabled:bg-white disabled:text-gray-3 disabled:border-gray-3',
-  secondaryDanger:
-    'bg-white text-red-6 border-red-6 hover:bg-#fff disabled:bg-white disabled:text-red-3 disabled:border-red-3 border-opacity-50 shadow-sm',
-  danger:
-    'bg-red-5 text-white border-red-5 hover:bg-red-6 disabled:bg-red-3 disabled:text-white disabled:border-red-3',
+};
+
+const colorClassnames: Record<Color, string> = {
+  error: 'text-red-6 border-red-6 hover:bg-red-7 disabled:bg-red-3',
+  info: 'text-blue-6 border-blue-6 hover:bg-blue-7 disabled:bg-blue-3',
+  success: 'text-green-6 border-green-6 hover:bg-green-7 disabled:bg-green-3',
+  warning:
+    'text-yellow-6 border-yellow-6 hover:bg-yellow-7 disabled:bg-yellow-3',
+  default: 'text-gray-6 border-gray-6 hover:bg-#f5f5f5 disabled:bg-gray-3',
 };
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: keyof typeof variantClassnames;
+  variant?: 'primary' | 'secondary';
+  color?: 'error' | 'info' | 'success' | 'warning' | 'default';
 }
 
 export const Button: FC<Props> = ({
@@ -21,6 +30,7 @@ export const Button: FC<Props> = ({
   className,
   disabled,
   variant = 'primary',
+  color = 'default',
   ...rest
 }) => (
   <button
@@ -29,6 +39,7 @@ export const Button: FC<Props> = ({
       'flex items-center justify-center',
       'disabled:cursor-not-allowed select-none',
       variantClassnames[variant],
+      colorClassnames[color],
       className,
     )}
     disabled={disabled}

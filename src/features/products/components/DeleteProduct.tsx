@@ -24,7 +24,8 @@ export function DeleteProduct({
       <Button
         onClick={() => setIsDialogOpen(true)}
         disabled={disabled}
-        variant="secondaryDanger"
+        variant="secondary"
+        color="error"
       >
         <i className="i-tabler:trash mr-1" />
         <span>Delete</span>
@@ -43,7 +44,8 @@ export function DeleteProduct({
           </Button>,
           <Button
             key="delete"
-            variant="danger"
+            variant="secondary"
+            color="error"
             onClick={() => {
               mutate(productId);
               closeDialog();

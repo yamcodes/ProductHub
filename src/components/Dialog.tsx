@@ -46,8 +46,8 @@ export const Dialog = ({
             leaveFrom="opacity-100 scale-100"
             leaveTo="opacity-0 scale-95"
           >
-            <HUIDialog.Panel className="relative z-50 bg-white rounded-md shadow-xl p-4">
-              <HUIDialog.Title className="font-medium text-lg" as="h3">
+            <HUIDialog.Panel className="relative z-50 rounded-md bg-white p-4 shadow-xl">
+              <HUIDialog.Title className="text-lg font-medium" as="h3">
                 {title}
               </HUIDialog.Title>
               <div className="mt-2">
