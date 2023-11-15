@@ -16,10 +16,10 @@ export const Textbox = forwardRef<HTMLInputElement, Props>(
         <input
           className={twJoin(
             twMerge(
-              'border-#ddd border-1 sm:max-w-screen rounded bg-white px-3 py-1.5 text-sm shadow-sm md:max-w-[300px]',
+              'border-gray-200 border sm:max-w-screen rounded bg-white px-3 py-1.5 text-sm shadow-sm md:max-w-[300px]',
               errorMessage
                 ? 'border-red-400 text-red-700 placeholder-red-300 focus:outline-red-500'
-                : 'border-#ddd',
+                : 'border-gray-200',
               ' ',
             ),
             className,

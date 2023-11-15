@@ -13,13 +13,13 @@ export function Product({ product, pending, actions }: Props) {
     <>
       <div
         className={twJoin(
-          'flex items-center space-x-24',
+          'grid grid-cols-3 items-center gap-2 px-6',
           pending && 'opacity-50',
         )}
       >
-        <span className={'color-gray'}>x{product.quantity}</span>
-        <span>{product.name}</span>
-        <span>{product.brand}</span>
+        <span className="text-gray-500">x{product.quantity}</span>
+        <span className="truncate">{product.name}</span>
+        <span className="truncate">{product.brand}</span>
       </div>
       {actions}
     </>

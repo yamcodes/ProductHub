@@ -8,7 +8,7 @@ const variantClassnames: Record<Variant, string> = {
   primary:
     'bg-blue-6 text-white border-blue-6 hover:bg-blue-7 disabled:bg-blue-3 disabled:text-white disabled:border-blue-3',
   secondary:
-    'bg-white text-gray-6 border-gray-6 hover:bg-#f5f5f5 disabled:bg-white disabled:text-gray-3 disabled:border-gray-3',
+    'bg-white text-gray-6 border-gray-6 hover:bg-grey-50 disabled:bg-white disabled:text-gray-3 disabled:border-gray-3',
 };
 
 const colorClassnames: Record<Color, string> = {
@@ -17,7 +17,7 @@ const colorClassnames: Record<Color, string> = {
   success: 'text-green-6 border-green-6 hover:bg-green-7 disabled:bg-green-3',
   warning:
     'text-yellow-6 border-yellow-6 hover:bg-yellow-7 disabled:bg-yellow-3',
-  default: 'text-gray-6 border-gray-6 hover:bg-#f5f5f5 disabled:bg-gray-3',
+  default: 'text-gray-6 border-gray-6 hover:bg-grey-50 disabled:bg-gray-3',
 };
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -35,7 +35,7 @@ export const Button: FC<Props> = ({
 }) => (
   <button
     className={twMerge(
-      'border-1 border-solid border-#ddd rounded-1.5 bg-white px-2.5 py-1 font-medium',
+      'border border-grey rounded-md bg-white px-2.5 py-1 font-medium',
       'flex items-center justify-center',
       'disabled:cursor-not-allowed select-none',
       variantClassnames[variant],

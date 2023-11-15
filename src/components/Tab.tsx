@@ -13,7 +13,7 @@ const BaseTab = ({ children }: Props) => {
         twJoin(
           'cursor-pointer select-none rounded bg-transparent px-2 py-1',
           selected
-            ? 'border-1 border-#ddd border-solid shadow-sm hover:bg-#f5f5f5 focus:outline-none'
+            ? 'border border-gray-200 border-solid shadow-sm hover:bg-#f5f5f5 focus:outline-none'
             : 'm-1px',
         )
       }
