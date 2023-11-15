@@ -18,64 +18,52 @@
   },
   "products": [
     {
-      "name": "Tasty Cotton Computer",
-      "quantity": 30,
-      "brand": "Dare, Torphy and Dooley",
-      "id": 1
-    },
-    {
-      "name": "Ergonomic Cotton Ball",
-      "quantity": 44,
-      "brand": "Legros, Halvorson and Morar",
-      "id": 2
-    },
-    {
-      "name": "Practical Metal Ball",
-      "quantity": 93,
-      "brand": "DuBuque LLC",
-      "id": 3
-    },
-    {
-      "name": "Elegant Steel Chicken",
-      "quantity": 76,
-      "brand": "Bernier - Klocko",
-      "id": 4
-    },
-    {
-      "name": "Sleek Steel Gloves",
-      "quantity": 50,
-      "brand": "Rohan - Boyle",
-      "id": 5
-    },
-    {
-      "name": "Licensed Granite Table",
-      "quantity": 19,
-      "brand": "Kilback Group",
-      "id": 6
-    },
-    {
-      "name": "Recycled Rubber Mouse",
-      "quantity": 7,
-      "brand": "Padberg, Hauck and Boyle",
-      "id": 7
-    },
-    {
-      "name": "Intelligent Concrete Bacon",
-      "quantity": 84,
-      "brand": "Boehm, Ullrich and Bailey",
-      "id": 8
-    },
-    {
-      "name": "Rustic Frozen Computer",
-      "quantity": 68,
-      "brand": "Franecki and Sons",
+      "name": "Recycled Frozen Chips",
+      "quantity": 37,
+      "brand": "Jacobi and Sons",
       "id": 9
     },
     {
-      "name": "Electronic Steel Keyboard",
-      "quantity": 43,
-      "brand": "Jones, Langosh and Heathcote",
+      "name": "Generic Plastic Bike",
+      "quantity": 13,
+      "brand": "Sanford, Jacobson and McLaughlin",
       "id": 10
+    },
+    {
+      "name": "Modern Bronze Sausages",
+      "quantity": 79,
+      "brand": "Hermann - Strosin",
+      "id": 11
+    },
+    {
+      "name": "Practical Cotton Shirt",
+      "quantity": 9,
+      "brand": "Weissnat, Prohaska and Pollich",
+      "id": 12
+    },
+    {
+      "name": "Luxurious Steel Salad",
+      "quantity": 3,
+      "brand": "Hackett, Osinski and Hickle",
+      "id": 13
+    },
+    {
+      "name": "Luxurious Frozen Mouse",
+      "quantity": 77,
+      "brand": "Effertz - Raynor",
+      "id": 14
+    },
+    {
+      "name": "Sleek Plastic Computer",
+      "quantity": 42,
+      "brand": "Barton and Sons",
+      "id": 15
+    },
+    {
+      "name": "Bespoke Fresh Shirt",
+      "quantity": 41,
+      "brand": "Considine - Jaskolski",
+      "id": 16
     }
   ]
 }

@@ -22,22 +22,6 @@ export function ProductsList() {
               />
             </li>
           ))}
-          {/* {variables.map((variable) => (
-            <li className="flex justify-between p-4 items-center border-t-1 border-solid border-#ddd">
-              <Product
-                product={{
-                  id: products!.length,
-                  name: variable.name,
-                  quantity: variable.quantity,
-                  brand: variable.brand,
-                }}
-                pending
-                actions={
-                  <DeleteProduct disabled productId={products!.length} />
-                }
-              />
-            </li>
-          ))} */}
         </ul>
       )}
       {query.isError && <p>Error: {query.error?.message}</p>}

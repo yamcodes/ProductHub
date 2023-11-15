@@ -1,7 +1,7 @@
-import { Button } from '~/components';
-import { twJoin } from 'tailwind-merge';
-import { useDeleteProduct } from '../api';
+import { useState } from 'react';
+import { Button, Dialog } from '~/components';
 import { ProductType } from '..';
+import { useDeleteProduct } from '../api';
 
 interface Props {
   productId: ProductType['id'];
@@ -16,19 +16,49 @@ export function DeleteProduct({
 
   const disabled = disabledOverride || isPending;
 
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const closeDialog = () => setIsDialogOpen(false);
+
   return (
-    <Button
-      onClick={() => mutate(productId)}
-      className={twJoin(
-        'border-0',
-        disabled
-          ? 'bg-red-3 text-red-1'
-          : 'hover:bg-red-6 bg-red-5 text-white ',
-      )}
-      disabled={disabled}
-    >
-      <i className="i-tabler:trash mr-1" />
-      <span>Delete</span>
-    </Button>
+    <>
+      <Button
+        onClick={() => setIsDialogOpen(true)}
+        disabled={disabled}
+        variant="secondaryDanger"
+      >
+        <i className="i-tabler:trash mr-1" />
+        <span>Delete</span>
+      </Button>
+      <Dialog
+        open={isDialogOpen}
+        onClose={() => closeDialog()}
+        title="Delete product?"
+        actions={[
+          <Button
+            key="cancel"
+            variant="secondary"
+            onClick={() => closeDialog()}
+          >
+            Cancel
+          </Button>,
+          <Button
+            key="delete"
+            variant="danger"
+            onClick={() => {
+              mutate(productId);
+              closeDialog();
+            }}
+          >
+            <i className="i-tabler:trash mr-1" />
+            Delete
+          </Button>,
+        ]}
+      >
+        Are you sure you want to delete this product?
+        <br />
+        <br />
+        <b>This action cannot be undone.</b>
+      </Dialog>
+    </>
   );
 }
