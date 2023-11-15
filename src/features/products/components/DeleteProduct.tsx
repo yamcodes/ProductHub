@@ -27,7 +27,8 @@ export function DeleteProduct({
         variant="secondary"
         color="error"
       >
-        <i className="i-tabler:trash mr-1" />
+        {/* <Icon className="mr-1" name="trash" /> */}
+        <IconTablerTrash className="mr-1" />
         <span>Delete</span>
       </Button>
       <Dialog
@@ -51,7 +52,7 @@ export function DeleteProduct({
               closeDialog();
             }}
           >
-            <i className="i-tabler:trash mr-1" />
+            <IconTablerTrash className="mr-1" />
             Delete
           </Button>,
         ]}

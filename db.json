@@ -16,48 +16,5 @@
   "profile": {
     "name": "typicode"
   },
-  "products": [
-    {
-      "name": "Generic Plastic Bike",
-      "quantity": 13,
-      "brand": "Sanford, Jacobson and McLaughlin",
-      "id": 10
-    },
-    {
-      "name": "Modern Bronze Sausages",
-      "quantity": 79,
-      "brand": "Hermann - Strosin",
-      "id": 11
-    },
-    {
-      "name": "Practical Cotton Shirt",
-      "quantity": 9,
-      "brand": "Weissnat, Prohaska and Pollich",
-      "id": 12
-    },
-    {
-      "name": "Luxurious Steel Salad",
-      "quantity": 3,
-      "brand": "Hackett, Osinski and Hickle",
-      "id": 13
-    },
-    {
-      "name": "Luxurious Frozen Mouse",
-      "quantity": 77,
-      "brand": "Effertz - Raynor",
-      "id": 14
-    },
-    {
-      "name": "Sleek Plastic Computer",
-      "quantity": 42,
-      "brand": "Barton and Sons",
-      "id": 15
-    },
-    {
-      "name": "Bespoke Fresh Shirt",
-      "quantity": 41,
-      "brand": "Considine - Jaskolski",
-      "id": 16
-    }
-  ]
+  "products": []
 }

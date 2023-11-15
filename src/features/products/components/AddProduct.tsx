@@ -70,9 +70,12 @@ export function AddProduct() {
         label="Brand"
         errorMessage={errors.brand?.message}
       />
-      <Button type="submit" disabled={isSubmitting || isValidating || !isError}>
-        <i className="i-tabler:circle-arrow-up-right mr-1" />
-        Submit
+      <Button
+        type="submit"
+        disabled={isSubmitting || isValidating || !isError}
+        color="success"
+      >
+        Submit new product
       </Button>
     </form>
   );

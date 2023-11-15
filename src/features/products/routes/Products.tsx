@@ -19,7 +19,7 @@ export function Products() {
     <div className="space-y-4">
       {/* Temporary delete all products button until we have a proper header for that */}
       <Button onClick={openDialog} disabled={!n} color="error">
-        <i className="i-tabler:trash mr-1" />
+        <IconTablerTrash className="mr-1" />
         Delete All {n} Product{n === 1 ? '' : 's'}
       </Button>
       <Dialog
@@ -42,7 +42,7 @@ export function Products() {
               mutate();
             }}
           >
-            <i className="i-tabler:trash mr-1" />
+            <IconTablerTrash className="mr-1" />
             Delete All
           </Button>,
         ]}
@@ -54,7 +54,7 @@ export function Products() {
       </Dialog>
 
       <ProductsList />
-      <div className="border border-gray-200 rounded-md bg-#f9f9f9 p-4">
+      <div className="border border-gray-200 rounded-md bg-gray-50 p-4">
         <AddProduct />
         <hr className="my-4" />
         <GenerateProducts />
