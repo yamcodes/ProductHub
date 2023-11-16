@@ -70,8 +70,8 @@ export function GenerateProducts() {
         type="submit"
         disabled={isSubmitting || isValidating || !isError}
         color="success"
+        icon={<IconTablerWand />}
       >
-        <IconTablerWand className="mr-1" />
         Generate
       </Button>
     </form>

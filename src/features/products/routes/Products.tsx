@@ -18,8 +18,12 @@ export function Products() {
   return (
     <div className="space-y-4">
       {/* Temporary delete all products button until we have a proper header for that */}
-      <Button onClick={openDialog} disabled={!n} color="danger">
-        <IconTablerTrash className="mr-1" />
+      <Button
+        onClick={openDialog}
+        disabled={!n}
+        color="danger"
+        icon={<IconTablerTrash />}
+      >
         Delete All {n} Product{n === 1 ? '' : 's'}
       </Button>
       <Dialog
@@ -41,8 +45,8 @@ export function Products() {
               setIsDialogOpen(false);
               mutate();
             }}
+            icon={<IconTablerTrash />}
           >
-            <IconTablerTrash className="mr-1" />
             Delete All
           </Button>,
         ]}

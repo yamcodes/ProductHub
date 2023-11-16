@@ -1,11 +1,11 @@
-import { ComponentProps, FC } from 'react';
+import { ComponentProps, FC, JSX } from 'react';
 import { twJoin, twMerge } from 'tailwind-merge';
 
 type Variant = Exclude<Props['variant'], undefined>;
 type Color = Exclude<Props['color'], undefined>;
 
 const baseClassnames = twJoin(
-  'rounded-md border px-2.5 py-1',
+  'rounded-md border px-3.5 py-1',
   'text-sm font-medium',
   'flex items-center justify-center',
   'select-none disabled:cursor-not-allowed',
@@ -40,6 +40,7 @@ const variantColorClassnames: Record<Variant, Record<Color, string>> = {
 interface Props extends ComponentProps<'button'> {
   variant?: 'primary' | 'secondary';
   color?: 'danger' | 'info' | 'success' | 'warning' | 'default';
+  icon?: JSX.Element;
 }
 
 export const Button: FC<Props> = ({
@@ -48,6 +49,7 @@ export const Button: FC<Props> = ({
   disabled,
   variant = 'primary',
   color = 'default',
+  icon,
   ...rest
 }) => (
   <button
@@ -61,6 +63,7 @@ export const Button: FC<Props> = ({
     disabled={disabled}
     {...rest}
   >
+    {icon && <span className="mr-2">{icon}</span>}
     {children}
   </button>
 );

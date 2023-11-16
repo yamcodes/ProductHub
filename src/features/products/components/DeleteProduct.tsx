@@ -26,9 +26,8 @@ export function DeleteProduct({
         disabled={disabled}
         variant="secondary"
         color="danger"
+        icon={<IconTablerTrash />}
       >
-        {/* <Icon className="mr-1" name="trash" /> */}
-        <IconTablerTrash className="mr-1" />
         <span>Delete</span>
       </Button>
       <Dialog
@@ -50,8 +49,8 @@ export function DeleteProduct({
               mutate(productId);
               closeDialog();
             }}
+            icon={<IconTablerTrash />}
           >
-            <IconTablerTrash className="mr-1" />
             Delete
           </Button>,
         ]}
