@@ -4,10 +4,8 @@ import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import tsParser from '@typescript-eslint/parser';
 import tsPlugin from '@typescript-eslint/eslint-plugin';
-import unocss from '@unocss/eslint-config/flat';
 
 export default [
-  unocss,
   {
     files: ['**/*.{ts,tsx}'],
     ignores: ['dist'],
@@ -35,6 +33,8 @@ export default [
           patterns: ['~/features/*/*'],
         },
       ],
+      // see: https://github.com/unplugin/unplugin-auto-import#eslint
+      'no-undef': 'off',
     },
   },
 ];

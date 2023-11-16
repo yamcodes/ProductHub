@@ -19,7 +19,7 @@ export const Dialog = ({
     <HUIDialog
       {...rest}
       className={twMerge(
-        'relative z-50 bg-white rounded-md shadow-xl',
+        'relative z-50 rounded-md bg-white shadow-xl',
         className,
       )}
       as={'div'}
@@ -36,7 +36,7 @@ export const Dialog = ({
         <div className="fixed inset-0 bg-black/25" />
       </Transition.Child>
       <div className="fixed inset-0 overflow-y-auto">
-        <div className="min-h-full flex items-center justify-center p-4">
+        <div className="flex min-h-full items-center justify-center p-4">
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"

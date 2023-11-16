@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Button, Dialog } from '~/components';
-import { ProductType } from '..';
 import { useDeleteProduct } from '../api';
+import { ProductType } from '..';
 
 interface Props {
   productId: ProductType['id'];
