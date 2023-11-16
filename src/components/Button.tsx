@@ -20,9 +20,9 @@ const variantColorClassnames: Record<Variant, Record<Color, string>> = {
   primary: {
     danger: 'bg-danger hover:bg-danger-400 disabled:bg-danger',
     info: 'bg-info hover:bg-info-400 disabled:bg-info',
-    success: 'bg-success hover:bg-success-400 disabled:bg-success',
+    success: 'bg-success-600 hover:bg-success-500 disabled:bg-success',
     warning: 'bg-warning hover:bg-warning-400 disabled:bg-warning',
-    default: 'bg-default hover:bg-default-400 disabled:bg-default',
+    default: 'bg-default-900 hover:bg-default-700 disabled:bg-default-300',
   },
   secondary: {
     danger:
@@ -33,7 +33,7 @@ const variantColorClassnames: Record<Variant, Record<Color, string>> = {
     warning:
       'text-warning-600 border-warning-300 hover:bg-warning-100 disabled:bg-warning',
     default:
-      'text-default-900 border-default-300 hover:bg-default-100 disabled:bg-default',
+      'text-default-900 border-default-300 hover:bg-default-100 disabled:bg-default-300',
   },
 };
 

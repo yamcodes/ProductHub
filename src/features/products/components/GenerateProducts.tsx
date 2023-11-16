@@ -66,7 +66,11 @@ export function GenerateProducts() {
         label="Amount"
         errorMessage={errors.amount?.message}
       />
-      <Button type="submit" disabled={isSubmitting || isValidating || !isError}>
+      <Button
+        type="submit"
+        disabled={isSubmitting || isValidating || !isError}
+        color="success"
+      >
         <IconTablerWand className="mr-1" />
         Generate
       </Button>
