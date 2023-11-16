@@ -28,6 +28,7 @@
     "@faker-js/faker": "^8.2.0",
     "@headlessui/react": "latest",
     "@hookform/resolvers": "^3.3.2",
+    "@phosphor-icons/react": "^2.0.14",
     "@tabler/icons-react": "^2.40.0",
     "@tanstack/react-query": "^5.0.0",
     "@tanstack/react-router": "beta",
@@ -65,8 +66,6 @@
     "prettier-plugin-tailwindcss": "^0.5.7",
     "tailwindcss": "^3.3.5",
     "typescript": "^5.0.2",
-    "unplugin-auto-import": "^0.16.7",
-    "unplugin-icons": "^0.17.4",
     "vite": "^4.4.5"
   }
 }

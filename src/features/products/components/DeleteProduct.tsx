@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button, Dialog } from '~/components';
+import { Button, Dialog, Icon } from '~/components';
 import { useDeleteProduct } from '../api';
 import { ProductType } from '..';
 
@@ -26,7 +26,7 @@ export function DeleteProduct({
         disabled={disabled}
         variant="secondary"
         color="danger"
-        icon={<IconTablerTrash />}
+        icon={<Icon.Trash />}
       >
         <span>Delete</span>
       </Button>
@@ -49,7 +49,7 @@ export function DeleteProduct({
               mutate(productId);
               closeDialog();
             }}
-            icon={<IconTablerTrash />}
+            icon={<Icon.Trash />}
           >
             Delete
           </Button>,

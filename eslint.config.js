@@ -30,11 +30,9 @@ export default [
       'no-restricted-imports': [
         'error',
         {
-          patterns: ['~/features/*/*'],
+          patterns: ['~/features/*/*', '~/components/*/*'],
         },
       ],
-      // see: https://github.com/unplugin/unplugin-auto-import#eslint
-      'no-undef': 'off',
     },
   },
 ];

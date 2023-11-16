@@ -1,7 +1,7 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
-import { Button, Textbox } from '~/components';
+import { Button, Icon, Textbox } from '~/components';
 import { faker } from '@faker-js/faker';
 import { queryKey, useAddProduct } from '..';
 import { valueAsNumber } from '~/utils/zod';
@@ -70,7 +70,7 @@ export function GenerateProducts() {
         type="submit"
         disabled={isSubmitting || isValidating || !isError}
         color="success"
-        icon={<IconTablerWand />}
+        icon={<Icon.MagicWand />}
       >
         Generate
       </Button>

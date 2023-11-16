@@ -3,8 +3,11 @@
 import { compose } from '~/utils/compose';
 import { withSuspense } from '../Suspense';
 import { withQueryClient } from '../QueryClientProvider';
+import { withIcons } from '../Icons';
 import { HOC } from '~/types';
 /**
  * HOC for all providers in the app
  */
-export const withProviders = <HOC>compose(withSuspense, withQueryClient);
+export const withProviders = <HOC>(
+  compose(withSuspense, withQueryClient, withIcons)
+);

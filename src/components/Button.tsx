@@ -36,12 +36,12 @@ const variantColorClassnames: Record<Variant, Record<Color, string>> = {
   },
   secondary: {
     danger:
-      'text-danger-600 border-danger-300 hover:bg-danger-100 disabled:bg-danger',
-    info: 'text-info-600 border-info-300 hover:bg-info-100 disabled:bg-info',
+      'text-danger-600 border-danger-300 hover:bg-danger-100 disabled:bg-danger-50',
+    info: 'text-info-600 border-info-300 hover:bg-info-100 disabled:bg-info-50',
     success:
-      'text-success-600 border-success-300 hover:bg-success-100 disabled:bg-success',
+      'text-success-600 border-success-300 hover:bg-success-100 disabled:bg-success-50',
     warning:
-      'text-warning-600 border-warning-300 hover:bg-warning-100 disabled:bg-warning',
+      'text-warning-600 border-warning-300 hover:bg-warning-100 disabled:bg-warning-50',
     default:
       'text-default-900 border-default-300 hover:bg-default-100 disabled:bg-default-300',
   },

@@ -25,9 +25,8 @@
      */
     "paths": {
       "~/*": ["./src/*"]
-    },
-    "types": ["unplugin-icons/types/react"]
+    }
   },
-  "include": ["src", "auto-imports.d.ts"],
+  "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

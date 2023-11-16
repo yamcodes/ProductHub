@@ -7,6 +7,7 @@ import { GenerateProducts } from '~/features/products';
 import { ProductsList } from '../components';
 import { Button, Dialog } from '~/components';
 import { useState } from 'react';
+import { Icon } from '~/components';
 
 export function Products() {
   const { mutate } = useDeleteProducts();
@@ -22,9 +23,10 @@ export function Products() {
         onClick={openDialog}
         disabled={!n}
         color="danger"
-        icon={<IconTablerTrash />}
+        variant="secondary"
+        icon={<Icon.Trash />}
       >
-        Delete All {n} Product{n === 1 ? '' : 's'}
+        Delete All Products
       </Button>
       <Dialog
         open={isDialogOpen}
@@ -45,7 +47,7 @@ export function Products() {
               setIsDialogOpen(false);
               mutate();
             }}
-            icon={<IconTablerTrash />}
+            icon={<Icon.Trash />}
           >
             Delete All
           </Button>,
