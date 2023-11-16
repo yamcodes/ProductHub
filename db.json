@@ -16,5 +16,60 @@
   "profile": {
     "name": "typicode"
   },
-  "products": []
+  "products": [
+    {
+      "name": "Fantastic Steel Gloves",
+      "quantity": 29,
+      "brand": "Haley - Veum",
+      "id": 2
+    },
+    {
+      "name": "Licensed Plastic Salad",
+      "quantity": 78,
+      "brand": "Mitchell and Sons",
+      "id": 3
+    },
+    {
+      "name": "Fantastic Fresh Computer",
+      "quantity": 53,
+      "brand": "Nader - Wehner",
+      "id": 4
+    },
+    {
+      "name": "Licensed Rubber Gloves",
+      "quantity": 98,
+      "brand": "DuBuque - Ankunding",
+      "id": 5
+    },
+    {
+      "name": "Unbranded Wooden Computer",
+      "quantity": 50,
+      "brand": "Kemmer, Wilderman and Boyle",
+      "id": 6
+    },
+    {
+      "name": "Recycled Wooden Chicken",
+      "quantity": 72,
+      "brand": "Frami, Cummerata and White",
+      "id": 7
+    },
+    {
+      "name": "Handmade Metal Hat",
+      "quantity": 85,
+      "brand": "Graham, Upton and Brown",
+      "id": 8
+    },
+    {
+      "name": "Elegant Rubber Car",
+      "quantity": 71,
+      "brand": "Baumbach - Sporer",
+      "id": 9
+    },
+    {
+      "name": "Licensed Frozen Pizza",
+      "quantity": 61,
+      "brand": "Schiller LLC",
+      "id": 10
+    }
+  ]
 }
