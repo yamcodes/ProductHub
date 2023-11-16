@@ -16,6 +16,8 @@ export function Products() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const openDialog = () => setIsDialogOpen(true);
 
+  const nString = `${n} product${n === 1 ? '' : 's'}`;
+
   return (
     <div className="space-y-4">
       {/* Temporary delete all products button until we have a proper header for that */}
@@ -26,12 +28,12 @@ export function Products() {
         variant="secondary"
         icon={<Icon.Trash />}
       >
-        Delete All Products
+        Delete All
       </Button>
       <Dialog
         open={isDialogOpen}
         onClose={() => setIsDialogOpen(false)}
-        title={`Delete ${n} products?`}
+        title={`Delete ${nString}`}
         actions={[
           <Button
             key="cancel"
@@ -53,7 +55,7 @@ export function Products() {
           </Button>,
         ]}
       >
-        Are you sure you want to delete all {n} product{n === 1 ? '' : 's'}?
+        You are about to delete <b>{nString}</b>.
         <br />
         <br />
         <b>This action cannot be undone.</b>

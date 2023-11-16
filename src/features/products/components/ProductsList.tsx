@@ -18,7 +18,7 @@ export function ProductsList() {
             >
               <Product
                 product={product}
-                actions={<DeleteProduct productId={product.id} />}
+                actions={<DeleteProduct product={product} />}
               />
             </li>
           ))}

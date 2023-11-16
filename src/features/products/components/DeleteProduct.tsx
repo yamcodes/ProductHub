@@ -4,14 +4,11 @@ import { useDeleteProduct } from '../api';
 import { ProductType } from '..';
 
 interface Props {
-  productId: ProductType['id'];
+  product: ProductType;
   disabled?: boolean;
 }
 
-export function DeleteProduct({
-  productId,
-  disabled: disabledOverride,
-}: Props) {
+export function DeleteProduct({ product, disabled: disabledOverride }: Props) {
   const { mutate, isPending } = useDeleteProduct();
 
   const disabled = disabledOverride || isPending;
@@ -33,7 +30,7 @@ export function DeleteProduct({
       <Dialog
         open={isDialogOpen}
         onClose={() => closeDialog()}
-        title="Delete product?"
+        title={`Delete ${product.name}`}
         actions={[
           <Button
             key="cancel"
@@ -46,7 +43,7 @@ export function DeleteProduct({
             key="delete"
             color="danger"
             onClick={() => {
-              mutate(productId);
+              mutate(product.id);
               closeDialog();
             }}
             icon={<Icon.Trash />}
@@ -55,7 +52,7 @@ export function DeleteProduct({
           </Button>,
         ]}
       >
-        Are you sure you want to delete this product?
+        You are about to delete <b>{product.name}</b>.
         <br />
         <br />
         <b>This action cannot be undone.</b>

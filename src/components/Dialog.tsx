@@ -51,7 +51,7 @@ export const Dialog = ({
                 {title}
               </HUIDialog.Title>
               <div className="mt-2">
-                <p className="text-sm text-gray-500">
+                <p className="text-sm text-gray-900">
                   <>{children}</>
                 </p>
               </div>
