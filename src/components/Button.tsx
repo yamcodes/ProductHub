@@ -2,9 +2,9 @@ import { ComponentProps, FC, JSX } from 'react';
 import { twJoin, twMerge } from 'tailwind-merge';
 
 // Infer types from props to improve intellisense
+type Size = Exclude<Props['size'], undefined>;
 type Variant = Exclude<Props['variant'], undefined>;
 type Color = Exclude<Props['color'], undefined>;
-type Size = Exclude<Props['size'], undefined>;
 
 const baseClassnames = twJoin(
   'rounded-md border',
@@ -13,17 +13,17 @@ const baseClassnames = twJoin(
   'select-none disabled:cursor-not-allowed',
 );
 
-const baseVariantClassnames: Record<Variant, string> = {
-  primary: 'text-white border-transparent',
-  secondary: 'bg-white shadow-sm',
-};
-
 const sizeClassnames: Record<Size, string> = {
   xs: 'text-xs px-2 py-0.5',
   sm: 'text-sm px-3 py-1',
   md: 'text-md px-3.5 py-1.5',
   lg: 'text-lg px-4 py-2',
   xl: 'text-xl px-5 py-2.5',
+};
+
+const variantClassnames: Record<Variant, string> = {
+  primary: 'text-white border-transparent',
+  secondary: 'bg-white shadow-sm',
 };
 
 const variantColorClassnames: Record<Variant, Record<Color, string>> = {
@@ -58,16 +58,16 @@ export const Button: FC<Props> = ({
   children,
   className,
   disabled,
+  size = 'sm',
   variant = 'primary',
   color = 'default',
-  size = 'sm',
   icon,
   ...rest
 }) => (
   <button
     className={twMerge(
       baseClassnames,
-      baseVariantClassnames[variant],
+      variantClassnames[variant],
       variantColorClassnames[variant][color],
       sizeClassnames[size],
       disabled && 'opacity-50',
