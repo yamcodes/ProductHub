@@ -4,7 +4,7 @@ import { z } from 'zod';
 import { Button, Icon, Textbox } from '~/components';
 import { faker } from '@faker-js/faker';
 import { queryKey, useAddProduct } from '..';
-import { valueAsNumber } from '~/utils/zod';
+import { valueAsNumber } from '~/lib/zod';
 import { useQueryClient } from '@tanstack/react-query';
 
 interface Values {

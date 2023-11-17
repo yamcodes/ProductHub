@@ -1,13 +1,12 @@
+import { useState } from 'react';
+import { Button, Dialog, Icon } from '~/components';
 import {
   AddProduct,
+  GenerateProducts,
   useDeleteProducts,
   useQueryProducts,
 } from '~/features/products';
-import { GenerateProducts } from '~/features/products';
 import { ProductsList } from '../components';
-import { Button, Dialog } from '~/components';
-import { useState } from 'react';
-import { Icon } from '~/components';
 
 export function Products() {
   const { mutate } = useDeleteProducts();
