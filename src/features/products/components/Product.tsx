@@ -11,17 +11,23 @@ interface Props {
 export function Product({ product, pending, actions }: Props) {
   return (
     <>
-      <div
+      <table
         className={twJoin(
-          'space-x-24 flex items-center',
+          ' layout-fixed w-full border-collapse',
           pending && 'opacity-50',
         )}
       >
-        <span className={'color-gray'}>x{product.quantity}</span>
-        <span>{product.name}</span>
-        <span>{product.brand}</span>
-      </div>
-      {actions}
+        <tbody>
+          <tr className="border-b white-space-nowrap">
+            <td className="p-4 text-gray-500 text-left">x{product.quantity}</td>
+            <td className="p-4 truncate break-all text-left">{product.name}</td>
+            <td className="p-4 truncate break-all items-left">
+              {product.brand}
+            </td>
+            <td className="items-right">{actions}</td>
+          </tr>
+        </tbody>
+      </table>
     </>
   );
 }

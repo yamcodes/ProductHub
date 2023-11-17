@@ -22,7 +22,7 @@ export function ProductsList() {
           {products!.map((product) => (
             <li
               key={product.id}
-              className="flex justify-between p-4 items-center border-t-1 border-solid border-#ddd first:border-none"
+              className="flex mx-2 ietms-left border-t-1 border-solid border-#ddd first:border-none"
             >
               <Product
                 product={product}
