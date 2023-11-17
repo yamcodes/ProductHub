@@ -1,29 +1,28 @@
-import { ReactNode } from 'react';
 import { Tab as HeadlessUiTab } from '@headlessui/react';
-import { twJoin } from 'tailwind-merge';
+import { FC, PropsWithChildren } from 'react';
+import { twJoin, twMerge } from 'tailwind-merge';
 
-interface Props {
-  children: ReactNode;
+interface BaseTabProps extends PropsWithChildren {
+  className?: string;
 }
 
-const BaseTab = ({ children }: Props) => {
+const BaseTab: FC<BaseTabProps> = ({ children, className }) => {
   return (
     <HeadlessUiTab
-      className={({ selected }) =>
+      className={twMerge(
         twJoin(
-          'cursor-pointer select-none rounded bg-transparent px-2 py-1 text-sm',
-          selected
-            ? 'border border-solid border-gray-200 hover:bg-[#f5f5f5] focus:outline-none'
-            : 'm-[1px]',
-        )
-      }
+          'cursor-pointer select-none rounded bg-transparent px-2 py-1 text-sm hover:bg-[#f5f5f5] focus:outline-none',
+          'ui-selected:font-semibold',
+        ),
+        className,
+      )}
     >
       {children}
     </HeadlessUiTab>
   );
 };
 
-const Panel = ({ children }: Props) => {
+const Panel: FC<PropsWithChildren> = ({ children }) => {
   return <HeadlessUiTab.Panel className="my-6">{children}</HeadlessUiTab.Panel>;
 };
 

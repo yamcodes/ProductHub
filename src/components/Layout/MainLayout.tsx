@@ -1,7 +1,7 @@
-import { getTabIndex, tabs } from '~/utils/tabs';
-import { Tab } from '..';
 import { Link } from '@tanstack/react-router';
 import { FC, PropsWithChildren } from 'react';
+import { getTabIndex, tabs } from '~/utils/tabs';
+import { Tab } from '..';
 
 export const Logo: FC = () => (
   <Link
@@ -18,10 +18,13 @@ export const MainLayout: FC<PropsWithChildren> = ({ children }) => {
       <Tab.Group selectedIndex={getTabIndex(location.pathname)}>
         <div className="flex items-center space-x-4">
           <Logo />
-          <Tab.List>
+          <Tab.List className="flex items-center space-x-2">
             {tabs.map((tab) => (
               <Link to={tab.pathname} key={tab.pathname}>
-                <Tab>{tab.name}</Tab>
+                <Tab className="flex items-center space-x-1">
+                  {tab.icon}
+                  <span>{tab.name}</span>
+                </Tab>
               </Link>
             ))}
           </Tab.List>
