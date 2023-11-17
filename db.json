@@ -16,5 +16,66 @@
   "profile": {
     "name": "typicode"
   },
-  "products": []
+  "products": [
+    {
+      "name": "Tasty Rubber Chair",
+      "quantity": 49,
+      "brand": "Wisoky and Sons",
+      "id": 1
+    },
+    {
+      "name": "Gorgeous Metal Sausages",
+      "quantity": 89,
+      "brand": "Nitzsche - Shields",
+      "id": 2
+    },
+    {
+      "name": "Luxurious Soft Sausages",
+      "quantity": 55,
+      "brand": "Fritsch and Sons",
+      "id": 3
+    },
+    {
+      "name": "Electronic Steel Towels",
+      "quantity": 36,
+      "brand": "Jenkins - Romaguera",
+      "id": 4
+    },
+    {
+      "name": "Handmade Fresh Table",
+      "quantity": 6,
+      "brand": "Spencer - Moen",
+      "id": 5
+    },
+    {
+      "name": "Incredible Cotton Tuna",
+      "quantity": 6,
+      "brand": "Lemke Group",
+      "id": 6
+    },
+    {
+      "name": "Modern Wooden Towels",
+      "quantity": 95,
+      "brand": "Schaefer - Towne",
+      "id": 7
+    },
+    {
+      "name": "Electronic Wooden Mouse",
+      "quantity": 2,
+      "brand": "Barrows - Bartoletti",
+      "id": 8
+    },
+    {
+      "name": "Fantastic Concrete Chicken",
+      "quantity": 72,
+      "brand": "Little, Mills and Stracke",
+      "id": 9
+    },
+    {
+      "name": "Intelligent Rubber Tuna",
+      "quantity": 43,
+      "brand": "Crist - Altenwerth",
+      "id": 10
+    }
+  ]
 }

@@ -1,5 +1,6 @@
 import { Config } from 'tailwindcss';
 import colors from 'tailwindcss/colors';
+import headlessUi from '@headlessui/tailwindcss';
 
 type TwColor = keyof typeof colors;
 type TwColorValue = (typeof colors)[TwColor];
@@ -37,7 +38,7 @@ const config: Config = {
       }),
     },
   },
-  plugins: [],
+  plugins: [headlessUi],
 };
 
 export default config;

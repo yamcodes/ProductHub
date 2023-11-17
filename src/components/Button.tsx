@@ -11,6 +11,7 @@ const baseClassnames = twJoin(
   'font-medium',
   'flex items-center justify-center',
   'select-none disabled:cursor-not-allowed',
+  'disabled:opacity-50',
 );
 
 const sizeClassnames: Record<Size, string> = {
@@ -70,7 +71,6 @@ export const Button: FC<Props> = ({
       variantClassnames[variant],
       variantColorClassnames[variant][color],
       sizeClassnames[size],
-      disabled && 'opacity-50',
       className,
     )}
     disabled={disabled}

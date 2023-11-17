@@ -21,11 +21,13 @@ export function Products() {
   return (
     <div className="space-y-4">
       {/* Temporary delete all products button until we have a proper header for that */}
-      <Button
+      {/* TODO: isolate this into a component */}
+      <Button // TODO: add tooltip? Not sure if we need it. Find examples of this.
         onClick={openDialog}
         disabled={!n}
         color="danger"
-        variant="secondary"
+        variant="primary"
+        // size="md" TODO: match the size of the icon to the size specified here.
         icon={<Icon.Trash />}
       >
         Delete All
@@ -42,7 +44,7 @@ export function Products() {
           >
             Cancel
           </Button>,
-          <Button
+          <Button // TODO: add keyboard actions
             key="delete"
             color="danger"
             onClick={() => {

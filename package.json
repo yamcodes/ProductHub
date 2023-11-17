@@ -27,6 +27,7 @@
   "dependencies": {
     "@faker-js/faker": "^8.2.0",
     "@headlessui/react": "latest",
+    "@headlessui/tailwindcss": "^0.2.0",
     "@hookform/resolvers": "^3.3.2",
     "@phosphor-icons/react": "^2.0.14",
     "@tabler/icons-react": "^2.40.0",
