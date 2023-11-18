@@ -2,6 +2,7 @@ import { useMutationState } from '@tanstack/react-query';
 import { ProductType, useQueryProducts } from '..';
 import { DeleteProduct } from './DeleteProduct';
 import { Product } from './Product';
+import { twJoin } from 'tailwind-merge';
 
 export function ProductsList() {
   const query = useQueryProducts();
@@ -18,9 +19,19 @@ export function ProductsList() {
     <>
       {query.isLoading && <p>Loading...</p>}
       {query.isSuccess && products!.length > 0 && (
-        <ul className="bg-#f9f9f9 border-#ddd border-1 rounded-md">
+        <div className="bg-#f9f9f9 border-#ddd border-1 rounded-md">
+          <table className={twJoin('layout-fixed w-full border-collapse')}>
+            <thead>
+              <tr className="border-b text-gray-500 mx-4">
+                <th className="p-0">Quantity</th>
+                <th className="p-4 w-16">Name</th>
+                <th className="p-4 w-32 ">Brand</th>
+                <th className="p-4 w-64">Actions</th>
+              </tr>
+            </thead>
+          </table>
           {products!.map((product) => (
-            <li
+            <div
               key={product.id}
               className="border-t-1 border-solid border-#ddd first:border-none"
             >
@@ -28,10 +39,10 @@ export function ProductsList() {
                 product={product}
                 actions={<DeleteProduct productId={product.id} />}
               />
-            </li>
+            </div>
           ))}
           {variables.map((variable) => (
-            <li className="border-t-1 border-solid border-#ddd">
+            <div className="border-t-1 border-solid border-#ddd">
               <Product
                 product={{
                   id: products!.length,
@@ -44,9 +55,9 @@ export function ProductsList() {
                   <DeleteProduct disabled productId={products!.length} />
                 }
               />
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       )}
       {query.isError && <p>Error: {query.error?.message}</p>}
     </>
