@@ -18,28 +18,22 @@ const BaseTab: FC<BaseTabProps> = ({ text, icon, className }) => {
             'transition duration-100 ease-in-out',
 
             selected &&
-              'after:absolute after:bottom-[calc(50%-23px)] after:left-0 after:z-10 after:h-[2px] after:w-[100%] after:rounded after:bg-gradient-to-r after:from-red-700 after:to-red-500',
-            selected ? 'font-semibold' : 'font-normal',
+              'font-semibold after:absolute after:bottom-[calc(50%-23px)] after:left-0 after:z-10 after:h-[2px] after:w-[100%] after:rounded after:bg-gradient-to-r after:from-red-700 after:to-red-500',
           ),
           className,
         )
       }
     >
-      <span className="inline-flex items-center space-x-2">
-        {icon && <span className="tab-icon">{icon}</span>}
+      <span className="flex items-center space-x-2">
+        {icon}
         <>
           <span
-            className="tab-text overflow-hidden truncate whitespace-nowrap"
-            style={{ maxWidth: '150px' }}
-          >
-            <span
-              title={text}
-              className="
+            title={text}
+            className="
               after:visibility-hidden after:block after:h-0 after:overflow-hidden after:font-semibold after:content-[attr(title)]
             "
-            >
-              {text}
-            </span>
+          >
+            {text}
           </span>
         </>
       </span>

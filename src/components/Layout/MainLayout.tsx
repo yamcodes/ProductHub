@@ -11,7 +11,7 @@ export const Logo = () => (
       // Color
       'text-gray-800',
       // Text
-      'text-xl font-bold text-transparent antialiased',
+      'text-xl font-bold antialiased',
       // Positioning
       'relative top-[-1px] flex items-center space-x-1',
       // Behavior
