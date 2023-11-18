@@ -29,7 +29,7 @@ export const Logo = () => (
 );
 
 export const Header: FC<PropsWithChildren> = ({ children }) => (
-  <div className="flex items-center space-x-4 border-b border-gray-200 bg-white px-8 pb-3 pt-4">
+  <div className="flex items-center space-x-4 border-b border-gray-200 bg-white px-8 py-3">
     <Logo />
     {children}
   </div>
