@@ -11,19 +11,17 @@ interface Props {
 export function Product({ product, pending, actions }: Props) {
   return (
     <>
-      <div
-        className={twJoin(
-          'mx-4 grid grid-cols-3 items-center p-16',
-          pending && 'opacity-50',
-        )}
-      >
-        <span className="text-gray-500">x{product.quantity}</span>
-        <span className="gap-1 truncate break-all md:col-span-2">
-          {product.name}
-        </span>
-        <span className="truncate break-all">{product.brand}</span>
-      </div>
-      {actions}
+      <table className={twJoin(' w-full border-collapse', pending && 'opacity-50')}>
+        <tbody>
+          <tr className="border-b ">
+            <td className="p-4  text-gray-500 text-left">x{product.quantity}</td>
+            <td className="p-4 truncate break-all text-left ">{product.name}</td>
+            <td className="p-4 truncate break-all text-left">{product.brand}</td>
+            <td>{actions}</td>
+          </tr>
+        </tbody>
+      </table>
+
     </>
   );
 }
