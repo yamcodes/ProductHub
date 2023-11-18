@@ -1,12 +1,14 @@
 import { Tab as HeadlessUiTab } from '@headlessui/react';
-import { FC, PropsWithChildren } from 'react';
+import { FC, PropsWithChildren, JSX } from 'react';
 import { twJoin, twMerge } from 'tailwind-merge';
 
-interface BaseTabProps extends PropsWithChildren {
+interface BaseTabProps {
   className?: string;
+  text: string;
+  icon?: JSX.Element;
 }
 
-const BaseTab: FC<BaseTabProps> = ({ children, className }) => {
+const BaseTab: FC<BaseTabProps> = ({ text, icon, className }) => {
   return (
     <HeadlessUiTab
       className={({ selected }) =>
@@ -22,7 +24,15 @@ const BaseTab: FC<BaseTabProps> = ({ children, className }) => {
         )
       }
     >
-      {children}
+      <span className="flex items-center space-x-2">
+        {icon}
+        <>
+          <span>{text}</span>
+          {/* TODO: Add an invisible semibold text here, so that when the tab switches from normal to semibold, the width doesn't change */}
+          {/* Or alternatively think of a way to make the width not change when the tab switches from normal to semibold */}
+          {/* Take note from GitHub repos */}
+        </>
+      </span>
     </HeadlessUiTab>
   );
 };
