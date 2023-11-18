@@ -22,12 +22,23 @@ export const Logo = () => (
   </Link>
 );
 
+export const Header: FC<PropsWithChildren> = ({ children }) => (
+  <div className="flex items-center space-x-4 border-b border-gray-200 bg-white px-8 pb-3 pt-4">
+    <Logo />
+    {children}
+  </div>
+);
+
+export const Content: FC<PropsWithChildren> = ({ children }) => (
+  <div className="px-8 py-3.5">{children}</div>
+);
+
 export const MainLayout: FC<PropsWithChildren> = ({ children }) => {
   return (
-    <div className="px-8 py-3.5">
+    // <div className="px-8 py-3.5"
+    <div>
       <Tab.Group selectedIndex={getTabIndex(location.pathname)}>
-        <div className="flex items-center space-x-4">
-          <Logo />
+        <Header>
           <Tab.List className="flex items-center space-x-2">
             {tabs.map((tab) => (
               <Link to={tab.pathname} key={tab.pathname}>
@@ -38,16 +49,14 @@ export const MainLayout: FC<PropsWithChildren> = ({ children }) => {
               </Link>
             ))}
           </Tab.List>
-        </div>
-        {/* <hr className="my-4" /> */}
-        {/* Horizontal rule should bypass padding and apply to full width */}
-        <hr className="absolute left-0 right-0 my-2.5" />
-        <div className="h-4" />
-        <Tab.Panels>
-          {tabs.map((tab) => (
-            <Tab.Panel key={tab.pathname}>{children}</Tab.Panel>
-          ))}
-        </Tab.Panels>
+        </Header>
+        <Content>
+          <Tab.Panels>
+            {tabs.map((tab) => (
+              <Tab.Panel key={tab.pathname}>{children}</Tab.Panel>
+            ))}
+          </Tab.Panels>
+        </Content>
       </Tab.Group>
     </div>
   );

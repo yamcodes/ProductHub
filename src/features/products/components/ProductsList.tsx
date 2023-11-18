@@ -10,7 +10,7 @@ export function ProductsList() {
     <>
       {query.isLoading && <p>Loading...</p>}
       {query.isSuccess && products!.length > 0 && (
-        <ul className="rounded-md border border-solid border-gray-200 bg-gray-50">
+        <ul className="rounded-md border border-solid border-gray-200 bg-white">
           {products!.map((product) => (
             <li
               key={product.id}
