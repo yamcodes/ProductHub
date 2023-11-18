@@ -22,7 +22,7 @@ export function ProductsList() {
           {products!.map((product) => (
             <li
               key={product.id}
-              className="flex mx-2 ietms-left border-t-1 border-solid border-#ddd first:border-none"
+              className="border-t-1 border-solid border-#ddd first:border-none"
             >
               <Product
                 product={product}
@@ -31,7 +31,7 @@ export function ProductsList() {
             </li>
           ))}
           {variables.map((variable) => (
-            <li className="flex justify-between p-4 items-center border-t-1 border-solid border-#ddd">
+            <li className="border-t-1 border-solid border-#ddd">
               <Product
                 product={{
                   id: products!.length,

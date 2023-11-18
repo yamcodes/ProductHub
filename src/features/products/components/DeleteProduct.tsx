@@ -24,6 +24,7 @@ export function DeleteProduct({
         disabled
           ? 'bg-red-3 text-red-1'
           : 'hover:bg-red-6 bg-red-5 text-white ',
+        'sm:w-24 md:w-32 lg:w-32 xl:w-32 hidden sm:inline md:inline lg:inline xl:inline',
       )}
       disabled={disabled}
     >
