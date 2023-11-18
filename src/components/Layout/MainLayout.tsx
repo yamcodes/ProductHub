@@ -21,7 +21,7 @@ export const MainLayout: FC<PropsWithChildren> = ({ children }) => {
           <Tab.List className="flex items-center space-x-2">
             {tabs.map((tab) => (
               <Link to={tab.pathname} key={tab.pathname}>
-                <Tab className="flex items-center space-x-1">
+                <Tab className="flex items-center space-x-2">
                   {tab.icon}
                   <span>{tab.name}</span>
                 </Tab>
