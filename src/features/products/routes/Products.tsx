@@ -1,13 +1,14 @@
+import { useState } from 'react';
+import { Button, Dialog } from '~/components';
 import {
   AddProduct,
+  GenerateProducts,
   useDeleteProducts,
   useQueryProducts,
 } from '~/features/products';
-import { GenerateProducts } from '~/features/products';
 import { ProductsList } from '../components';
-import { Button, Dialog } from '~/components';
-import { useState } from 'react';
-import { Icon } from '~/components';
+
+import * as Icon from '@phosphor-icons/react';
 
 export function Products() {
   const { mutate } = useDeleteProducts();
@@ -64,7 +65,7 @@ export function Products() {
       </Dialog>
 
       <ProductsList />
-      <div className="rounded-md border border-gray-200 bg-gray-50 p-4">
+      <div className="rounded-md border border-gray-200 bg-white p-4">
         <AddProduct />
         <hr className="my-4" />
         <GenerateProducts />

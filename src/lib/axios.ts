@@ -2,7 +2,7 @@
 
 // @ts-expect-error - we're redefining the AxiosInstance interface
 import axios, { AxiosRequestConfig } from 'axios';
-import { API_URL } from '~/config';
+import { env } from '~/config';
 
 /**
  * Axios instance with base URL set to the API URL.
@@ -10,7 +10,7 @@ import { API_URL } from '~/config';
  * Unwraps the response data from the server.
  */
 export const request = axios.create({
-  baseURL: API_URL,
+  baseURL: env.VITE_API_URL,
 });
 
 // Note: Instead if 'axios' which might cause issues with the auto-import,

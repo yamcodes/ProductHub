@@ -1,8 +1,8 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
-import { Button, Textbox } from '~/components';
-import { valueAsNumber } from '~/utils/zod';
+import { Button, Textbox } from '~/components/Elements';
+import { valueAsNumber } from '~/lib/zod';
 import { useAddProduct } from '..';
 
 interface Values {

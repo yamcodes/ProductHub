@@ -1,1 +1,7 @@
-export * as Icon from '@phosphor-icons/react';
+import * as PhosphorIcons from '@phosphor-icons/react';
+
+const Icon = {
+  ...PhosphorIcons,
+};
+
+export default Icon;

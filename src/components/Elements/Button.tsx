@@ -12,6 +12,7 @@ const baseClassnames = twJoin(
   'flex items-center justify-center',
   'select-none disabled:cursor-not-allowed',
   'disabled:opacity-50',
+  'transition duration-100 ease-in-out',
 );
 
 const sizeClassnames: Record<Size, string> = {
