@@ -1,7 +1,7 @@
 import { Link } from '@tanstack/react-router';
 import { FC, PropsWithChildren } from 'react';
 import { getTabIndex, tabs } from '~/utils/tabs';
-import { Tab } from '..';
+import { Icon, Tab } from '..';
 import { twJoin } from 'tailwind-merge';
 
 export const Logo = () => (
@@ -9,16 +9,22 @@ export const Logo = () => (
     to="/"
     className={twJoin(
       // Color
-      'bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text',
+      'text-gray-800',
       // Text
       'text-xl font-bold text-transparent antialiased',
       // Positioning
-      'relative top-[-1px]',
+      'relative top-[-1px] flex items-center space-x-1',
       // Behavior
       'cursor-pointer select-none',
     )}
   >
-    ProductHub
+    <Icon.DiceFive
+      // gradient
+      className="relative top-[1px] text-red-600"
+      size="18"
+      weight="fill"
+    />
+    scorepion
   </Link>
 );
 

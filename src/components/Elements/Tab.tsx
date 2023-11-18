@@ -16,7 +16,7 @@ const BaseTab: FC<BaseTabProps> = ({ children, className }) => {
             'transition duration-100 ease-in-out',
             // GitHub-like line below the selected tab
             selected &&
-              'font-semibold after:absolute after:bottom-[calc(50%-27px)] after:left-0 after:z-10 after:h-[2px] after:w-[100%] after:rounded after:bg-gradient-to-r after:from-purple-500 after:to-pink-400',
+              'font-semibold after:absolute after:bottom-[calc(50%-27px)] after:left-0 after:z-10 after:h-[2px] after:w-[100%] after:rounded after:bg-gradient-to-r after:from-red-700 after:to-red-500',
           ),
           className,
         )
