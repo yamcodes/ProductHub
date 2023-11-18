@@ -9,5 +9,5 @@ import { HOC } from '~/types';
  * HOC for all providers in the app
  */
 export const withProviders = <HOC>(
-  compose(withSuspense, withQueryClient, withIcons)
+  compose(withIcons, withSuspense, withQueryClient)
 );

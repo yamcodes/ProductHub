@@ -3,7 +3,7 @@ import { FC, PropsWithChildren } from 'react';
 import { getTabIndex, tabs } from '~/utils/tabs';
 import { Tab } from '..';
 
-export const Logo: FC = () => (
+export const Logo = () => (
   <Link
     to="/"
     className="cursor-pointer select-none bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text text-xl font-bold text-transparent"
@@ -31,7 +31,7 @@ export const MainLayout: FC<PropsWithChildren> = ({ children }) => {
         </div>
         {/* <hr className="my-4" /> */}
         {/* Horizontal rule should bypass padding and apply to full width */}
-        <hr className="absolute left-0 right-0 my-4" />
+        <hr className="absolute left-0 right-0 my-2" />
         <div className="h-4" />
         <Tab.Panels>
           {tabs.map((tab) => (

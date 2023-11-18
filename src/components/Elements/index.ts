@@ -1,4 +1,3 @@
-export * from '.';
 export * from './Tab';
 export * from './Textbox';
 export * from './Dialog';

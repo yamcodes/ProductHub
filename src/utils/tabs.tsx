@@ -2,7 +2,8 @@
 
 import { Link } from '@tanstack/react-router';
 import { ComponentProps, JSX } from 'react';
-import { Icon } from '~/components';
+import { Icon } from '../components/index';
+// import * as Icon from '@phosphor-icons/react';
 
 export type TabPathname = ComponentProps<typeof Link>['to'];
 
