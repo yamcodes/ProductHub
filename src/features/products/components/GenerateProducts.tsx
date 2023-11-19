@@ -2,7 +2,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { Button, Textbox } from '~/components';
-import { faker } from '@faker-js/faker';
+import { faker } from '@faker-js/faker/locale/en';
 import { queryKey, useAddProduct } from '..';
 import { valueAsNumber } from '~/lib/zod';
 import { useQueryClient } from '@tanstack/react-query';
