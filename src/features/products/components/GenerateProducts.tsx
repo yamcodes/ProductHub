@@ -2,7 +2,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { Button, Textbox } from '~/components';
-import { faker } from '@faker-js/faker/locale/en';
+import { randProductName, randNumber, randCompanyName } from '@ngneat/falso';
 import { queryKey, useAddProduct } from '..';
 import { valueAsNumber } from '~/lib/zod';
 import { useQueryClient } from '@tanstack/react-query';
@@ -42,9 +42,9 @@ export function GenerateProducts() {
       await Promise.all(
         Array.from({ length: values.amount }).map(() =>
           mutateAsync({
-            name: faker.commerce.productName(),
-            quantity: faker.number.int({ min: 1, max: 99 }),
-            brand: faker.company.name(),
+            name: randProductName(),
+            quantity: randNumber({ min: 1, max: 99 }),
+            brand: randCompanyName(),
           }),
         ),
       );
