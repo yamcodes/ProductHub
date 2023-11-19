@@ -1,14 +1,9 @@
 import { Outlet, RootRoute, Route, Router } from '@tanstack/react-router';
 import { lazy } from 'react';
-import { lazyImport } from '~/utils/lazyImport';
+import { About } from '~/features/misc';
+import { Products } from '~/features/products';
+import { MainLayout } from '~/components';
 
-const { About } = lazyImport(() => import('~/features/misc'), 'About');
-const { Products } = lazyImport(
-  () => import('~/features/products'),
-  'Products',
-);
-
-const { MainLayout } = lazyImport(() => import('~/components'), 'MainLayout');
 // Define Devtools (only for development)
 /* eslint-disable react-refresh/only-export-components -- This is a dev-only component */
 const TanStackRouterDevtools =

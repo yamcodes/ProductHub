@@ -1,8 +1,9 @@
 import { Link } from '@tanstack/react-router';
 import { FC, PropsWithChildren } from 'react';
 import { getTabIndex, tabs } from '~/utils/tabs';
-import { Icon, Tab } from '..';
+import { Tab } from '..';
 import { twJoin } from 'tailwind-merge';
+import { Icon } from '~/lib/phosphor';
 
 export const Logo = () => (
   <Link

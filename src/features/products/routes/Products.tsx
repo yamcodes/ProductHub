@@ -7,8 +7,7 @@ import {
   useQueryProducts,
 } from '~/features/products';
 import { ProductsList } from '../components';
-
-import * as Icon from '@phosphor-icons/react';
+import { Icon } from '~/lib/phosphor';
 
 export function Products() {
   const { mutate } = useDeleteProducts();

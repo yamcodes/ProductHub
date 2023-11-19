@@ -6,7 +6,7 @@ import { faker } from '@faker-js/faker';
 import { queryKey, useAddProduct } from '..';
 import { valueAsNumber } from '~/lib/zod';
 import { useQueryClient } from '@tanstack/react-query';
-import * as Icon from '@phosphor-icons/react';
+import { Icon } from '~/lib/phosphor';
 
 interface Values {
   amount: number;
