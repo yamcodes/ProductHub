@@ -15,7 +15,7 @@ export default defineConfig({
       // see: https://github.com/ngneat/falso/issues/353#issuecomment-1564392071
       {
         find: 'crypto',
-        replacement: './src/lib/seedrandom.ts',
+        replacement: './src/lib/falso.ts',
       },
     ],
   },
