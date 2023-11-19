@@ -1,7 +1,11 @@
-import { Outlet, RootRoute, Route, Router } from '@tanstack/react-router';
+import {
+  Outlet,
+  RootRoute,
+  Route,
+  Router,
+  lazyRouteComponent,
+} from '@tanstack/react-router';
 import { lazy } from 'react';
-import { About } from '~/features/misc';
-import { Products } from '~/features/products';
 import { MainLayout } from '~/components';
 
 // Define Devtools (only for development)
@@ -36,13 +40,16 @@ const rootRoute = new RootRoute({
 const productsRoute = new Route({
   getParentRoute: () => rootRoute,
   path: '/',
-  component: Products,
+  component: lazyRouteComponent(
+    () => import('~/features/products'),
+    'Products',
+  ),
 });
 
 const aboutRoute = new Route({
   getParentRoute: () => rootRoute,
   path: '/about',
-  component: About,
+  component: lazyRouteComponent(() => import('~/features/misc'), 'About'),
 });
 
 const routeTree = rootRoute.addChildren([productsRoute, aboutRoute]);
