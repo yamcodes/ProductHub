@@ -10,7 +10,7 @@ import { randProductName, randNumber, randCompanyName } from '@ngneat/falso';
 import { queryKey, useAddProduct } from '..';
 import { valueAsNumber } from '~/lib/zod';
 import { useQueryClient } from '@tanstack/react-query';
-import { Icon } from '~/lib/phosphor';
+import { Icons } from '~/lib/phosphor';
 
 interface Values {
   amount: number;
@@ -75,7 +75,7 @@ export function GenerateProducts() {
         type="submit"
         disabled={isSubmitting || isValidating || !isError}
         color="success"
-        icon={<Icon.MagicWand />}
+        icon={<Icons.MagicWand />}
       >
         Generate
       </Button>

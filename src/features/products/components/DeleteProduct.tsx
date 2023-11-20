@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Button, Dialog } from '~/components';
 import { useDeleteProduct } from '../api';
 import { ProductType } from '..';
-import { Icon } from '~/lib/phosphor';
+import { Icons } from '~/lib/phosphor';
 
 interface Props {
   product: ProductType;
@@ -24,7 +24,7 @@ export function DeleteProduct({ product, disabled: disabledOverride }: Props) {
         disabled={disabled}
         variant="secondary"
         color="danger"
-        icon={<Icon.Trash />}
+        icon={<Icons.Trash />}
       >
         <span>Delete</span>
       </Button>
@@ -47,7 +47,7 @@ export function DeleteProduct({ product, disabled: disabledOverride }: Props) {
               mutate(product.id);
               closeDialog();
             }}
-            icon={<Icon.Trash />}
+            icon={<Icons.Trash />}
           >
             Delete
           </Button>,

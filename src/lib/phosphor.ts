@@ -1,1 +1,1 @@
-export * as Icon from '@phosphor-icons/react';
+export * as Icons from '@phosphor-icons/react';

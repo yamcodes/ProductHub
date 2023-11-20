@@ -7,7 +7,7 @@ import {
   useQueryProducts,
 } from '~/features/products';
 import { ProductsList } from '../components';
-import { Icon } from '~/lib/phosphor';
+import { Icons } from '~/lib/phosphor';
 
 export function Products() {
   const { mutate } = useDeleteProducts();
@@ -28,7 +28,7 @@ export function Products() {
         color="danger"
         variant="primary"
         // size="md" TODO: match the size of the icon to the size specified here.
-        icon={<Icon.Trash />}
+        icon={<Icons.Trash />}
       >
         Delete All
       </Button>
@@ -51,7 +51,7 @@ export function Products() {
               setIsDialogOpen(false);
               mutate();
             }}
-            icon={<Icon.Trash />}
+            icon={<Icons.Trash />}
           >
             Delete All
           </Button>,
