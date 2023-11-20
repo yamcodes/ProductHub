@@ -1,15 +1,8 @@
-import { Link, ToSubOptions } from '@tanstack/react-router';
-import { FC, JSX, PropsWithChildren } from 'react';
-import { Tab } from '..';
+import { FC, PropsWithChildren } from 'react';
+import { Icons } from '~/lib/phosphor';
+import { Tab, TabType } from '..';
 import { Content } from './Content';
 import { Header } from './Header';
-import { Icons } from '~/lib/phosphor';
-
-interface TabType {
-  name: string;
-  pathname: ToSubOptions['to'];
-  icon?: JSX.Element;
-}
 
 const tabs: TabType[] = [
   {
@@ -37,9 +30,12 @@ export const MainLayout: FC<PropsWithChildren> = ({ children }) => {
       <Header>
         <Tab.List className="flex items-center space-x-2">
           {tabs.map((tab) => (
-            <Link to={tab.pathname} key={tab.pathname}>
-              <Tab text={tab.name} icon={tab.icon} />
-            </Link>
+            <Tab
+              name={tab.name}
+              icon={tab.icon}
+              key={tab.pathname}
+              pathname={tab.pathname}
+            />
           ))}
         </Tab.List>
       </Header>

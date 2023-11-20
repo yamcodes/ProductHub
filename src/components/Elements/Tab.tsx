@@ -1,14 +1,19 @@
 import { Tab as HeadlessUiTab } from '@headlessui/react';
+import { Link, ToSubOptions } from '@tanstack/react-router';
 import { FC, PropsWithChildren, JSX } from 'react';
 import { twJoin, twMerge } from 'tailwind-merge';
 
-interface BaseTabProps {
-  className?: string;
-  text: string;
+export interface TabType {
+  name: string;
+  pathname: ToSubOptions['to'];
   icon?: JSX.Element;
 }
 
-const BaseTab: FC<BaseTabProps> = ({ text, icon, className }) => {
+interface BaseTabProps extends TabType {
+  className?: string;
+}
+
+const BaseTab: FC<BaseTabProps> = ({ name, icon, className, pathname }) => {
   return (
     <HeadlessUiTab
       className={({ selected }) =>
@@ -24,19 +29,21 @@ const BaseTab: FC<BaseTabProps> = ({ text, icon, className }) => {
         )
       }
     >
-      <span className="flex items-center space-x-2">
-        {icon}
-        <>
-          <span
-            title={text}
-            className="
+      <Link to={pathname} key={pathname}>
+        <span className="flex items-center space-x-2">
+          {icon}
+          <>
+            <span
+              title={name}
+              className="
               after:visibility-hidden after:block after:h-0 after:overflow-hidden after:font-semibold after:content-[attr(title)]
             "
-          >
-            {text}
-          </span>
-        </>
-      </span>
+            >
+              {name}
+            </span>
+          </>
+        </span>
+      </Link>
     </HeadlessUiTab>
   );
 };
