@@ -24,7 +24,7 @@ const BaseTab: FC<BaseTabProps> = ({ name, icon, className, pathname }) => {
               'transition duration-100 ease-in-out',
 
               selected &&
-                'font-semibold after:absolute after:bottom-[calc(50%-23px)] after:left-0 after:z-10 after:h-[2px] after:w-[100%] after:rounded after:bg-gradient-to-r after:from-red-700 after:to-red-500',
+                'font-semibold after:absolute after:bottom-[calc(50%-23px)] after:left-0 after:z-10 after:h-[2px] after:w-[100%] after:rounded after:bg-gradient-to-r after:from-blue-700 after:to-blue-500',
             ),
             className,
           )

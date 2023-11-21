@@ -17,13 +17,13 @@ const Logo = () => (
       'cursor-pointer select-none',
     )}
   >
-    <Icons.DiceFive
+    <Icons.ShoppingCart
       // gradient
-      className="relative top-[2px] text-red-600"
+      className="relative top-[2px] text-blue-500"
       size="16"
       weight="fill"
     />
-    scorepion
+    ProductHub
   </Link>
 );
 
