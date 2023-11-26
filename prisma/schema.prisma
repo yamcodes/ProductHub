@@ -18,3 +18,14 @@ model Post {
 
     @@index([name])
 }
+
+model Product {
+    id        Int      @id @default(autoincrement())
+    name      String
+    quantity  Int @default(1)
+    brand     String
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    @@index([name])
+}
