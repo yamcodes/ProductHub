@@ -55,6 +55,7 @@ export function GenerateProducts() {
       // invalidate the query so that it refetches the data after the bulk insert
       queryClient.invalidateQueries({ queryKey });
       reset();
+      console.log('Successfully generated products.');
     } catch (error) {
       console.error(error);
     }

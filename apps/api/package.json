@@ -2,26 +2,34 @@
   "name": "api",
   "version": "1.0.0",
   "description": "This project was bootstrapped with Fastify-CLI.",
-  "main": "app.js",
+  "main": "app.ts",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "tap \"test/**/*.test.js\"",
-    "start": "fastify start -l info app.js",
-    "dev": "fastify start -w -l info -P app.js"
+    "test": "npm run build:ts && tsc -p test/tsconfig.json && tap --ts \"test/**/*.test.ts\"",
+    "start": "npm run build:ts && fastify start -l info dist/app.js",
+    "build:ts": "tsc",
+    "watch:ts": "tsc -w --preserveWatchOutput",
+    "dev": "run-p -rn watch:ts dev:start",
+    "dev:start": "fastify start --ignore-watch=.ts$ -w -l info -P dist/app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "fastify": "^4.0.0",
-    "fastify-plugin": "^4.0.0",
     "@fastify/autoload": "^5.0.0",
     "@fastify/sensible": "^5.0.0",
-    "fastify-cli": "^5.9.0"
+    "fastify": "^4.0.0",
+    "fastify-cli": "^5.9.0",
+    "fastify-plugin": "^4.0.0"
   },
   "devDependencies": {
-    "tap": "^16.1.0"
+    "@types/node": "^20.4.4",
+    "@types/tap": "^15.0.5",
+    "fastify-tsconfig": "^2.0.0",
+    "tap": "^16.1.0",
+    "ts-node": "^10.4.0",
+    "typescript": "^5.2.2"
   }
 }
