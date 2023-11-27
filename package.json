@@ -16,7 +16,9 @@
   "scripts": {
     "dev:web": "npm run dev -w apps/web",
     "dev:api": "npm run dev -w apps/api",
-    "dev": "run-p -rln dev:*"
+    "dev": "run-p -rln dev:*",
+    "db:push": "npm run db:push -w apps/api",
+    "db:studio": "npm run db:studio -w apps/api"
   },
   "dependencies": {
     "typescript": "^5.3.2"

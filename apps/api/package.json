@@ -12,7 +12,9 @@
     "build:ts": "tsc",
     "watch:ts": "tsc -w --preserveWatchOutput",
     "dev": "run-p -rn watch:ts dev:start",
-    "dev:start": "fastify start --ignore-watch=.ts$ -w -l info -P dist/app.js"
+    "dev:start": "fastify start --ignore-watch=.ts$ -w -l info -P dist/app.js",
+    "db:push": "prisma db push",
+    "db:studio": "prisma studio"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +22,7 @@
   "dependencies": {
     "@fastify/autoload": "^5.0.0",
     "@fastify/sensible": "^5.0.0",
+    "@prisma/client": "^5.6.0",
     "fastify": "^4.0.0",
     "fastify-cli": "^5.9.0",
     "fastify-plugin": "^4.0.0"
@@ -28,6 +31,7 @@
     "@types/node": "^20.4.4",
     "@types/tap": "^15.0.5",
     "fastify-tsconfig": "^2.0.0",
+    "prisma": "^5.6.0",
     "tap": "^16.1.0",
     "ts-node": "^10.4.0",
     "typescript": "^5.2.2"
