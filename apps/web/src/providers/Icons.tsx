@@ -1,7 +1,7 @@
 // HOC for Suspense
 
 import { IconContext } from '@phosphor-icons/react';
-import { HOC } from '~/types';
+import { HOC } from '@/types';
 
 export const withIcons: HOC = (Component) => () => (
   <IconContext.Provider

@@ -1,2 +1,2 @@
-// See `~/vite.config.ts` for why this exists
+// See `@/vite.config.ts` for why this exists
 export {};

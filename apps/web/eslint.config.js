@@ -30,7 +30,7 @@ export default [
       'no-restricted-imports': [
         'error',
         {
-          patterns: ['~/features/*/*', '~/components/*/*'],
+          patterns: ['@/features/*/*', '@/components/*/*'],
         },
       ],
     },

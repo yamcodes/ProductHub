@@ -1,6 +1,6 @@
 import { FC, PropsWithChildren } from 'react';
 import { withProviders } from './withProviders';
-import { HOC } from '~/types';
+import { HOC } from '@/types';
 
 interface Props extends PropsWithChildren {
   providers: HOC[];

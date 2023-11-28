@@ -1,5 +1,5 @@
 import { queryOptions, useQuery } from '@tanstack/react-query';
-import { request } from '~/lib/axios';
+import { request } from '@/lib/axios';
 import { ProductType } from '..';
 
 export const productsOptions = queryOptions({

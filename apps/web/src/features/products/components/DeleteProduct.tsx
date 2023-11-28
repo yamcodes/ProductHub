@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { Button, Dialog } from '~/components';
+import { Button, Dialog } from '@/components';
 import { useDeleteProduct } from '../api';
 import { ProductType } from '..';
-import { Icons } from '~/lib/phosphor';
+import { Icons } from '@/lib/phosphor';
 
 interface Props {
   product: ProductType;

@@ -1,7 +1,7 @@
 import { Link } from '@tanstack/react-router';
 import { FC, PropsWithChildren } from 'react';
 import { twJoin } from 'tailwind-merge';
-import { Icons } from '~/lib/phosphor';
+import { Icons } from '@/lib/phosphor';
 
 const Logo = () => (
   <Link

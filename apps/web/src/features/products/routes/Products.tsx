@@ -1,13 +1,13 @@
 import { useState } from 'react';
-import { Button, Dialog } from '~/components';
+import { Button, Dialog } from '@/components';
 import {
   AddProduct,
   GenerateProducts,
   useDeleteProducts,
   useQueryProducts,
-} from '~/features/products';
+} from '@/features/products';
 import { ProductsList } from '../components';
-import { Icons } from '~/lib/phosphor';
+import { Icons } from '@/lib/phosphor';
 
 export function Products() {
   const { mutate } = useDeleteProducts();

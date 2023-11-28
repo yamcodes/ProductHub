@@ -1,5 +1,5 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { request } from '~/lib/axios';
+import { request } from '@/lib/axios';
 import { AddProductDto, ProductType, queryKey } from '..';
 
 /**

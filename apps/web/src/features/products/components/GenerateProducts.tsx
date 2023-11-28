@@ -1,16 +1,16 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
-import { Button, Textbox } from '~/components';
+import { Button, Textbox } from '@/components';
 // This module is a faker.js tree-shakable wrapper.
 // Ideally, we shouldn't do this in the frontend.
 // In that case, tree-shaking wouldn't even matter.
 // TODO: Move faker.js to the backend.
 import { randProductName, randNumber, randCompanyName } from '@ngneat/falso';
 import { queryKey, useAddProduct } from '..';
-import { valueAsNumber } from '~/lib/zod';
+import { valueAsNumber } from '@/lib/zod';
 import { useQueryClient } from '@tanstack/react-query';
-import { Icons } from '~/lib/phosphor';
+import { Icons } from '@/lib/phosphor';
 
 interface Values {
   amount: number;

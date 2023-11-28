@@ -6,7 +6,7 @@ import {
   lazyRouteComponent,
 } from '@tanstack/react-router';
 import { lazy } from 'react';
-import { MainLayout } from '~/components';
+import { MainLayout } from '@/components';
 
 // Define Devtools (only for development)
 /* eslint-disable react-refresh/only-export-components -- This is a dev-only component */
@@ -39,7 +39,7 @@ const productsRoute = new Route({
   getParentRoute: () => rootRoute,
   path: '/',
   component: lazyRouteComponent(
-    () => import('~/features/products'),
+    () => import('@/features/products'),
     'Products',
   ),
 });
@@ -47,7 +47,7 @@ const productsRoute = new Route({
 const aboutRoute = new Route({
   getParentRoute: () => rootRoute,
   path: '/about',
-  component: lazyRouteComponent(() => import('~/features/misc'), 'About'),
+  component: lazyRouteComponent(() => import('@/features/misc'), 'About'),
 });
 
 const routeTree = rootRoute.addChildren([productsRoute, aboutRoute]);

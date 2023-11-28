@@ -1,6 +1,6 @@
 // export all providers as a single HOC
 
-import { HOC } from '~/types';
+import { HOC } from '@/types';
 import { ComponentType } from 'react';
 import { flow } from 'lodash-es';
 /**

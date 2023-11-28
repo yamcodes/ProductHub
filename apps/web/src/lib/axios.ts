@@ -2,7 +2,7 @@
 
 // @ts-expect-error - we're redefining the AxiosInstance interface
 import axios, { AxiosRequestConfig } from 'axios';
-import { env } from '~/config';
+import { env } from '@/config';
 
 /**
  * Axios instance with base URL set to the API URL.

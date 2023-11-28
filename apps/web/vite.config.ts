@@ -8,7 +8,7 @@ export default defineConfig({
   resolve: {
     alias: [
       {
-        find: '~',
+        find: '@',
         replacement: '/src',
       },
       // replace crypto with empty module

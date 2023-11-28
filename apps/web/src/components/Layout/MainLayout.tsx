@@ -1,5 +1,5 @@
 import { FC, PropsWithChildren } from 'react';
-import { Icons } from '~/lib/phosphor';
+import { Icons } from '@/lib/phosphor';
 import { Tab, TabType } from '..';
 import { Content } from './Content';
 import { Header } from './Header';
