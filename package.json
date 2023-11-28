@@ -7,11 +7,14 @@
   "scripts": {
     "dev:web": "npm run dev -w apps/web",
     "dev:api": "npm run dev -w apps/api",
-    "dev": "run-p -rln dev:*",
+    "dev": "run-p -rln dev:* db:studio",
     "db:push": "npm run db:push -w apps/api",
     "db:studio": "npm run db:studio -w apps/api"
   },
   "dependencies": {
+    "@trpc/client": "^11.0.0-alpha-next-2023-11-24-13-58-38.113",
+    "@trpc/react-query": "^11.0.0-alpha-next-2023-11-24-13-58-38.113",
+    "@trpc/server": "^11.0.0-alpha-next-2023-11-24-13-58-38.113",
     "typescript": "^5.3.2",
     "zod": "^3.22.4"
   },
