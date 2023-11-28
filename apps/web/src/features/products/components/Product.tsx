@@ -1,6 +1,6 @@
-import type { ProductType } from '@/features/products';
 import { ReactNode } from 'react';
 import { twJoin } from 'tailwind-merge';
+import { ProductType } from '..';
 
 interface Props {
   product: ProductType;
