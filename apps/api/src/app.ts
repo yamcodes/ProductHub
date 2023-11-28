@@ -1,14 +1,17 @@
 import { join } from 'path';
 import AutoLoad, { AutoloadPluginOptions } from '@fastify/autoload';
 import { FastifyPluginAsync, FastifyServerOptions } from 'fastify';
+import { fastifyTRPCPlugin } from '@trpc/server/adapters/fastify';
+import { router } from './router';
+import { createContext } from './context';
 
 export interface AppOptions
   extends FastifyServerOptions,
     Partial<AutoloadPluginOptions> {}
 // Pass --options via CLI arguments in command to enable these options.
-const options: AppOptions = {};
+export const options: AppOptions = {};
 
-const app: FastifyPluginAsync<AppOptions> = async (
+export const app: FastifyPluginAsync<AppOptions> = async (
   fastify,
   opts,
 ): Promise<void> => {
@@ -30,7 +33,12 @@ const app: FastifyPluginAsync<AppOptions> = async (
     dir: join(__dirname, 'routes'),
     options: opts,
   });
+
+  // tRPC
+  void fastify.register(fastifyTRPCPlugin, {
+    prefix: '/trpc',
+    trpcOptions: { router, createContext },
+  });
 };
 
 export default app;
-export { app, options };
