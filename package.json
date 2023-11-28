@@ -34,6 +34,7 @@
     "@tanstack/react-router": "beta",
     "@types/axios": "^0.14.0",
     "@types/lodash-es": "^4.17.11",
+    "@vitejs/plugin-react-swc": "latest",
     "axios": "^1.5.1",
     "lodash-es": "^4.17.21",
     "react": "^18.2.0",
@@ -41,6 +42,7 @@
     "react-hook-form": "^7.47.0",
     "tailwind-merge": "^1.14.0",
     "tailwindcss-patterns": "^0.1.2",
+    "vite-plugin-svgr": "^4.2.0",
     "zod": "^3.22.4"
   },
   "devDependencies": {
@@ -66,6 +68,6 @@
     "prettier-plugin-tailwindcss": "^0.5.7",
     "tailwindcss": "^3.3.5",
     "typescript": "^5.0.2",
-    "vite": "^4.4.5"
+    "vite": "latest"
   }
 }

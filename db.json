@@ -16,5 +16,66 @@
   "profile": {
     "name": "typicode"
   },
-  "products": []
+  "products": [
+    {
+      "name": "Ergonomic Soft Towels",
+      "quantity": 85,
+      "brand": "Hodkiewicz Inc",
+      "id": 1
+    },
+    {
+      "name": "Ergonomic Granite Bacon",
+      "quantity": 40,
+      "brand": "Durgan - Stamm",
+      "id": 2
+    },
+    {
+      "name": "Awesome Wooden Shirt",
+      "quantity": 80,
+      "brand": "Labadie LLC",
+      "id": 3
+    },
+    {
+      "name": "Licensed Steel Salad",
+      "quantity": 98,
+      "brand": "Rodriguez - Spencer",
+      "id": 4
+    },
+    {
+      "name": "Gorgeous Fresh Shoes",
+      "quantity": 77,
+      "brand": "Skiles and Sons",
+      "id": 5
+    },
+    {
+      "name": "Unbranded Granite Chicken",
+      "quantity": 31,
+      "brand": "Orn, Gerlach and Runolfsdottir",
+      "id": 6
+    },
+    {
+      "name": "Generic Wooden Ball",
+      "quantity": 85,
+      "brand": "Hintz - Boehm",
+      "id": 7
+    },
+    {
+      "name": "Licensed Metal Chips",
+      "quantity": 59,
+      "brand": "Mohr, Fritsch and Wisozk",
+      "id": 8
+    },
+    {
+      "name": "Sleek Plastic Chips",
+      "quantity": 11,
+      "brand": "Carroll Group",
+      "id": 9
+    },
+    {
+      "name": "Fantastic Soft Cheese",
+      "quantity": 17,
+      "brand": "Weber and Sons",
+      "id": 10
+    }
+  ]
 }
