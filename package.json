@@ -9,7 +9,8 @@
     "dev:api": "npm run dev -w apps/api",
     "dev": "run-p -rln dev:* db:studio",
     "db:push": "npm run db:push -w apps/api",
-    "db:studio": "npm run db:studio -w apps/api"
+    "db:studio": "npm run db:studio -w apps/api",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@trpc/client": "^11.0.0-alpha-next-2023-11-24-13-58-38.113",

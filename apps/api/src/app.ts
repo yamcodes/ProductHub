@@ -2,7 +2,7 @@ import { join } from 'path';
 import AutoLoad, { AutoloadPluginOptions } from '@fastify/autoload';
 import { FastifyPluginAsync, FastifyServerOptions } from 'fastify';
 import { fastifyTRPCPlugin } from '@trpc/server/adapters/fastify';
-import { router } from './routes/router';
+import { router } from './router';
 import { createContext } from './context';
 import cors from '@fastify/cors';
 
