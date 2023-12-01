@@ -5,6 +5,8 @@ export const productsOptions = queryOptions({
   queryKey: ['products'],
 });
 
+// TODO: migrate this to tRPC
+// see: https://trpc.io/docs/client/react/getQueryKey
 export const queryKey = productsOptions.queryKey;
 
 export const useQueryProducts = () => {
