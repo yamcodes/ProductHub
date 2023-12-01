@@ -28,7 +28,7 @@ const schema = z.object({
 });
 
 export function GenerateProducts() {
-  const { data: products, isLoading, status, error } = trpc.products.useQuery();
+  const { data: products, status, error } = trpc.products.list.useQuery();
   const { mutateAsync } = useAddProduct({ alwaysRefetch: false });
   const {
     register,
