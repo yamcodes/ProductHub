@@ -1,21 +1,24 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { queryKey } from '.';
-import { deleteProduct, queryProducts } from '.';
+import { queryKey, useQueryProducts } from '.';
+import { deleteProduct } from '.';
+import { api } from '@/lib/trpc';
+import { ProductType } from '..';
 
 /**
  * Iterate over the products and delete them one by one.
  * @returns A promise resolving to an empty array upon success.
  */
-export async function deleteProducts() {
-  const products = await queryProducts();
+export async function deleteProducts(products?: ProductType[]) {
+  if (!products) return [];
   await Promise.all(products.map((product) => deleteProduct(product.id)));
   return [];
 }
 
 export const useDeleteProducts = () => {
   const queryClient = useQueryClient();
+  const { products } = useQueryProducts();
   return useMutation({
-    mutationFn: deleteProducts,
+    mutationFn: () => deleteProducts(products),
     // Optimistic Updates (Cache method)
     // 1. When the mutation is called:
     onMutate: async () => {

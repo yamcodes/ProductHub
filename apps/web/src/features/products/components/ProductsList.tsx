@@ -1,4 +1,4 @@
-import { trpc } from '@/lib/trpc';
+import { api } from '@/lib/trpc';
 import { DeleteProduct } from './DeleteProduct';
 import { Product } from './Product';
 
@@ -9,7 +9,7 @@ export function ProductsList() {
     isSuccess,
     error,
     isError,
-  } = trpc.products.list.useQuery();
+  } = api.products.list.useQuery();
   // TODO: this is an ugly hack that we put while we're integrating TRPC, absolutely remove this once we're done
   if (typeof products?.map !== 'function') return null;
 

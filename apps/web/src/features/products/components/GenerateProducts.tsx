@@ -11,7 +11,7 @@ import { queryKey, useAddProduct } from '..';
 import { valueAsNumber } from '@/lib/zod';
 import { useQueryClient } from '@tanstack/react-query';
 import { Icons } from '@/lib/phosphor';
-import { trpc } from '@/lib/trpc';
+import { api } from '@/lib/trpc';
 
 interface Values {
   amount: number;
@@ -28,7 +28,7 @@ const schema = z.object({
 });
 
 export function GenerateProducts() {
-  const { data: products, status, error } = trpc.products.list.useQuery();
+  const { data: products, status, error } = api.products.list.useQuery();
   const { mutateAsync } = useAddProduct({ alwaysRefetch: false });
   const {
     register,
