@@ -41,10 +41,10 @@ export const app: FastifyPluginAsync<AppOptions> = async (
     options: opts,
   });
 
-  fastify.get('/', async function (request, _reply) {
+  fastify.get('/', async function () {
     return;
-  });  
-  
+  });
+
   // tRPC
   void fastify.register(fastifyTRPCPlugin, {
     prefix: '/trpc',
@@ -52,14 +52,13 @@ export const app: FastifyPluginAsync<AppOptions> = async (
   });
 
   fastify.setErrorHandler((error, _request, reply) => {
-    console.log("Caught error: ", error);
+    console.log('Caught error: ', error);
     if (error.statusCode) {
       reply.status(error.statusCode).send(error.message);
     } else {
       reply.status(500).send(error.message);
     }
-  }
-  );
+  });
 };
 
 export default app;

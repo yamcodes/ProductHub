@@ -1,7 +1,7 @@
-import Fastify from "fastify";
+import Fastify from 'fastify';
 // Require library to exit fastify process, gracefully (if possible)
-import closeWithGrace from "close-with-grace";
-import { env } from "@/config";
+import closeWithGrace from 'close-with-grace';
+import { env } from '@/config';
 
 // Instantiate Fastify with some config
 const fastify = Fastify({
@@ -9,18 +9,19 @@ const fastify = Fastify({
 });
 
 // Register your application as a normal plugin.
-fastify.register(import("./app"));
+fastify.register(import('./app'));
 
-// delay is the number of milliseconds for the graceful close to finish 
-const closeListeners = closeWithGrace({ delay: env.FASTIFY_CLOSE_GRACE_DELAY}, async function ({ signal, err, manual }) {
-  if (err) {
-    fastify.log.error(err)
-  }
-  await fastify.close()
-} as closeWithGrace.CloseWithGraceAsyncCallback)
+// delay is the number of milliseconds for the graceful close to finish
+const closeListeners = closeWithGrace(
+  { delay: env.FASTIFY_CLOSE_GRACE_DELAY },
+  async function ({ err }) {
+    if (err) fastify.log.error(err);
+    await fastify.close();
+  } as closeWithGrace.CloseWithGraceAsyncCallback,
+);
 
-fastify.addHook('onClose', async (instance) => {
-  closeListeners.uninstall()
+fastify.addHook('onClose', async () => {
+  closeListeners.uninstall();
 });
 
 const start = async () => {

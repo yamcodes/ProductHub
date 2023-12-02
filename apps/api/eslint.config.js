@@ -24,6 +24,12 @@ export default [
           patterns: ['@/features/*/*', '@/components/*/*'],
         },
       ],
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+          argsIgnorePattern: '^_',
+        },
+      ],
     },
   },
 ];

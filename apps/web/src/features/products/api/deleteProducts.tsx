@@ -1,7 +1,6 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { queryKey, useQueryProducts } from '.';
 import { deleteProduct } from '.';
-import { api } from '@/lib/trpc';
 import { ProductType } from '..';
 
 /**
