@@ -41,13 +41,10 @@ export const app: FastifyPluginAsync<AppOptions> = async (
     options: opts,
   });
 
-  // // This loads all plugins defined in routes
-  // // define your routes in one of these
-  void fastify.register(AutoLoad, {
-    dir: join(__dirname, 'routes'),
-    options: opts,
-  });
-
+  fastify.get('/', async function (request, _reply) {
+    return;
+  });  
+  
   // tRPC
   void fastify.register(fastifyTRPCPlugin, {
     prefix: '/trpc',

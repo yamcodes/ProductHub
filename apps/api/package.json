@@ -1,11 +1,8 @@
 {
   "name": "api",
   "version": "1.0.0",
-  "description": "This project was bootstrapped with Fastify-CLI.",
-  "main": "dist/app.js",
-  "directories": {
-    "test": "test"
-  },
+  "description": "API for producthub",
+  "main": "src/index.ts",
   "type": "module",
   "exports": {
     "import": "./dist/app.js",
@@ -15,7 +12,7 @@
     "test": "npm run build:ts && tsc -p test/tsconfig.json && tap --ts \"test/**/*.test.ts\"",
     "start": "npm run build:ts && fastify start -l info dist/app.js",
     "build": "tsc --noEmit && tsup src/**/*.ts src/**.ts --format esm",
-    "dev": "tsx src/index.ts --watch | pino-pretty --colorize",
+    "dev": "tsx watch --clear-screen=false . | pino-pretty --colorize",
     "db:push": "prisma db push",
     "db:studio": "prisma studio",
     "format:check": "prettier --check .",
