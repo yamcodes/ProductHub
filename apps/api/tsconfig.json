@@ -7,7 +7,8 @@
       "@/*": ["./src/*"]
     },
     "module": "ESNext",
-    "moduleResolution": "Bundler"
+    "moduleResolution": "Bundler",
+    "composite": true
   },
   "include": ["src/**/*.ts", "ignore.support.ts"]
 }
