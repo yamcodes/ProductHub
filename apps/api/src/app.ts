@@ -50,6 +50,16 @@ export const app: FastifyPluginAsync<AppOptions> = async (
     prefix: '/trpc',
     trpcOptions: { router: appRouter, createContext },
   });
+
+  fastify.setErrorHandler((error, _request, reply) => {
+    console.log("Caught error: ", error);
+    if (error.statusCode) {
+      reply.status(error.statusCode).send(error.message);
+    } else {
+      reply.status(500).send(error.message);
+    }
+  }
+  );
 };
 
 export default app;
