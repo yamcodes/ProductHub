@@ -15,6 +15,7 @@
     "dev": "tsx watch --clear-screen=false --env-file=.env . | pino-pretty --colorize",
     "db:push": "prisma db push",
     "db:studio": "prisma studio",
+    "db:generate": "prisma generate",
     "format:check": "prettier --check .",
     "format": "prettier --write .",
     "lint": "npm run format:check && eslint .",

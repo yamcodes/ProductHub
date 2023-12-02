@@ -17,6 +17,7 @@
     "host": "run-p -rln host:web host:api",
     "db:push": "npm run db:push -w apps/api",
     "db:studio": "npm run db:studio -w apps/api",
+    "db:generate": "npm run db:generate -w apps/api",
     "lint": "run-p -rln lint:*",
     "format": "run-p -rln format:*"
   },
