@@ -1,4 +1,4 @@
-import { join, dirname} from 'path';
+import { join, dirname } from 'path';
 import AutoLoad, { AutoloadPluginOptions } from '@fastify/autoload';
 import { FastifyPluginAsync, FastifyServerOptions } from 'fastify';
 import { fastifyTRPCPlugin } from '@trpc/server/adapters/fastify';
@@ -54,6 +54,5 @@ export const app: FastifyPluginAsync<AppOptions> = async (
     trpcOptions: { router: appRouter, createContext },
   });
 };
-
 
 export default app;
