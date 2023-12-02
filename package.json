@@ -22,9 +22,7 @@
     "format": "run-p -rln format:*"
   },
   "dependencies": {
-    "@trpc/client": "^11.0.0-alpha-next-2023-11-24-13-58-38.113",
-    "@trpc/react-query": "^11.0.0-alpha-next-2023-11-24-13-58-38.113",
-    "@trpc/server": "^11.0.0-alpha-next-2023-11-24-13-58-38.113",
+    "@trpc/server": "^10.44.1",
     "typescript": "^5.3.2",
     "zod": "^3.22.4"
   },

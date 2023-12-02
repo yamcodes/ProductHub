@@ -29,7 +29,6 @@
     "@fastify/cors": "^8.4.1",
     "@fastify/sensible": "^5.0.0",
     "@prisma/client": "^5.6.0",
-    "@trpc/server": "^11.0.0-alpha-next-2023-11-24-13-58-38.113",
     "fastify": "^4.0.0",
     "fastify-cli": "^5.9.0",
     "fastify-plugin": "^4.0.0"

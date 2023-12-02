@@ -1,13 +1,8 @@
 import { api } from '@/lib/trpc';
-import { queryOptions } from '@tanstack/react-query';
+import { getQueryKey } from '@trpc/react-query';
 
-export const productsOptions = queryOptions({
-  queryKey: ['products'],
-});
-
-// TODO: migrate this to tRPC
 // see: https://trpc.io/docs/client/react/getQueryKey
-export const queryKey = productsOptions.queryKey;
+export const queryKey = getQueryKey(api.products.all, undefined, 'query');
 
 export const useQueryProducts = () => {
   // TODO: figure out how to use the queryOptions (or at least the queryKey) here
