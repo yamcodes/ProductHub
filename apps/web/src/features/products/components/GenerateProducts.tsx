@@ -28,7 +28,7 @@ const schema = z.object({
 });
 
 export function GenerateProducts() {
-  const { data: products, status, error } = api.products.list.useQuery();
+  const { data: products, status, error } = api.products.all.useQuery();
   const { mutateAsync } = useAddProduct({ alwaysRefetch: false });
   const {
     register,

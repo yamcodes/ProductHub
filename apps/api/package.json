@@ -9,10 +9,12 @@
   "scripts": {
     "test": "npm run build:ts && tsc -p test/tsconfig.json && tap --ts \"test/**/*.test.ts\"",
     "start": "npm run build:ts && fastify start -l info dist/app.js",
-    "build:ts": "tsc",
-    "watch:ts": "tsc -w --preserveWatchOutput",
-    "dev": "run-p -rn watch:ts dev:start",
-    "dev:start": "fastify start --ignore-watch=.ts$ -w -l info -P dist/app.js",
+    "build:watch": "tsup src/**/*.ts src/**.ts --watch",
+    "build": "tsc --noEmit && tsup src/**/*.ts src/**.ts",
+    "dev": "run-p -rn build:watch serve",
+    "host": "run-p -rn build:watch serve:host",
+    "serve": "fastify start --ignore-watch=.ts$ -w -l info -P dist/app.js",
+    "serve:host": "fastify start --ignore-watch=.ts$ -w -l info -P dist/app.js -H",
     "db:push": "prisma db push",
     "db:studio": "prisma studio"
   },
@@ -33,6 +35,7 @@
     "@types/node": "^20.4.4",
     "fastify-tsconfig": "^2.0.0",
     "prisma": "^5.6.0",
+    "tsup": "^8.0.1",
     "typescript": "^5.2.2"
   }
 }

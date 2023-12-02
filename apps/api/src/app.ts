@@ -2,7 +2,7 @@ import { join } from 'path';
 import AutoLoad, { AutoloadPluginOptions } from '@fastify/autoload';
 import { FastifyPluginAsync, FastifyServerOptions } from 'fastify';
 import { fastifyTRPCPlugin } from '@trpc/server/adapters/fastify';
-import { router } from './router';
+import { appRouter } from './router';
 import { createContext } from './context';
 import cors from '@fastify/cors';
 
@@ -47,7 +47,7 @@ export const app: FastifyPluginAsync<AppOptions> = async (
   // tRPC
   void fastify.register(fastifyTRPCPlugin, {
     prefix: '/trpc',
-    trpcOptions: { router, createContext },
+    trpcOptions: { router: appRouter, createContext },
   });
 };
 

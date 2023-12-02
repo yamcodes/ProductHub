@@ -6,8 +6,11 @@
   ],
   "scripts": {
     "dev:web": "npm run dev -w apps/web",
+    "host:web": "npm run host -w apps/web",
     "dev:api": "npm run dev -w apps/api",
+    "host:api": "npm run host -w apps/api",
     "dev": "run-p -rln dev:* db:studio",
+    "host": "run-p -rln host:web host:api",
     "db:push": "npm run db:push -w apps/api",
     "db:studio": "npm run db:studio -w apps/api",
     "format": "prettier --write ."

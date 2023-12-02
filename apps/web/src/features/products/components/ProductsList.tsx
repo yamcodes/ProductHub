@@ -9,7 +9,7 @@ export function ProductsList() {
     isSuccess,
     error,
     isError,
-  } = api.products.list.useQuery();
+  } = api.products.all.useQuery();
   // TODO: this is an ugly hack that we put while we're integrating TRPC, absolutely remove this once we're done
   if (typeof products?.map !== 'function') return null;
 

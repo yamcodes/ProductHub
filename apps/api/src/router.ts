@@ -3,9 +3,9 @@
 import { productsRouter } from './features/products/productsRouter';
 import { makeRouter } from './lib/trpc';
 
-export const router = makeRouter({
+export const appRouter = makeRouter({
   products: productsRouter,
 });
 
 // export type definition of API
-export type Router = typeof router;
+export type AppRouter = typeof appRouter;
