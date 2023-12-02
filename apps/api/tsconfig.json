@@ -5,7 +5,9 @@
     "sourceMap": true,
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "module": "ESNext",
+    "moduleResolution": "Bundler"
   },
-  "include": ["src/**/*.ts"]
+  "include": ["src/**/*.ts", "ignore.support.ts"]
 }
