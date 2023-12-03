@@ -10,9 +10,9 @@ interface Props {
 }
 
 export function DeleteProduct({ product, disabled: disabledOverride }: Props) {
-  const { mutate, isPending } = useDeleteProduct();
+  const { mutate, isLoading } = useDeleteProduct();
 
-  const disabled = disabledOverride || isPending;
+  const disabled = disabledOverride || isLoading;
 
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const closeDialog = () => setIsDialogOpen(false);
