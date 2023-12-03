@@ -24,13 +24,11 @@ fastify.addHook('onClose', async () => {
   closeListeners.uninstall();
 });
 
-const start = async () => {
+(async () => {
   try {
     await fastify.listen({ port: env.PORT, host: '127.0.0.1' });
   } catch (err) {
     fastify.log.error(err);
     process.exit(1);
   }
-};
-
-start();
+})();
