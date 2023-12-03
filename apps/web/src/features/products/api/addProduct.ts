@@ -1,6 +1,6 @@
-import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { request } from '@/lib/axios';
-import { AddProductDto, ProductType, queryKey } from '..';
+import { api, useUtils } from '@/lib/trpc';
+import { AddProductDto, ProductType } from '..';
 
 /**
  * Add a product.
@@ -21,37 +21,32 @@ const defaultHookOptions: HookOptions = {
 
 export const useAddProduct = (options: HookOptions = defaultHookOptions) => {
   const { alwaysRefetch } = { ...defaultHookOptions, ...options };
-  const queryClient = useQueryClient();
-  return useMutation({
-    mutationFn: addProduct,
-    // Optimistic Updates (Cache method)
-    // 1. When the mutation is called:
+  const { products } = useUtils();
+  return api.products.createOne.useMutation({
     onMutate: async (newProduct) => {
-      // 1.a. Cancel any outgoing refetches (so they don't overwrite our optimistic update)
-      await queryClient.cancelQueries({ queryKey });
-
-      // 1.b. Snapshot the previous value
-      const previousProducts = queryClient.getQueryData(queryKey);
-
+      await products.all.cancel();
+      const previousProducts = products.all.getData();
       // 1.c. Optimistically update to the new value
       if (previousProducts) {
-        queryClient.setQueryData(queryKey, [
+        products.all.setData(undefined, [
           ...previousProducts,
-          { ...newProduct, id: previousProducts.length },
+          {
+            ...newProduct,
+            id: `some-random-id-${previousProducts.length}`,
+            createdAt: new Date().toISOString(),
+            updatedAt: new Date().toISOString(),
+          },
         ]);
       }
       return { previousProducts };
     },
-    // 2. If the mutation fails:
     onError: (_err, _newProduct, context) => {
-      // 2.a. Rollback to the previous value
       if (context?.previousProducts) {
-        queryClient.setQueryData(queryKey, context.previousProducts);
+        products.all.setData(undefined, context.previousProducts);
       }
     },
-    // 3. Refetch after error or success:
     onSettled: () => {
-      if (alwaysRefetch) queryClient.invalidateQueries({ queryKey });
+      if (alwaysRefetch) products.all.invalidate();
     },
   });
 };
