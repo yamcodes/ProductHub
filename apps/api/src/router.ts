@@ -1,9 +1,9 @@
 // This file exposes the tRPC router for the API app.
 
 import { productsRouter } from '@/features/products';
-import { makeRouter } from '@/lib/trpc';
+import { createRouter } from '@/lib/trpc';
 
-export const appRouter = makeRouter({
+export const appRouter = createRouter({
   products: productsRouter,
 });
 

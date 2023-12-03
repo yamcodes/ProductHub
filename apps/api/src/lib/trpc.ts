@@ -1,33 +1,24 @@
+import { errorFormatter } from '@/features/errors';
 import { initTRPC } from '@trpc/server';
-import { ZodError } from 'zod';
+import { CreateFastifyContextOptions } from '@trpc/server/adapters/fastify';
 
-const t = initTRPC.create({
-  errorFormatter(opts) {
-    const { shape, error } = opts;
-    return {
-      ...shape,
-      data: {
-        ...shape.data,
-        zodError:
-          error.code === 'BAD_REQUEST' && error.cause instanceof ZodError
-            ? error.cause.flatten()
-            : null,
-        prismaError:
-          error.code === 'INTERNAL_SERVER_ERROR' &&
-          error.cause instanceof Error &&
-          error.cause.message.includes('Invalid'),
-      },
-    };
-  },
+const t = initTRPC.context<Context>().create({
+  errorFormatter,
 });
 
 /**
- * Make a tRPC router
+ * Create a tRPC router
  */
-export const makeRouter = t.router;
+export const createRouter = t.router;
 
 /**
  * Create an unprotected procedure
  * @see https://trpc.io/docs/v10/procedures
  **/
 export const publicProcedure = t.procedure;
+
+export function createContext({ req, res }: CreateFastifyContextOptions) {
+  const user = { name: req.headers.username ?? 'anonymous' };
+  return { req, res, user };
+}
+export type Context = Awaited<ReturnType<typeof createContext>>;

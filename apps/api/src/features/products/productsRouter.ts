@@ -1,8 +1,8 @@
 import { prisma } from '@/lib/prisma';
-import { makeRouter, publicProcedure } from '@/lib/trpc';
+import { createRouter, publicProcedure } from '@/lib/trpc';
 import { z } from 'zod';
 
-export const productsRouter = makeRouter({
+export const productsRouter = createRouter({
   all: publicProcedure.query(() => prisma.product.findMany()),
   one: publicProcedure
     .input(z.string().min(1))

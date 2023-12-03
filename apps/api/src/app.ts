@@ -1,12 +1,13 @@
-import { createOnErrorWithLogger, onError } from '@/features/errors';
+import { createOnErrorWithLogger } from '@/features/errors';
 import AutoLoad, { AutoloadPluginOptions } from '@fastify/autoload';
 import cors from '@fastify/cors';
 import { fastifyTRPCPlugin } from '@trpc/server/adapters/fastify';
-import Fastify, { FastifyPluginAsync, FastifyServerOptions } from 'fastify';
+import { FastifyPluginAsync, FastifyServerOptions } from 'fastify';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
-import { createContext } from './context';
 import { appRouter } from './router';
+import { createContext } from '@/lib/trpc';
+import { createErrorHandlerWithLogger } from '@/features/errors';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -56,17 +57,7 @@ export const app: FastifyPluginAsync<AppOptions> = async (
     },
   });
 
-  fastify.setErrorHandler(function (error, request, reply) {
-    if (error instanceof Fastify.errorCodes.FST_ERR_BAD_STATUS_CODE) {
-      // Log error
-      this.log.error(error);
-      // Send error response
-      reply.status(500).send({ ok: false });
-    } else {
-      // fastify will use parent error handler to handle this
-      reply.send(error);
-    }
-  });
+  fastify.setErrorHandler(createErrorHandlerWithLogger(fastify.log));
 };
 
 export default app;
