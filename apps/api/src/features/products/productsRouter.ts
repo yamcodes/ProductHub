@@ -13,4 +13,18 @@ export const productsRouter = createRouter({
       await prisma.product.delete({ where: { id } });
       return { id };
     }),
+  createOne: publicProcedure
+    .input(
+      z.object({
+        name: z.string().min(1),
+        quantity: z.number().min(1),
+        brand: z.string().min(1),
+      }),
+    )
+    .mutation(async ({ input: { name, quantity, brand } }) => {
+      const product = await prisma.product.create({
+        data: { name, quantity, brand },
+      });
+      return product;
+    }),
 });

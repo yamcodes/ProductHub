@@ -5,7 +5,7 @@ import { fastifyTRPCPlugin } from '@trpc/server/adapters/fastify';
 import { FastifyPluginAsync, FastifyServerOptions } from 'fastify';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
-import { appRouter } from './router';
+import { appRouter } from '@/router';
 import { createContext } from '@/lib/trpc';
 import { createErrorHandlerWithLogger } from '@/features/errors';
 
