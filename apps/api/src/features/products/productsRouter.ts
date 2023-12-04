@@ -13,6 +13,7 @@ export const productsRouter = createRouter({
       await prisma.product.delete({ where: { id } });
       return { id };
     }),
+  deleteAll: publicProcedure.mutation(() => prisma.product.deleteMany()),
   createOne: publicProcedure
     .input(
       z.object({

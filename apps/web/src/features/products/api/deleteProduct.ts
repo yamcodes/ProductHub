@@ -12,6 +12,7 @@ export const deleteProduct = async (id: string) => {
 
 export const useDeleteProduct = () => {
   const { products } = useUtils();
+
   return api.products.deleteOne.useMutation({
     onMutate: async (id) => {
       await products.all.cancel();

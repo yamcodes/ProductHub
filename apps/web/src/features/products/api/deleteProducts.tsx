@@ -1,5 +1,4 @@
-import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { queryKey, useQueryProducts } from '.';
+import { api, useUtils } from '@/lib/trpc';
 import { deleteProduct } from '.';
 import { ProductType } from '..';
 
@@ -14,33 +13,16 @@ export async function deleteProducts(products?: ProductType[]) {
 }
 
 export const useDeleteProducts = () => {
-  const queryClient = useQueryClient();
-  const { products } = useQueryProducts();
-  return useMutation({
-    mutationFn: () => deleteProducts(products),
-    // Optimistic Updates (Cache method)
-    // 1. When the mutation is called:
+  // const queryClient = useQueryClient();
+  const { products } = useUtils();
+  // const { products } = useQueryProducts();
+  return api.products.deleteAll.useMutation({
+    onSettled: () => products.all.invalidate(),
     onMutate: async () => {
-      // 1.a. Cancel any outgoing refetches (so they don't overwrite our optimistic update)
-      await queryClient.cancelQueries({ queryKey });
-      // 1.b. Snapshot the previous value
-      const previousProducts = queryClient.getQueryData(queryKey);
-      // 1.c. Optimistically update to the new value
-      if (previousProducts)
-        queryClient.setQueryData(queryKey, () => {
-          return [];
-        });
-      // 1.d. Return the snapshotted value (to use in the `onError` callback)
+      await products.all.cancel();
+      const previousProducts = products.all.getData();
+      products.all.setData(undefined, []);
       return { previousProducts };
     },
-    // 2. If the mutation fails:
-    onError: (_err, _id, context) => {
-      // 2.a. Rollback to the previous value
-      if (context?.previousProducts) {
-        queryClient.setQueryData(queryKey, context.previousProducts);
-      }
-    },
-    // 3. Always refetch after error or success:
-    onSettled: () => queryClient.invalidateQueries({ queryKey }),
   });
 };
