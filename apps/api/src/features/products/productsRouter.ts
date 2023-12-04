@@ -28,4 +28,20 @@ export const productsRouter = createRouter({
       });
       return product;
     }),
+  generateMany: publicProcedure
+    .input(
+      z.object({
+        amount: z.number().min(1),
+      }),
+    )
+    .mutation(async ({ input: { amount } }) => {
+      // // const products = await prisma.product.
+      //   data: Array.from({ length: amount }).map(() => ({
+      //     name: 'Some product',
+      //     quantity: 1,
+      //     brand: 'Some brand',
+      //   })),
+      // });
+      // return products;
+    }),
 });
