@@ -5,7 +5,7 @@
     "sourceMap": true,
     "paths": {
       "@/*": ["./src/*"],
-      "local-config": ["env.config.ts"]
+      "local-config": ["./env.config.ts"]
     },
     "module": "ESNext",
     "moduleResolution": "Bundler",
