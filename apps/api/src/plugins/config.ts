@@ -15,6 +15,7 @@ export default fp<SupportPluginOptions>(async (fastify, _opts) => {
     fastify.decorate('config', config);
   } catch (error) {
     const { errors } = <ZodError>error;
+    if (!errors) throw error;
     errors.forEach((error) => {
       fastify.log.error(
         `Environment variable ${error.path.join('.')}: ${error.message}`,

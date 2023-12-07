@@ -7,7 +7,7 @@ export const getConfig = async () => {
     const { default: localConfig } = await import('local-config');
     return { ...envConfig, ...localConfig };
   } catch (err) {
-    throw new Error('Invalid config. Please run `npm run init`');
+    throw new Error('Invalid config. Please run `npx init-api`');
   }
 };
 
