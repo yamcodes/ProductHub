@@ -15,7 +15,7 @@ export default fp<SupportPluginOptions>(async (fastify, _opts) => {
     fastify.decorate('config', config);
   } catch (error) {
     const { errors } = <ZodError>error;
-    if (!errors) throw error;
+    if (!errors) throw error; // TODO: This is a hack. We should find a better way to error handle.
     errors.forEach((error) => {
       fastify.log.error(
         `Environment variable ${error.path.join('.')}: ${error.message}`,

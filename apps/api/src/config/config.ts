@@ -2,12 +2,16 @@ import { defineConfig } from './defineConfig';
 
 const envConfig = defineConfig(process.env); // applies defaults i.e. falls back to 3000
 
+
 export const getConfig = async () => {
   try {
     const { default: localConfig } = await import('local-config');
     return { ...envConfig, ...localConfig };
   } catch (err) {
-    throw new Error('Invalid config. Please run `npx init-api`');
+    if (err.code === 'ERR_MODULE_NOT_FOUND') {
+      throw new Error('Invalid config. Please run `npx init-api`');
+    }
+    throw err;
   }
 };
 
