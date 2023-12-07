@@ -1,17 +1,14 @@
+import { Button, Textbox } from '@/components';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
-import { Button, Textbox } from '@/components';
 // This module is a faker.js tree-shakable wrapper.
 // Ideally, we shouldn't do this in the frontend.
 // In that case, tree-shaking wouldn't even matter.
 // TODO: Move faker.js to the backend.
-import { randProductName, randNumber, randCompanyName } from '@ngneat/falso';
-import { queryKey, useAddProduct } from '..';
-import { valueAsNumber } from '@/lib/zod';
-import { useQueryClient } from '@tanstack/react-query';
 import { Icons } from '@/lib/phosphor';
-import { api } from '@/lib/trpc';
+import { api, useUtils } from '@/lib/trpc';
+import { valueAsNumber } from '@/lib/zod';
 
 interface Values {
   amount: number;
@@ -28,8 +25,7 @@ const schema = z.object({
 });
 
 export function GenerateProducts() {
-  const { data: products, status, error } = api.products.all.useQuery();
-  const { mutateAsync } = useAddProduct({ alwaysRefetch: false });
+  const { mutateAsync } = api.products.generateMany.useMutation();
   const {
     register,
     handleSubmit: formSubmitHandler,
@@ -41,26 +37,15 @@ export function GenerateProducts() {
       amount: 10,
     },
   });
-  const queryClient = useQueryClient();
+
+  const { products } = useUtils();
 
   const handleSubmit = async (values: Values) => {
-    try {
-      await Promise.all(
-        Array.from({ length: values.amount }).map(() =>
-          mutateAsync({
-            name: randProductName(),
-            quantity: randNumber({ min: 1, max: 99 }),
-            brand: randCompanyName(),
-          }),
-        ),
-      );
-      // invalidate the query so that it refetches the data after the bulk insert
-      queryClient.invalidateQueries({ queryKey });
-      reset();
-      console.log('Successfully generated products.');
-    } catch (error) {
-      console.error(error);
-    }
+    const { amount } = values;
+    await mutateAsync({ amount });
+    // invalidate the query so that it refetches the data after the bulk insert
+    products.all.invalidate();
+    reset();
   };
 
   const isError = Object.values(errors).every((value) => !value);
@@ -82,11 +67,6 @@ export function GenerateProducts() {
       >
         Generate
       </Button>
-      <div className="text-sm text-gray-500">
-        {JSON.stringify(products, null, 2)}
-      </div>
-      <div className="text-sm text-gray-500">{status}</div>
-      <div className="text-sm text-gray-500">{error?.message}</div>
     </form>
   );
 }

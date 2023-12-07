@@ -11,12 +11,6 @@ export default defineConfig({
         find: '@',
         replacement: '/src',
       },
-      // replace crypto with empty module
-      // see: https://github.com/ngneat/falso/issues/353#issuecomment-1564392071
-      {
-        find: 'crypto',
-        replacement: './src/lib/falso.ts',
-      },
     ],
   },
 });

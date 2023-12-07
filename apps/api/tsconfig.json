@@ -4,11 +4,12 @@
     "outDir": "dist",
     "sourceMap": true,
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "local-config": ["./env.config.ts"]
     },
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "composite": true
   },
-  "include": ["src/**/*.ts", "ignore.support.ts"]
+  "include": ["src/**/*.ts", "ignore.support.ts", "env.config.ts", "scripts"]
 }

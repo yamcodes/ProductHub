@@ -2,12 +2,13 @@ import { createOnErrorWithLogger } from '@/features/errors';
 import AutoLoad, { AutoloadPluginOptions } from '@fastify/autoload';
 import cors from '@fastify/cors';
 import { fastifyTRPCPlugin } from '@trpc/server/adapters/fastify';
-import { FastifyPluginAsync, FastifyServerOptions } from 'fastify';
+import { FastifyServerOptions } from 'fastify';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 import { appRouter } from '@/router';
 import { createContext } from '@/lib/trpc';
 import { createErrorHandlerWithLogger } from '@/features/errors';
+import fp from 'fastify-plugin';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -18,10 +19,7 @@ export interface AppOptions
 // Pass --options via CLI arguments in command to enable these options.
 export const options: AppOptions = {};
 
-export const app: FastifyPluginAsync<AppOptions> = async (
-  fastify,
-  opts,
-): Promise<void> => {
+export default fp(async (fastify, opts) => {
   await fastify.register(cors, {
     origin: (origin, callback) => {
       // disable CORS for curl or postman
@@ -38,7 +36,7 @@ export const app: FastifyPluginAsync<AppOptions> = async (
   // This loads all plugins defined in plugins
   // those should be support plugins that are reused
   // through your application
-  void fastify.register(AutoLoad, {
+  await fastify.register(AutoLoad, {
     dir: join(__dirname, 'plugins'),
     options: opts,
   });
@@ -48,7 +46,7 @@ export const app: FastifyPluginAsync<AppOptions> = async (
   });
 
   // tRPC
-  void fastify.register(fastifyTRPCPlugin, {
+  await fastify.register(fastifyTRPCPlugin, {
     prefix: '/trpc',
     trpcOptions: {
       router: appRouter,
@@ -58,6 +56,4 @@ export const app: FastifyPluginAsync<AppOptions> = async (
   });
 
   fastify.setErrorHandler(createErrorHandlerWithLogger(fastify.log));
-};
-
-export default app;
+});

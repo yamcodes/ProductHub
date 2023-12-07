@@ -1,0 +1,32 @@
+{
+  "name": "init",
+  "version": "0.0.0",
+  "license": "MIT",
+  "bin": {
+    "init-api": "dist/index.js"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=16"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "build": "tsc",
+    "format": "prettier --write .",
+    "prepare": "npm run build"
+  },
+  "dependencies": {
+    "@clack/prompts": "^0.7.0",
+    "ansis": "^2.0.2",
+    "colorette": "^2.0.20",
+    "colorize-template": "^1.0.0",
+    "minimatch": "^9.0.3"
+  },
+  "module": "index.ts",
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}

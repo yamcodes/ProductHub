@@ -1,5 +1,6 @@
 import { prisma } from '@/lib/prisma';
 import { createRouter, publicProcedure } from '@/lib/trpc';
+import { faker } from '@faker-js/faker';
 import { z } from 'zod';
 
 export const productsRouter = createRouter({
@@ -35,13 +36,13 @@ export const productsRouter = createRouter({
       }),
     )
     .mutation(async ({ input: { amount } }) => {
-      // // const products = await prisma.product.
-      //   data: Array.from({ length: amount }).map(() => ({
-      //     name: 'Some product',
-      //     quantity: 1,
-      //     brand: 'Some brand',
-      //   })),
-      // });
-      // return products;
+      const products = await prisma.product.createMany({
+        data: Array.from({ length: amount }).map(() => ({
+          name: faker.commerce.productName(),
+          quantity: faker.number.int({ min: 1, max: 100 }),
+          brand: faker.company.name(),
+        })),
+      });
+      return products;
     }),
 });

@@ -16,5 +16,5 @@ model Product {
   quantity    Int @default(1)
   brand       String
   createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  updatedAt   DateTime @updatedAt @default(now())
 }
