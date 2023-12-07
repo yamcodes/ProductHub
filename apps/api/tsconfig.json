@@ -5,11 +5,11 @@
     "sourceMap": true,
     "paths": {
       "@/*": ["./src/*"],
-      "local-config": ["env.config2.ts"]
+      "local-config": ["env.config.ts"]
     },
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "composite": true
   },
-  "include": ["src/**/*.ts", "ignore.support.ts", "env.config2.ts", "scripts"]
+  "include": ["src/**/*.ts", "ignore.support.ts", "env.config.ts", "scripts"]
 }
