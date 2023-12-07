@@ -1,1 +1,3 @@
 node_modules
+# Vite configuration cache
+vite.config.ts.timestamp-*
